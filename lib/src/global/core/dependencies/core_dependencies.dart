@@ -1,11 +1,16 @@
 // ignore_for_file: strict_raw_type
 
 import '../../../modules/auth/data/data_source/remote/auth_api.dart';
+import '../../../modules/auth/data/data_source/remote/auth_api_rest.dart';
 import '../../../modules/auth/data/repositories_impl/auth_repository.dart';
 import '../../../modules/auth/domain/repositories/auth_repository.dart';
+import '../../../modules/home/data/data_source/remote/media_api.dart';
+import '../../../modules/home/data/data_source/remote/media_api_rest.dart';
+import '../../../modules/home/domain/repositories/media_repository.dart';
 import '../../../shared/features/data_source/device_storage/device_storage_api.dart';
 import '../../../shared/features/data_source/device_storage/device_storage_flutter_secure.dart';
 import '../../../shared/features/data_source/user_api/user_api.dart';
+import '../../../shared/features/data_source/user_api/user_api_rest.dart';
 import '../../../shared/features/repositories/repositories.dart';
 import '../../../shared/features/repositories_impl/user_repository.dart';
 import 'base_module_dependencies.dart';
@@ -34,7 +39,7 @@ class CoreDependencies implements BaseModuleDependencies {
 
     authApi = AuthApiRest(apiUrl: authApiUrl);
     userApi = UserApiRest(apiUrl: userApiUrl);
-    media = MediaApiRest(apiUrl: mediaApiUrl);
+    mediaApi = MediaApiRest(apiUrl: mediaApiUrl);
     secureStorage = const FlutterSecureStorageApi();
     profileApi = ProfileApiRest(apiUrl: profileApiUrl);
 
