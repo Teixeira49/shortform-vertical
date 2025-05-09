@@ -10,9 +10,9 @@ import 'media_endpoints.dart';
 class MediaApiRest implements IMediaApi {
 
   MediaApiRest({
-    required String baseUrl,
+    required String apiUrl,
     HttpManager? client,
-  }) : _baseUrl = baseUrl,
+  }) : _baseUrl = apiUrl,
        _client = client ?? HttpManager();
 
   final HttpManager _client;
