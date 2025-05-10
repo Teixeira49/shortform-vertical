@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:venetiktok/src/modules/home/presentation/home/home.dart';
+
+import '../../modules/home/presentation/feed_home/page/feed_home_page.dart';
 
 class IndexHome extends StatelessWidget {
   const IndexHome({super.key});

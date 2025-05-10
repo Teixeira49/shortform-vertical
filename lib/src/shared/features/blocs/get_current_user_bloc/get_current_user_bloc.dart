@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../modules/domain/entities/entities.dart';
+import '../../entities/entities/entities.dart';
 import '../../use_cases/get_current_user.dart';
 
 

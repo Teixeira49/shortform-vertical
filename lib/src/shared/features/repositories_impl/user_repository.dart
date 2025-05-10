@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import '../../core/exceptions/no_current_user_found_exception.dart';
-import '../../modules/domain/entities/entities.dart';
-import '../../modules/domain/repositories/user_repository.dart';
 import '../data_source/user_api/user_api.dart';
+import '../entities/entities/entities.dart';
+import '../repositories/repositories.dart';
 
 class UserRepository implements IUserRepository {
   UserRepository({

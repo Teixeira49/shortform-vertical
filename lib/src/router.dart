@@ -3,22 +3,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:venetiktok/src/index.dart';
-import 'package:venetiktok/src/modules/auth/presentation/forgot_password/forgot_password.dart';
-import 'package:venetiktok/src/modules/auth/presentation/login/login.dart';
-import 'package:venetiktok/src/modules/auth/presentation/sign_up/sign_up.dart';
-import 'package:venetiktok/src/modules/auth/presentation/splash/splash.dart';
-import 'package:venetiktok/src/modules/commerce/presentation/commerce_detail/commerce_detail.dart';
-import 'package:venetiktok/src/modules/home/presentation/new_rewards/view/new_rewards_page.dart';
+
 import 'package:venetiktok/src/navigation_controller.dart';
 import 'package:venetiktok/src/navigator_observer.dart';
-import 'package:venetiktok/src/routes/branches/cards_branch.dart';
-import 'package:venetiktok/src/routes/branches/commerce_branch.dart';
+import 'package:venetiktok/src/routes/branches/search_branch.dart';
 import 'package:venetiktok/src/routes/branches/home_branch.dart';
 import 'package:venetiktok/src/routes/branches/profile_branch.dart';
-import 'package:venetiktok/src/routes/branches/stamps_branch.dart';
 import 'package:venetiktok/src/routes/shell_branches.dart';
-import 'package:venetiktok/src/shared/presentation/success/success.dart';
-import 'package:venetiktok/src/shared/widgets/widgets.dart';
+import 'package:venetiktok/src/shared/features/presentation/success/page/success_page.dart';
+import 'package:venetiktok/src/shared/features/widgets/custom_page_transition.dart';
+
+
+import 'modules/auth/presentation/login/page/login_page.dart';
+import 'modules/auth/presentation/sign_up/page/sign_up_page.dart';
+import 'modules/auth/presentation/splash/bloc/bloc.dart';
+import 'modules/auth/presentation/splash/page/splash_page.dart';
 
 /// {@template app_router}
 /// The root router for the app. Call [AppRouter.router] to get the router.
@@ -76,11 +75,11 @@ class AppRouter {
                   CustomPageTransition(animation: animation, child: child),
             ),
             routes: [
-              GoRoute(
-                path: ForgotPasswordPage.routeName,
-                name: ForgotPasswordPage.routeName,
-                builder: (context, state) => const ForgotPasswordPage(),
-              ),
+              //GoRoute(
+              //  path: ForgotPasswordPage.routeName,
+              //  name: ForgotPasswordPage.routeName,
+              //  builder: (context, state) => const ForgotPasswordPage(),
+              //),
             ],
           ),
 
@@ -138,28 +137,10 @@ class AppRouter {
                       CustomPageTransition(animation: animation, child: child),
             ),
           ),
-          GoRoute(
-            path: NewRewardsPage.path,
-            name: NewRewardsPage.routeName,
-            builder: (context, state) {
-              return const NewRewardsPage();
-            },
-          ),
-          GoRoute(
-            path: CommerceDetailPage.path,
-            name: CommerceDetailPage.routeName,
-            builder: (context, state) {
-              return CommerceDetailPage(
-                commerceId: state.extra! as int,
-              );
-            },
-          ),
 
           ...HomeShellBranch().rootRoutes(rootNavigatorKey),
-          ...CardsShellBranch().rootRoutes(rootNavigatorKey),
-          ...CommerceShellBranch().rootRoutes(rootNavigatorKey),
+          ...SearchShellBranch().rootRoutes(rootNavigatorKey),
           ...ProfileShellBranch().rootRoutes(rootNavigatorKey),
-          ...StampsShellBranch().rootRoutes(rootNavigatorKey),
         ],
       );
 }

@@ -1,4 +1,4 @@
-import '../../../../shared/modules/domain/repositories/user_repository.dart';
+import '../../../../shared/features/repositories/repositories.dart';
 import '../repositories/auth_repository.dart';
 
 class SignOutUserUseCase {

@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
 
   /// The route name of ProfilePage. Use to navigate
   /// with named routes.
-  static const routeName = 'profile';
+  static const routeName = 'profile-home';
 
   @override
   Widget build(BuildContext context) {

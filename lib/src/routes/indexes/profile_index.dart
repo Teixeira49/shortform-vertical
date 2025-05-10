@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:venetiktok/src/modules/profile/presentation/profile/profile.dart';
+
+import '../../modules/profile/presentation/profile_info/page/profile_info_page.dart';
 
 class IndexProfile extends StatelessWidget {
   const IndexProfile({super.key});

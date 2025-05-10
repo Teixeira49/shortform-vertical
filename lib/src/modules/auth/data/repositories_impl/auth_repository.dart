@@ -6,8 +6,6 @@ import '../../domain/repositories/auth_repository.dart';
 import '../data_source/remote/auth_api.dart';
 import '../models/models.dart';
 
-
-
 class AuthRepository implements IAuthRepository {
   AuthRepository({
     required IAuthApi authApi,

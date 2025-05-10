@@ -1,6 +1,6 @@
 import '../../../modules/auth/domain/repositories/auth_repository.dart';
-import '../../modules/domain/entities/entities.dart';
-import '../../modules/domain/repositories/user_repository.dart';
+import '../entities/entities/entities.dart';
+import '../repositories/repositories.dart';
 
 class GetCurrentUserUseCase {
   GetCurrentUserUseCase({

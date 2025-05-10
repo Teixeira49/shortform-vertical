@@ -1,4 +1,4 @@
-import '../../modules/domain/entities/entities.dart';
+import '../entities/entities/entities.dart';
 
 abstract class IUserRepository {
   User? get currentUser;

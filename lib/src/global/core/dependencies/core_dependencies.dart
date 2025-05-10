@@ -6,13 +6,18 @@ import '../../../modules/auth/data/repositories_impl/auth_repository.dart';
 import '../../../modules/auth/domain/repositories/auth_repository.dart';
 import '../../../modules/home/data/data_source/remote/media_api.dart';
 import '../../../modules/home/data/data_source/remote/media_api_rest.dart';
+import '../../../modules/home/data/repositories_impl/media_repository.dart';
 import '../../../modules/home/domain/repositories/media_repository.dart';
+import '../../../modules/profile/data/data_source/remote/profile_api.dart';
+import '../../../modules/profile/data/data_source/remote/profile_api_rest.dart';
+import '../../../modules/profile/data/repositories_impl/profile_repository.dart';
+import '../../../modules/profile/domain/repositories/profile_repository.dart';
 import '../../../shared/features/data_source/device_storage/device_storage_api.dart';
 import '../../../shared/features/data_source/device_storage/device_storage_flutter_secure.dart';
 import '../../../shared/features/data_source/user_api/user_api.dart';
 import '../../../shared/features/data_source/user_api/user_api_rest.dart';
 import '../../../shared/features/repositories/repositories.dart';
-import '../../../shared/features/repositories_impl/user_repository.dart';
+import '../../../shared/features/repositories_impl/repositories_impl.dart';
 import 'base_module_dependencies.dart';
 
 class CoreDependencies implements BaseModuleDependencies {
@@ -44,16 +49,9 @@ class CoreDependencies implements BaseModuleDependencies {
     profileApi = ProfileApiRest(apiUrl: profileApiUrl);
 
     return CoreDependencies(
-      authRepository: AuthRepository(
-        authApi: authApi,
-        storage: secureStorage,
-      ),
-      userRepository: UserRepository(
-        userApi: userApi,
-      ),
-      mediaRepository: MediaRepository(
-        mediaApi: mediaApi,
-      ),
+      authRepository: AuthRepository(authApi: authApi, storage: secureStorage),
+      userRepository: UserRepository(userApi: userApi,),
+      mediaRepository: MediaRepository(mediaApi: mediaApi),
       profileRepository: ProfileRepository(
         profileApi: profileApi,
         storage: secureStorage,

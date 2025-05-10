@@ -1,20 +1,20 @@
 
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SearchPage extends StatelessWidget {
+  const SearchPage({super.key});
 
   static const path = '/$routeName';
 
   /// The route name of ProfilePage. Use to navigate
   /// with named routes.
-  static const routeName = 'home';
+  static const routeName = 'search';
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Home Page'),
+        child: Text('SearchPage'),
       ),
     );
   }

@@ -1,14 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:venetiktok/l10n/l10n.dart';
 import 'package:venetiktok/src/routes/branches/base_branch.dart';
-import 'package:venetiktok/src/routes/branches/cards_branch.dart';
-import 'package:venetiktok/src/routes/branches/commerce_branch.dart';
+import 'package:venetiktok/src/routes/branches/search_branch.dart';
 import 'package:venetiktok/src/routes/branches/home_branch.dart';
 import 'package:venetiktok/src/routes/branches/profile_branch.dart';
-import 'package:venetiktok/src/routes/branches/stamps_branch.dart';
 import 'package:venetiktok/src/variables/variables.dart';
 
 /// Defines all the branches for the app, including navigator keys for each
@@ -30,20 +27,14 @@ class AppStatefulShellBranches {
 
   static StatefulShellBranch _branch(AppShellBranch page) {
     final home = HomeShellBranch();
-    final cards = CardsShellBranch();
-    final stamps = StampsShellBranch();
-    final commerce = CommerceShellBranch();
+    final search = SearchShellBranch();
     final profile = ProfileShellBranch();
 
     switch (page) {
       case AppShellBranch.home:
         return home.branch;
-      case AppShellBranch.cards:
-        return cards.branch;
-      case AppShellBranch.stamps:
-        return stamps.branch;
-      case AppShellBranch.commerce:
-        return commerce.branch;
+      case AppShellBranch.search:
+        return search.branch;
       case AppShellBranch.profile:
         return profile.branch;
     }
@@ -60,9 +51,7 @@ class AppStatefulShellBranches {
 /// {@endtemplate}
 enum AppShellBranch {
   home('home'),
-  cards('cards'),
-  stamps('stamps'),
-  commerce('commerce'),
+  search('search'),
   profile('profile'),
   ;
 
@@ -85,12 +74,8 @@ enum AppShellBranch {
     switch (this) {
       case AppShellBranch.home:
         return context.l10n.homeLabel;
-      case AppShellBranch.cards:
+      case AppShellBranch.search:
         return context.l10n.cardsLabel;
-      case AppShellBranch.stamps:
-        return '';
-      case AppShellBranch.commerce:
-        return context.l10n.commercesLabel;
       case AppShellBranch.profile:
         return context.l10n.profileLabel;
     }
@@ -112,34 +97,29 @@ enum AppShellBranch {
 
     switch (this) {
       case AppShellBranch.home:
-        return SvgPicture.asset(
-          AssetIcons.homeIcon,
-          colorFilter: colorFilter,
-          height: size,
+        return Icon(
+          Icons.home,
+          color: isSelected
+              ? ColorValues.fgBrandPrimary(context)
+              : ColorValues.fgDisabled(context),
+          size: size,
         );
 
-      case AppShellBranch.cards:
-        return SvgPicture.asset(
-          AssetIcons.cardIcon,
-          colorFilter: colorFilter,
-          height: size,
-        );
-
-      case AppShellBranch.stamps:
-        return const SizedBox.shrink();
-
-      case AppShellBranch.commerce:
-        return SvgPicture.asset(
-          AssetIcons.commerceIcon,
-          colorFilter: colorFilter,
-          height: size,
-        );
+      case AppShellBranch.search:
+        return Icon(
+          Icons.search,
+          color: isSelected
+              ? ColorValues.fgBrandPrimary(context)
+              : ColorValues.fgDisabled(context),
+          size: size,);
 
       case AppShellBranch.profile:
-        return SvgPicture.asset(
-          AssetIcons.profileIcon,
-          colorFilter: colorFilter,
-          height: size,
+        return Icon(
+          Icons.person,
+          color: isSelected
+              ? ColorValues.fgBrandPrimary(context)
+              : ColorValues.fgDisabled(context),
+          size: size,
         );
     }
   }

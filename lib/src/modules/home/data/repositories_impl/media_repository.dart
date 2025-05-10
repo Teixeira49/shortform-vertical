@@ -7,8 +7,8 @@ import 'package:venetiktok/src/modules/home/domain/repositories/media_repository
 
 import '../data_source/remote/media_api.dart';
 
-class MediaRepositoryImpl extends IMediaRepository {
-  MediaRepositoryImpl({required IMediaApi mediaApi}) : _mediaApi = mediaApi;
+class MediaRepository implements IMediaRepository {
+  MediaRepository({required IMediaApi mediaApi}) : _mediaApi = mediaApi;
 
   final IMediaApi _mediaApi;
 

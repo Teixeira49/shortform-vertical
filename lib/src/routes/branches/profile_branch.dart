@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:venetiktok/src/modules/profile/presentation/profile_info/profile_info.dart';
 
+import '../../modules/profile/presentation/profile_info/page/profile_info_page.dart';
 import '../indexes/profile_index.dart';
 import '../branches/base_branch.dart';
 import '../shell_branches.dart';
@@ -33,10 +33,10 @@ class ProfileShellBranch implements AppBaseShellBranch {
     return [
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
-        path: ProfileInfoPage.path,
-        name: ProfileInfoPage.routeName,
+        path: ProfilePage.path,
+        name: ProfilePage.routeName,
         builder: (context, state) {
-          return const ProfileInfoPage();
+          return const ProfilePage();
         },
       ),
     ];

@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import '../../../modules/domain/entities/entities.dart';
+import '../../entities/entities/entities.dart';
 
 
 class UserModel extends User {
