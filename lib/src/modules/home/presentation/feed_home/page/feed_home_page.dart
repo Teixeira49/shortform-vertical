@@ -1,5 +1,15 @@
 
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:venetiktok/l10n/l10n.dart';
+import 'package:venetiktok/src/shared/features/widgets/base_layout.dart';
+import 'package:venetiktok/src/shared/features/widgets/text_page_header_widget.dart';
+
+import '../../../../../variables/values/values.dart';
+
+part '../widgets/feed_home_body.dart';
+part '../widgets/video_player.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,10 +22,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Home Page'),
-      ),
+    return Scaffold(
+      body: _HomeView(),
     );
+  }
+}
+
+class _HomeView extends StatelessWidget {
+  const _HomeView();
+
+  @override
+  Widget build(BuildContext context) {
+    return _HomeBody();
   }
 }
