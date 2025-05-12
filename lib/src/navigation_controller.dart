@@ -13,10 +13,6 @@ class NavigationController extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocListener(
-      listeners: [
-      ],
-      child: child,
-    );
+    return child; // MultiblocListener Here
   }
 }
