@@ -37,146 +37,319 @@ class _VideoScreen extends StatelessWidget {
           return Stack(
             children: [
               VideoPlayerWidget(),
-              Positioned(
-                  top: 25,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.account_circle),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.arrow_back),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      PopupMenuButton(
-                          itemBuilder: (BuildContext context) => [
-                                PopupMenuItem(
-                                  child: Text(
-                                    'Option 1',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                                PopupMenuItem(
-                                  child: Text(
-                                    'Option 2',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                              ])
-                    ],
-                  )),
-              Column(
-                children: [
-                  const SizedBox(
-                    height: 100,
-                  ),
-                  Expanded(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Expanded(
-                          child: Container(
-                              padding: const EdgeInsets.only(
-                                left: 24,
-                              ),
+              Container(
+                padding: const EdgeInsets.all(
+                  24,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return Container(
+                              height: size.height / 2,
+                              color: Colors.white,
                               child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text(
-                                    'User Name',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                  ListTile(
+                                    leading: const Icon(Icons.share),
+                                    title: const Text('Share'),
+                                    onTap: () {
+                                      // Handle share action
+                                      Navigator.pop(context);
+                                    },
                                   ),
-                                  const Text(
-                                    'Description',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                    ),
+                                  ListTile(
+                                    leading: const Icon(Icons.save),
+                                    title: const Text('Save'),
+                                    onTap: () {
+                                      // Handle save action
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                  ListTile(
+                                    leading: const Icon(Icons.report),
+                                    title: const Text('Report'),
+                                    onTap: () {
+                                      // Handle report action
+                                      Navigator.pop(context);
+                                    },
                                   ),
                                 ],
-                              )),
-                        ),
-                        const SizedBox(height: 8),
-                      ],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.account_circle,
+                            size: 32,
+                          ),
+                          Gap(WidthValues.spacingMd),
+                          Text(
+                            'User Name',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    IconButton(
+                      icon: const Icon(
+                        Icons.more_vert_outlined,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return Container(
+                                height: size.height / 2,
+                                color: Colors.white,
+                                child: Column(
+                                  children: [
+                                    ListTile(
+                                      leading: const Icon(Icons.share),
+                                      title: const Text('Share'),
+                                      onTap: () {
+                                        // Handle share action
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                    ListTile(
+                                      leading: const Icon(Icons.save),
+                                      title: const Text('Save'),
+                                      onTap: () {
+                                        // Handle save action
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                    ListTile(
+                                      leading: const Icon(Icons.report),
+                                      title: const Text('Report'),
+                                      onTap: () {
+                                        // Handle report action
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              );
+                            });
+                      },
+                    ),
+                  ],
+                ),
               ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: size.height / 2.5,
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.transparent,
-                        Colors.black,
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
+              Container(
+                alignment: Alignment.bottomRight,
+                margin: EdgeInsets.only(top: size.height / 5),
+                padding: const EdgeInsets.only(
+                  right: 24,
+                  bottom: 24,
+                ),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                   ),
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                      left: 24,
-                      right: 24,
-                      bottom: 24,
-                    ),
-                    margin: EdgeInsets.only(top: size.height / 5),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
                       children: [
                         IconButton(
-                          icon: const Icon(Icons.favorite),
+                          icon: const Icon(
+                            Icons.favorite,
+                            size: 32,
+                          ),
                           onPressed: () {
                             // Handle favorite button press
                           },
                         ),
-                        const SizedBox(width: 8),
+                        Text(
+                          '100k',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Gap(WidthValues.spacingLg)
+                      ],
+                    ),
+                    Column(
+                      children: [
                         IconButton(
-                          icon: const Icon(Icons.comment),
+                          icon: const Icon(
+                            Icons.comment,
+                            size: 32,
+                          ),
                           onPressed: () {
-                            // Handle comment button press
+                            // Handle favorite button press
                           },
                         ),
-                        const SizedBox(width: 8),
+                        Text(
+                          '100k',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Gap(WidthValues.spacingLg)
+                      ],
+                    ),
+                    Column(
+                      children: [
                         IconButton(
-                          icon: const Icon(Icons.share),
+                          icon: const Icon(
+                            Icons.share,
+                            size: 32,
+                          ),
                           onPressed: () async {
                             await SharePlus.instance.share(ShareParams(
-                                uri: Uri.parse(
-                                    'https://i.pinimg.com/736x/20/b3/33/20b333af293a687925a2652345015f4e.jpg'),
-                                downloadFallbackEnabled: true,
-                                title: 'Share this video',
-                                //text: 'check out my website https://example.com'
+                              uri: Uri.parse(
+                                  'https://i.pinimg.com/736x/20/b3/33/20b333af293a687925a2652345015f4e.jpg'),
+                              downloadFallbackEnabled: true,
+                              title: 'Share this video',
+                              //text: 'check out my website https://example.com'
                             ));
                           },
                         ),
+                        Text(
+                          'Share',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Gap(WidthValues.spacingLg)
                       ],
                     ),
-                  )
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: const Icon(
+                            Icons.bookmark_border,
+                            size: 32,
+                          ),
+                          onPressed: () {
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return Container(
+                                  height: size.height / 2,
+                                  color: Colors.white,
+                                  child: Column(
+                                    children: [
+                                      ListTile(
+                                        leading: const Icon(Icons.share),
+                                        title: const Text('Share'),
+                                        onTap: () {
+                                          // Handle share action
+                                          Navigator.pop(context);
+                                        },
+                                      ),
+                                      ListTile(
+                                        leading: const Icon(Icons.save),
+                                        title: const Text('Save'),
+                                        onTap: () {
+                                          // Handle save action
+                                          Navigator.pop(context);
+                                        },
+                                      ),
+                                      ListTile(
+                                        leading: const Icon(Icons.report),
+                                        title: const Text('Report'),
+                                        onTap: () {
+                                          // Handle report action
+                                          Navigator.pop(context);
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        ),
+                        Text(
+                          'Safe',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Gap(WidthValues.spacingLg)
+                      ],
+                    )
+                  ],
                 ),
               ),
+              Container(
+                padding: const EdgeInsets.only(
+                  right: 24,
+                  bottom: 24,
+                ),
+                alignment: Alignment.bottomRight,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Expanded(
+                            child: Container(
+                                padding: const EdgeInsets.only(
+                                  left: 24,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'User Name',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Description',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white.withOpacity(0.9),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                          ),
+                          Gap(WidthValues.spacingMd),
+                        ],
+                      ),
+                    ),
+                    Gap(WidthValues.spacingLg)
+                  ],
+                ),
+              )
             ],
           );
         },
