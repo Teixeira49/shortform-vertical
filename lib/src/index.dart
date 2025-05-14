@@ -30,57 +30,50 @@ class IndexNavigationPage extends StatelessWidget {
     return Scaffold(
       key: AppRouter.rootScaffoldKey,
       body: child,
-      bottomNavigationBar:
-          bottomBarVisibility()
-              ? const SizedBox.shrink()
-              : Container(
-                height: 70,
-                decoration: BoxDecoration(
-                  color: ColorValues.bgPrimary(context),
-                ),
-                child: BottomNavigationBar(
-                  currentIndex: child.currentIndex,
-                  items:
-                      AppShellBranch.values
-                          .map(
-                            (e) => BottomNavigationBarItem(
-                              label: e.title(context),
-                              icon: e.icon(
-                                context: context,
-                                isSelected: child.currentIndex == e.index,
-                              ),
-                            ),
-                          )
-                          .toList(),
-                  onTap: onTap,
-                ),
+      bottomNavigationBar: bottomBarVisibility()
+          ? const SizedBox.shrink()
+          : Container(
+              height: 70,
+              decoration: BoxDecoration(
+                color: ColorValues.bgPrimary(context),
               ),
+              child: BottomNavigationBar(
+                currentIndex: child.currentIndex,
+                items: AppShellBranch.values
+                    .map(
+                      (e) => BottomNavigationBarItem(
+                        label: e.title(context),
+                        icon: e.icon(
+                          context: context,
+                          isSelected: child.currentIndex == e.index,
+                        ),
+                      ),
+                    )
+                    .toList(),
+                onTap: onTap,
+              ),
+            ),
     );
   }
 
   void onTap(int i) {
-    if (i != 2) {
-      /// Get current index from current router path
-      final currentIndex = AppShellBranch.indexFromName(
-        routerState.fullPath?.split('/')[1] ?? '',
-      );
+    final currentIndex = AppShellBranch.indexFromName(
+      routerState.fullPath?.split('/')[1] ?? '',
+    );
 
-      /// If the current index is the same as the tapped index,
-      /// navigate back to the root of the current branch.
-      ///
-      /// This is the expected behavior from apps in both iOS and
-      /// Android.
-      if (currentIndex == i) {
-        return child.goBranch(i, initialLocation: true);
-      }
-
-      return child.goBranch(i);
+    /// If the current index is the same as the tapped index,
+    /// navigate back to the root of the current branch.
+    ///
+    /// This is the expected behavior from apps in both iOS and
+    /// Android.
+    if (currentIndex == i) {
+      return child.goBranch(i, initialLocation: true);
     }
+    return child.goBranch(i);
   }
 
   bool bottomBarVisibility() {
-    final bannedList = [
-    ]; // TODO refactor this list in a util class
+    final bannedList = []; // TODO refactor this list in a util class
     for (final i in bannedList) {
       if (routerState.uri.toString().contains(i)) {
         return true;

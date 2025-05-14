@@ -1,16 +1,21 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:venetiktok/l10n/l10n.dart';
 
 import '../../../../../shared/features/blocs/get_current_user_bloc/bloc.dart';
+import '../../../../../shared/features/entities/entities/entities.dart';
 import '../../../../../shared/features/entities/enums/custom_dialog_type.dart';
 import '../../../../../shared/features/use_cases/get_current_user.dart';
 import '../../../../../shared/features/widgets/custom_dialog.dart';
 import '../../../../../shared/features/widgets/custom_loading_dialog.dart';
+import '../../../../../variables/values/values.dart';
 import '../../../../auth/domain/use_cases/sign_out_user.dart';
 import '../../../domain/use_cases/delete_account_use_case.dart';
 import '../bloc/bloc.dart';
+
+part '../widgets/profile_info_body.dart';
 
 /// {@template profile_page}
 /// A description for ProfilePage
@@ -149,7 +154,15 @@ class _ProfileView extends StatelessWidget {
           },
         ),
       ],
-      child: const SizedBox(),//_ProfileBody(),
+      child: _ProfileInfoBody(
+        user: User(id: 1, userId: 1, name: 'John', lastname: 'Doe', documentNum: '12312412', email: 'javiertxr@gmail.com'),
+        isMe: true, // TODO: Get this value from the user
+        isFollowing: false, // TODO: Get this value from the user
+        onFollow: () {
+
+        }, onUnfollow: () {  },
+
+      ),
     );
   }
 }

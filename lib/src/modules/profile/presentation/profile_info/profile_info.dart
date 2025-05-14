@@ -1,0 +1,1 @@
+export 'page/profile_info_page.dart';
