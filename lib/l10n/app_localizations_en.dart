@@ -153,7 +153,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileLabel => 'Profile';
 
   @override
-  String get commercesLabel => 'Commerces';
+  String get historyLabel => 'Recently viewed';
+
+  @override
+  String get likedLabel => 'Favorites';
+
+  @override
+  String get bookmarksLabel => 'Your list';
 
   @override
   String get kudearLabel => 'Kudear';

@@ -387,7 +387,19 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Commerces'**
-  String get commercesLabel;
+  String get historyLabel;
+
+  /// No description provided for @commercesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Commerces'**
+  String get likedLabel;
+
+  /// No description provided for @commercesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Commerces'**
+  String get bookmarksLabel;
 
   /// No description provided for @kudearLabel.
   ///
