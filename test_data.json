@@ -1,0 +1,170 @@
+[
+  {
+    "Asset Name": "NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL",
+    "Images": {
+      "Image URL": {
+        "label": "Image",
+        "url": "http://192.168.0.10:5001/resize?source=http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL_1920x1080.jpg&resolution=960x540"
+      }
+    },
+    "Videos": {
+      "HLS URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL.m3u8"
+      },
+      "DASH URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL.mpd"
+      }
+    },
+    "Metadata": {
+      "Title": "New You Green Dress",
+      "Actors": "Dereck Candace",
+      "Directors": "Dereck Candace",
+      "Rating": "G",
+      "Synopsis": "Describing green dress ",
+      "Avail Date": "2025-05-13T00:59:00.000Z",
+      "Exp Date": "2050-05-13T00:59:00.000Z"
+    }
+  },
+  {
+    "Asset Name": "NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_BLACK_DRESS_FINAL",
+    "Images": {
+      "Image URL": {
+        "label": "Image",
+        "url": "http://192.168.0.10:5001/resize?source=http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_BLACK_DRESS_FINAL_1920x1080.jpg&resolution=960x540"
+      }
+    },
+    "Videos": {
+      "HLS URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_BLACK_DRESS_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_BLACK_DRESS_FINAL.m3u8"
+      },
+      "DASH URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_BLACK_DRESS_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_BLACK_DRESS_FINAL.mpd"
+      }
+    },
+    "Metadata": {
+      "Title": "New You Back Dress",
+      "Actors": "Dereck Candace",
+      "Directors": "Dereck Candace",
+      "Rating": "G",
+      "Synopsis": "Describing black dress ",
+      "Avail Date": "2025-05-13T00:59:00.000Z",
+      "Exp Date": "2050-05-13T00:59:00.000Z"
+    }
+  },
+  {
+    "Asset Name": "NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_WHITE_SHIRT_FINAL",
+    "Images": {
+      "Image URL": {
+        "label": "Image",
+        "url": "http://192.168.0.10:5001/resize?source=http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_WHITE_SHIRT_FINAL_1920x1080.jpg&resolution=960x540"
+      }
+    },
+    "Videos": {
+      "HLS URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_WHITE_SHIRT_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_WHITE_SHIRT_FINAL.m3u8"
+      },
+      "DASH URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_WHITE_SHIRT_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_WHITE_SHIRT_FINAL.mpd"
+      }
+    },
+    "Metadata": {
+      "Title": "New You White Shirt",
+      "Actors": "Dereck Candace",
+      "Directors": "Dereck Candace",
+      "Rating": "G",
+      "Synopsis": "Describing white shirt",
+      "Avail Date": "2025-05-13T00:59:00.000Z",
+      "Exp Date": "2050-05-13T00:59:00.000Z"
+    }
+  },
+  {
+    "Asset Name": "NewYou_Candace_Bushnell_COVERSHOOT_BTS_FINAL",
+    "Images": {
+      "Image URL": {
+        "label": "Image",
+        "url": "http://192.168.0.10:5001/resize?source=http://192.168.0.10/origin/NewYou_Candace_Bushnell_COVERSHOOT_BTS_FINAL_1920x1080.jpg&resolution=960x540"
+      }
+    },
+    "Videos": {
+      "HLS URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Candace_Bushnell_COVERSHOOT_BTS_FINAL/NewYou_Candace_Bushnell_COVERSHOOT_BTS_FINAL.m3u8"
+      },
+      "DASH URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Candace_Bushnell_COVERSHOOT_BTS_FINAL/NewYou_Candace_Bushnell_COVERSHOOT_BTS_FINAL.mpd"
+      }
+    },
+    "Metadata": {
+      "Title": "New You Covershoot",
+      "Actors": "Dereck Candace",
+      "Directors": "Dereck Candace",
+      "Rating": "G",
+      "Synopsis": "Describing covershoot",
+      "Avail Date": "2025-05-13T00:59:00.000Z",
+      "Exp Date": "2050-05-13T00:59:00.000Z"
+    }
+  },
+  {
+    "Asset Name": "NewYou_Candace_Bushnell_Interview_FINAL",
+    "Images": {
+      "Image URL": {
+        "label": "Image",
+        "url": "http://192.168.0.10:5001/resize?source=http://192.168.0.10/origin/NewYou_Candace_Bushnell_Interview_FINAL_1920x1080.jpg&resolution=960x540"
+      }
+    },
+    "Videos": {
+      "HLS URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Candace_Bushnell_Interview_FINAL/NewYou_Candace_Bushnell_Interview_FINAL.m3u8"
+      },
+      "DASH URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Candace_Bushnell_Interview_FINAL/NewYou_Candace_Bushnell_Interview_FINAL.mpd"
+      }
+    },
+    "Metadata": {
+      "Title": "New You Interview",
+      "Actors": "Dereck Candace",
+      "Directors": "Dereck Candace",
+      "Rating": "G",
+      "Synopsis": "Describing interview",
+      "Avail Date": "2025-05-13T00:59:00.000Z",
+      "Exp Date": "2050-05-13T00:59:00.000Z"
+    }
+  },
+  {
+    "Asset Name": "NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_FEATHERS__FINAL",
+    "Images": {
+      "Image URL": {
+        "label": "Image",
+        "url": "http://192.168.0.10:5001/resize?source=http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_FEATHERS__FINAL_1920x1080.jpg&resolution=960x540"
+      }
+    },
+    "Videos": {
+      "HLS URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_FEATHERS__FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_FEATHERS__FINAL.m3u8"
+      },
+      "DASH URL": {
+        "label": "Play",
+        "url": "http://192.168.0.10/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_FEATHERS__FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_FEATHERS__FINAL.mpd"
+      }
+    },
+    "Metadata": {
+      "Title": "New You Feathers",
+      "Actors": "Dereck Candace",
+      "Directors": "Dereck Candace",
+      "Rating": "G",
+      "Synopsis": "Describing feathers",
+      "Avail Date": "2025-05-13T00:59:00.000Z",
+      "Exp Date": "2050-05-13T00:59:00.000Z"
+    }
+  }
+]

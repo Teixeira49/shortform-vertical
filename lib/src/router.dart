@@ -18,6 +18,7 @@ import 'modules/auth/presentation/login/page/login_page.dart';
 import 'modules/auth/presentation/sign_up/page/sign_up_page.dart';
 import 'modules/auth/presentation/splash/bloc/bloc.dart';
 import 'modules/auth/presentation/splash/page/splash_page.dart';
+import 'modules/profile/presentation/profile_history/page/profile_history_page.dart';
 
 /// {@template app_router}
 /// The root router for the app. Call [AppRouter.router] to get the router.
@@ -135,6 +136,19 @@ class AppRouter {
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) =>
                       CustomPageTransition(animation: animation, child: child),
+            ),
+          ),
+          GoRoute(
+            path: ProfileHistoryPage.path,
+            name: ProfileHistoryPage.routeName,
+            pageBuilder: (context, state) => CustomTransitionPage(
+              key: state.pageKey,
+              child: ProfileHistoryPage(
+                searchKey: state.extra! as int, // TODO Change
+              ),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) =>
+                  CustomPageTransition(animation: animation, child: child),
             ),
           ),
 

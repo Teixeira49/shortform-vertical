@@ -65,4 +65,6 @@ class User extends Equatable {
     documentNum: 'Document',
     email: 'email@email.com',
   );
+
+  get userFullName => '$name $lastname';
 }
