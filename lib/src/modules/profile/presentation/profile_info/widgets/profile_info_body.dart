@@ -2,39 +2,40 @@ part of '../page/profile_info_page.dart';
 
 class _ProfileInfoBody extends StatelessWidget {
   const _ProfileInfoBody({
-    super.key,
     required this.user,
-    required this.isMe,
-    required this.isFollowing,
-    required this.onFollow,
-    required this.onUnfollow,
   });
 
   final User user;
-  final bool isMe;
-  final bool isFollowing;
-  final VoidCallback onFollow;
-  final VoidCallback onUnfollow;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return BaseLayout(
+        child: SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
+        spacing: WidthValues.spacingSm,
         children: [
+          Gap(WidthValues.spacingSm),
           ProfileHeader(
             user: user,
-            isMe: isMe,
-            isFollowing: isFollowing,
-            onFollow: onFollow,
-            onUnfollow: onUnfollow,
           ),
-          const SizedBox(height: 16),
-          const ProfileTabBar(),
+          Gap(WidthValues.spacingSm),
+          ProfileInfoSection(
+            sectionName: context.l10n.historyLabel,
+            viewsRoute: 1,
+          ),
+          ProfileInfoSection(
+            sectionName: context.l10n.likedLabel,
+            viewsRoute: 2,
+          ),
+          ProfileInfoSection(
+            sectionName: context.l10n.bookmarksLabel,
+            viewsRoute: 3,
+          ),
         ],
       ),
-    );
+    ));
   }
 }
 
@@ -42,22 +43,14 @@ class ProfileHeader extends StatelessWidget {
   const ProfileHeader({
     super.key,
     required this.user,
-    required this.isMe,
-    required this.isFollowing,
-    required this.onFollow,
-    required this.onUnfollow,
   });
 
   final User user;
-  final bool isMe;
-  final bool isFollowing;
-  final VoidCallback onFollow;
-  final VoidCallback onUnfollow;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Gap(WidthValues.spacingLg),
@@ -67,116 +60,155 @@ class ProfileHeader extends StatelessWidget {
               'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'), //user.profilePictureUrl
         ),
         Gap(WidthValues.spacing2Md),
-        Text(
-          user.name,
-        ),
-        Text(
-          user.lastname,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              user.userFullName,
+            ),
+            Gap(WidthValues.spacingXxs),
+            Text(
+              user.email,
+            ),
+          ],
         ),
         Gap(WidthValues.spacingMd),
-        if (!isMe)
-          ElevatedButton(
-            onPressed: isFollowing ? onUnfollow : onFollow,
-            child: Text(isFollowing ? 'Unfollow' : 'Follow'),
-          ),
-        if (isMe)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: isFollowing ? onUnfollow : onFollow,
-                child: Text('Share perfil'),
-              ),
-              ElevatedButton(
-                onPressed: isFollowing ? onUnfollow : onFollow,
-                child: Text('Edit perfil'),
-              ),
-            ],
-          )
       ],
     );
   }
 }
 
-class ProfileTabBar extends StatefulWidget {
-  const ProfileTabBar({super.key});
+class ProfileInfoSection extends StatelessWidget {
+  const ProfileInfoSection({super.key, required this.sectionName, required this.viewsRoute});
 
-  @override
-  State<StatefulWidget> createState() => ProfileTabBarState();
-}
-
-class ProfileTabBarState extends State<ProfileTabBar> {
-  @override
-  void initState() {
-    super.initState();
-    // Initialize any state here if needed
-  }
-
-  @override
-  void dispose() {
-    // Dispose any resources here if needed
-    super.dispose();
-  }
+  final String sectionName;
+  final int viewsRoute; // TODO change for a enum
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Column(
-        children: [
-          TabBar(
-            tabs: [
-              Tab(text: 'Posts', icon: Icon(Icons.post_add)),
-              Tab(text: 'Saved', icon: Icon(Icons.book_outlined)),
-              Tab(text: 'History', icon: Icon(Icons.history)),
-            ],
-          ),
-          const SizedBox(height: 16),
-          SizedBox(
-            height: 400,
-            child: TabBarView(
-              children: [
-                PostsTab(),
-                SavedTab(),
-                HistoryTab(),
-              ],
+    /*return BlocBuilder(
+        buildWhen: (previous, current) => previous.status != current.status,
+        builder: (context, state) {
+          final status = state.status;
+
+          final data = state.data;
+
+          if (status.isFailure) {
+            body = Center(
+              child: OnErrorWidget(
+                iconSize: 30,
+                icon: Icons.close_outlined,
+                iconBackgroundColor: ColorValues.fgErrorPrimary(context),
+                onRetry: () => context
+                    .read<GetCommercesBloc>()
+                    .add(const PaginatedFilteredLoaderRestarted()),
+              ),
+            );
+          }
+
+          if (data.isEmpty && !status.isLoading) {
+            body = Center(
+              child: EmptyListWidget(
+                iconUrl: AssetIcons.commerceIcon,
+                description: context.l10n.noNewCommercesDescriptionLabel,
+                iconSize: 30,
+              ),
+            );
+          }*/
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              sectionName,
+              style: ExtendedTextTheme.textMedium(context)
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
-          ),
-        ],
-      ),
+            TextButton(
+                onPressed: () {
+                  context.pushNamed(ProfileHistoryPage.routeName, extra: viewsRoute);
+                },
+                child: Text('Ver todos'))
+          ],
+        ),
+        Gap(WidthValues.spacingMd),
+        //body ??
+        _ViewsCarousel(views: [
+          Movie(
+              assetsName: 'ejemplo',
+              title: 'title',
+              actors: 'actors',
+              directors: 'directors',
+              rating: 'rating',
+              synopsis: 'synopsis',
+              availDate: 'availDate',
+              expDate: 'expDate',
+              posterUrl:
+                  'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+          Movie(
+              assetsName: 'ejemplo',
+              title: 'title',
+              actors: 'actors',
+              directors: 'directors',
+              rating: 'rating',
+              synopsis: 'synopsis',
+              availDate: 'availDate',
+              expDate: 'expDate',
+              posterUrl:
+                  'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+          Movie(
+              assetsName: 'ejemplo',
+              title: 'title',
+              actors: 'actors',
+              directors: 'directors',
+              rating: 'rating',
+              synopsis: 'synopsis',
+              availDate: 'availDate',
+              expDate: 'expDate',
+              posterUrl:
+                  'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+          Movie(
+              assetsName: 'ejemplo',
+              title: 'title',
+              actors: 'actors',
+              directors: 'directors',
+              rating: 'rating',
+              synopsis: 'synopsis',
+              availDate: 'availDate',
+              expDate: 'expDate',
+              posterUrl:
+                  'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+          Movie(
+              assetsName: 'ejemplo',
+              title: 'title',
+              actors: 'actors',
+              directors: 'directors',
+              rating: 'rating',
+              synopsis: 'synopsis',
+              availDate: 'availDate',
+              expDate: 'expDate',
+              posterUrl:
+                  'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+          Movie(
+              assetsName: 'ejemplo',
+              title: 'title',
+              actors: 'actors',
+              directors: 'directors',
+              rating: 'rating',
+              synopsis: 'synopsis',
+              availDate: 'availDate',
+              expDate: 'expDate',
+              posterUrl:
+                  'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+        ], isLoading: false //status.isLoading || status.isInitial,
+            ),
+      ],
     );
-  }
-}
-
-class PostsTab extends StatelessWidget {
-  const PostsTab({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Posts Tab'),
-    );
-  }
-}
-
-class SavedTab extends StatelessWidget {
-  const SavedTab({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Saved Tab'),
-    );
-  }
-}
-
-class HistoryTab extends StatelessWidget {
-  const HistoryTab({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('History Tab'),
-    );
+    //}
+    //);
   }
 }
