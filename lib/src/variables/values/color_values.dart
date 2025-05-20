@@ -848,6 +848,142 @@ class ColorValues {
     altDark: _ColorConstants.grayDark.shade100,
   );
 
+  static final _utilityBrandSecond50 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade50,
+    dark: _ColorConstants.brandSecondColor.shade900,
+  );
+
+  static final _utilityBrandSecond100 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade100,
+    dark: _ColorConstants.brandSecondColor.shade900,
+    altLight: _ColorConstants.brandSecondColor.shade100,
+    altDark: _ColorConstants.grayDark.shade800,
+  );
+
+  static final _utilityBrandSecond200 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade200,
+    dark: _ColorConstants.brandSecondColor.shade800,
+    altLight: _ColorConstants.brandSecondColor.shade200,
+    altDark: _ColorConstants.grayDark.shade700,
+  );
+
+  static final _utilityBrandSecond300 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade300,
+    dark: _ColorConstants.brandSecondColor.shade700,
+    altLight: _ColorConstants.brandSecondColor.shade300,
+    altDark: _ColorConstants.grayDark.shade700,
+  );
+
+  static final _utilityBrandSecond400 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade400,
+    dark: _ColorConstants.brandSecondColor.shade600,
+    altLight: _ColorConstants.brandSecondColor.shade400,
+    altDark: _ColorConstants.grayDark.shade600,
+  );
+
+  static final _utilityBrandSecond500 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor,
+    dark: _ColorConstants.brandSecondColor,
+    altLight: _ColorConstants.brandSecondColor,
+    altDark: _ColorConstants.grayDark,
+  );
+
+  static final _utilityBrandSecond600 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade600,
+    dark: _ColorConstants.brandSecondColor.shade400,
+    altLight: _ColorConstants.brandSecondColor.shade600,
+    altDark: _ColorConstants.grayDark.shade400,
+  );
+
+  static final _utilityBrandSecond700 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade700,
+    dark: _ColorConstants.brandSecondColor.shade300,
+    altLight: _ColorConstants.brandSecondColor.shade700,
+    altDark: _ColorConstants.grayDark.shade300,
+  );
+
+  static final _utilityBrandSecond800 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade800,
+    dark: _ColorConstants.brandSecondColor.shade200,
+    altLight: _ColorConstants.brandSecondColor.shade800,
+    altDark: _ColorConstants.grayDark.shade200,
+  );
+
+  static final _utilityBrandSecond900 = _ColorScheme(
+    light: _ColorConstants.brandSecondColor.shade900,
+    dark: _ColorConstants.brandSecondColor.shade100,
+    altLight: _ColorConstants.brandSecondColor.shade900,
+    altDark: _ColorConstants.grayDark.shade100,
+  );
+
+  static final _utilityBrandThird50 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade50,
+    dark: _ColorConstants.brandThirdColor.shade900,
+  );
+
+  static final _utilityBrandThird100 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade100,
+    dark: _ColorConstants.brandThirdColor.shade900,
+    altLight: _ColorConstants.brandThirdColor.shade100,
+    altDark: _ColorConstants.grayDark.shade800,
+  );
+
+  static final _utilityBrandThird200 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade200,
+    dark: _ColorConstants.brandThirdColor.shade800,
+    altLight: _ColorConstants.brandThirdColor.shade200,
+    altDark: _ColorConstants.grayDark.shade700,
+  );
+
+  static final _utilityBrandThird300 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade300,
+    dark: _ColorConstants.brandThirdColor.shade700,
+    altLight: _ColorConstants.brandThirdColor.shade300,
+    altDark: _ColorConstants.grayDark.shade700,
+  );
+
+  static final _utilityBrandThird400 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade400,
+    dark: _ColorConstants.brandThirdColor.shade600,
+    altLight: _ColorConstants.brandThirdColor.shade400,
+    altDark: _ColorConstants.grayDark.shade600,
+  );
+
+  static final _utilityBrandThird500 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor,
+    dark: _ColorConstants.brandThirdColor,
+    altLight: _ColorConstants.brandThirdColor,
+    altDark: _ColorConstants.grayDark,
+  );
+
+  static final _utilityBrandThird600 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade600,
+    dark: _ColorConstants.brandThirdColor.shade400,
+    altLight: _ColorConstants.brandThirdColor.shade600,
+    altDark: _ColorConstants.grayDark.shade400,
+  );
+
+  static final _utilityBrandThird700 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade700,
+    dark: _ColorConstants.brandThirdColor.shade300,
+    altLight: _ColorConstants.brandThirdColor.shade700,
+    altDark: _ColorConstants.grayDark.shade300,
+  );
+
+  static final _utilityBrandThird800 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade800,
+    dark: _ColorConstants.brandThirdColor.shade200,
+    altLight: _ColorConstants.brandThirdColor.shade800,
+    altDark: _ColorConstants.grayDark.shade200,
+  );
+
+  static final _utilityBrandThird900 = _ColorScheme(
+    light: _ColorConstants.brandThirdColor.shade900,
+    dark: _ColorConstants.brandThirdColor.shade100,
+    altLight: _ColorConstants.brandThirdColor.shade900,
+    altDark: _ColorConstants.grayDark.shade100,
+  );
+
   static final _utilityError50 = _ColorScheme(
     light: _ColorConstants.error.shade50,
     dark: _ColorConstants.error.shade900,
@@ -1075,6 +1211,102 @@ class ColorValues {
       _utilityBrand900.getColor(context);
   static Color utilityBrand900Alt(BuildContext context) =>
       _utilityBrand900.getAltColor(context);
+
+  static Color utilityBrandSecond50(BuildContext context) =>
+      _utilityBrandSecond50.getColor(context);
+
+  static Color utilityBrandSecond100(BuildContext context) =>
+      _utilityBrandSecond100.getColor(context);
+  static Color utilityBrandSecond100Alt(BuildContext context) =>
+      _utilityBrandSecond100.getAltColor(context);
+
+  static Color utilityBrandSecond200(BuildContext context) =>
+      _utilityBrandSecond200.getColor(context);
+  static Color utilityBrandSecond200Alt(BuildContext context) =>
+      _utilityBrandSecond200.getAltColor(context);
+
+  static Color utilityBrandSecond300(BuildContext context) =>
+      _utilityBrandSecond300.getColor(context);
+  static Color utilityBrandSecond300Alt(BuildContext context) =>
+      _utilityBrandSecond300.getAltColor(context);
+
+  static Color utilityBrandSecond400(BuildContext context) =>
+      _utilityBrandSecond400.getColor(context);
+  static Color utilityBrandSecond400Alt(BuildContext context) =>
+      _utilityBrandSecond400.getAltColor(context);
+
+  static Color utilityBrandSecond500(BuildContext context) =>
+      _utilityBrandSecond500.getColor(context);
+  static Color utilityBrandSecond500Alt(BuildContext context) =>
+      _utilityBrandSecond500.getAltColor(context);
+
+  static Color utilityBrandSecond600(BuildContext context) =>
+      _utilityBrandSecond600.getColor(context);
+  static Color utilityBrandSecond600Alt(BuildContext context) =>
+      _utilityBrandSecond600.getAltColor(context);
+
+  static Color utilityBrandSecond700(BuildContext context) =>
+      _utilityBrandSecond700.getColor(context);
+  static Color utilityBrandSecond700Alt(BuildContext context) =>
+      _utilityBrandSecond700.getAltColor(context);
+
+  static Color utilityBrandSecond800(BuildContext context) =>
+      _utilityBrandSecond800.getColor(context);
+  static Color utilityBrandSecond800Alt(BuildContext context) =>
+      _utilityBrandSecond800.getAltColor(context);
+
+  static Color utilityBrandSecond900(BuildContext context) =>
+      _utilityBrandSecond900.getColor(context);
+  static Color utilityBrandSecond900Alt(BuildContext context) =>
+      _utilityBrandSecond900.getAltColor(context);
+
+  static Color utilityBrandThird50(BuildContext context) =>
+      _utilityBrandThird50.getColor(context);
+
+  static Color utilityBrandThird100(BuildContext context) =>
+      _utilityBrandThird100.getColor(context);
+  static Color utilityBrandThird100Alt(BuildContext context) =>
+      _utilityBrandThird100.getAltColor(context);
+
+  static Color utilityBrandThird200(BuildContext context) =>
+      _utilityBrandThird200.getColor(context);
+  static Color utilityBrandThird200Alt(BuildContext context) =>
+      _utilityBrandThird200.getAltColor(context);
+
+  static Color utilityBrandThird300(BuildContext context) =>
+      _utilityBrandThird300.getColor(context);
+  static Color utilityBrandThird300Alt(BuildContext context) =>
+      _utilityBrandThird300.getAltColor(context);
+
+  static Color utilityBrandThird400(BuildContext context) =>
+      _utilityBrandThird400.getColor(context);
+  static Color utilityBrandThird400Alt(BuildContext context) =>
+      _utilityBrandThird400.getAltColor(context);
+
+  static Color utilityBrandThird500(BuildContext context) =>
+      _utilityBrandThird500.getColor(context);
+  static Color utilityBrandThird500Alt(BuildContext context) =>
+      _utilityBrandThird500.getAltColor(context);
+
+  static Color utilityBrandThird600(BuildContext context) =>
+      _utilityBrandThird600.getColor(context);
+  static Color utilityBrandThird600Alt(BuildContext context) =>
+      _utilityBrandThird600.getAltColor(context);
+
+  static Color utilityBrandThird700(BuildContext context) =>
+      _utilityBrandThird700.getColor(context);
+  static Color utilityBrandThird700Alt(BuildContext context) =>
+      _utilityBrandThird700.getAltColor(context);
+
+  static Color utilityBrandThird800(BuildContext context) =>
+      _utilityBrandThird800.getColor(context);
+  static Color utilityBrandThird800Alt(BuildContext context) =>
+      _utilityBrandThird800.getAltColor(context);
+
+  static Color utilityBrandThird900(BuildContext context) =>
+      _utilityBrandThird900.getColor(context);
+  static Color utilityBrandThird900Alt(BuildContext context) =>
+      _utilityBrandThird900.getAltColor(context);
 
   static Color utilityError50(BuildContext context) =>
       _utilityError50.getColor(context);
