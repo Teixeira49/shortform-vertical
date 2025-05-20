@@ -6,19 +6,50 @@ part of 'package:venetiktok/src/variables/values/color_values.dart';
 class _ColorConstants {
   static const MaterialColor brandColor =
       MaterialColor(_brandColorPrimaryValue, <int, Color>{
-    50: Color(0xFFECF8ED),
-    100: Color(0xFFC3E9C8),
-    200: Color(0xFFA6DEAD),
-    300: Color(0xFF7ECF88),
-    400: Color(0xFF65C671),
-    500: Color(_brandColorPrimaryValue),
-    600: Color(0xFF38A746),
-    700: Color(0xFF2C8337),
-    800: Color(0xFF22652A),
-    900: Color(0xFF1A4D20),
+        50: Color(0xFFE6F6F5),
+        100: Color(0xFFB1E3DE),
+        200: Color(0xFF8BD6CF),
+        300: Color(0xFF56C3B9),
+        400: Color(0xFF35B8AB),
+        500: Color(_brandColorPrimaryValue),
+        600: Color(0xFF039789),
+        700: Color(0xFF02766B),
+        800: Color(0xFF025B53),
+        900: Color(0xFF01463F),
+      });
+  static const int _brandColorPrimaryValue = 0xFF3eb89c;
+
+  static const MaterialColor brandSecondColor =
+      MaterialColor(_brandSecondColorValue, <int, Color>{
+    50: Color(0xFFECF2F8),
+    100: Color(0xFFC3E2E9),
+    200: Color(0xFFA6C7DE),
+    300: Color(0xFF7EADCF),
+    400: Color(0xFF65A4C6),
+    500: Color(_brandSecondColorValue),
+    600: Color(0xFF3875A7),
+    700: Color(0xFF2C6583),
+    800: Color(0xFF224465),
+    900: Color(0xFF1A384D),
   });
 
-  static const int _brandColorPrimaryValue = 0xFF3eb84d;
+  static const int _brandSecondColorValue = 0xff3e89b8;
+
+  static const MaterialColor brandThirdColor =
+  MaterialColor(_brandThirdColorValue, <int, Color>{
+    50: Color(0xFFECF8F0),
+    100: Color(0xFFC3E9CE),
+    200: Color(0xFFA6DEAD),
+    300: Color(0xFF7ECF8C),
+    400: Color(0xFF65C67C),
+    500: Color(_brandThirdColorValue),
+    600: Color(0xFF329C5C),
+    700: Color(0xFF2C8345),
+    800: Color(0xFF226541),
+    900: Color(0xFF1A4D32),
+  });
+
+  static const int _brandThirdColorValue = 0xff3eb856;
 
   static const MaterialColor grayLight =
       MaterialColor(_grayLightPrimaryValue, <int, Color>{
@@ -53,19 +84,19 @@ class _ColorConstants {
   static const int _grayDarkPrimaryValue = 0xFF85888E;
 
   static const MaterialColor success =
-      MaterialColor(_successPrimaryValue, <int, Color>{
-    50: Color(0xFFE6F6F5),
-    100: Color(0xFFB1E3DE),
-    200: Color(0xFF8BD6CF),
-    300: Color(0xFF56C3B9),
-    400: Color(0xFF35B8AB),
-    500: Color(_successPrimaryValue),
-    600: Color(0xFF039789),
-    700: Color(0xFF02766B),
-    800: Color(0xFF025B53),
-    900: Color(0xFF01463F),
-  });
-  static const int _successPrimaryValue = 0xFF03A696;
+    MaterialColor(_successPrimaryValue, <int, Color>{
+      50: Color(0xFFECF8ED),
+      100: Color(0xFFC3E9C8),
+      200: Color(0xFFA6DEAD),
+      300: Color(0xFF7ECF88),
+      400: Color(0xFF65C671),
+      500: Color(_brandColorPrimaryValue),
+      600: Color(0xFF38A746),
+      700: Color(0xFF2C8337),
+      800: Color(0xFF22652A),
+      900: Color(0xFF1A4D20),
+    });
+  static const int _successPrimaryValue = 0xFF3eb84d;
 
   static const MaterialColor warning =
       MaterialColor(_warningPrimaryValue, <int, Color>{

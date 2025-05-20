@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:venetiktok/l10n/l10n.dart';
 
+import '../../../../../shared/core/utils/asset_icons.dart';
 import '../../../../../shared/features/entities/enums/custom_dialog_type.dart';
 import '../../../../../shared/features/widgets/custom_dialog.dart';
 import '../../../../../variables/values/color_values.dart';
 import '../../../domain/use_cases/get_current_token.dart';
 import '../bloc/bloc.dart';
-
 
 part '../widgets/splash_body.dart';
 
@@ -30,14 +30,24 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SplashBloc(
-          getCurrentTokenUseCase:
-              GetCurrentTokenUsecase(authRepository: context.read())),
-      child: Scaffold(
-        backgroundColor: ColorValues.fgBrandSecondary(context),
-        body: const SplashView(),
-      ),
-    );
+        create: (context) => SplashBloc(
+            getCurrentTokenUseCase:
+                GetCurrentTokenUsecase(authRepository: context.read())),
+        child: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                ColorValues.utilityBrand500(context),
+                ColorValues.utilityBrandThird500(context),
+                ColorValues.utilityBrandSecond500(context),
+              ])),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: const SplashView(),
+          ),
+        ));
   }
 }
 

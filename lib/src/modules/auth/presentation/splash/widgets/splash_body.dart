@@ -12,7 +12,10 @@ class _SplashBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SplashBloc, SplashState>(
       builder: (context, state) {
-        return Center(child: Icon(Icons.warning, size: 100, color: Colors.red));
+        return Center(
+            child: Image.asset(
+          AssetIcons.appIcon,
+        ));
       },
     );
   }
