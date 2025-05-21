@@ -72,28 +72,28 @@ class SplashView extends StatelessWidget {
               if (state.error.isNoInternet) {
                 showErrorDialog(
                   context,
-                  title: context.l10n.kudoConnectionErrorTitle,
+                  title: context.l10n.appConnectionErrorTitle,
                   content:
-                      context.l10n.kudoConnectionErrorNoInternetDescription,
+                      context.l10n.appConnectionErrorNoInternetDescription,
                 );
               } else if (state.error.isUsingVPN) {
                 showErrorDialog(
                   context,
-                  title: context.l10n.kudoConnectionErrorVpnDetectedTitle,
-                  content: context.l10n.kudoConnectionErrorActiveVPNDescription,
+                  title: context.l10n.appConnectionErrorVpnDetectedTitle,
+                  content: context.l10n.appConnectionErrorActiveVPNDescription,
                 );
               } else if (state.error.isInMaintainance) {
                 showErrorDialog(
                   context,
-                  title: context.l10n.kudoMaintenanceModeTitle,
-                  content: context.l10n.kudoMaintenanceModeDescription,
+                  title: context.l10n.appMaintenanceModeTitle,
+                  content: context.l10n.appMaintenanceModeDescription,
                 );
               } else if (state.error.isUpdateRequired) {
                 //TODO: Implement this
                 // showErrorDialog(
                 //   context,
-                //   title: context.l10n.kudoUpdateRequiredTitle,
-                //   content: context.l10n.kudoUpdateRequiredDescription,
+                //   title: context.l10n.appUpdateRequiredTitle,
+                //   content: context.l10n.appUpdateRequiredDescription,
                 //   actions: [
                 //     DialogAction(
                 //       isPrimaryAction: true,
@@ -111,10 +111,10 @@ class SplashView extends StatelessWidget {
                 //           log('❌ Error opening app store URL', error: e);
                 //           showErrorDialog(
                 //             context,
-                //             title: context.l10n.kudoErrorOpeningUpdateUrlTitle,
+                //             title: context.l10n.appErrorOpeningUpdateUrlTitle,
                 //             content: S
                 //                 .of(context)
-                //                 .kudoErrorOpeningUpdateUrlDescription,
+                //                 .appErrorOpeningUpdateUrlDescription,
                 //             actions: [
                 //               DialogAction(
                 //                 isPrimaryAction: true,
@@ -127,21 +127,21 @@ class SplashView extends StatelessWidget {
                 //           );
                 //         }
                 //       },
-                //       child: Text(context.l10n.kudoUpdateAppButton),
+                //       child: Text(context.l10n.appUpdateAppButton),
                 //     ),
                 //   ],
                 // );
               } else if (state.error.isServerError) {
                 showErrorDialog(
                   context,
-                  title: context.l10n.kudoConnectionErrorTitle,
-                  content: context.l10n.kudoServerErrorMessage,
+                  title: context.l10n.appConnectionErrorTitle,
+                  content: context.l10n.appServerErrorMessage,
                 );
               } else if (state.error.isUnknownError) {
                 showErrorDialog(
                   context,
-                  title: context.l10n.kudoConnectionErrorTitle,
-                  content: context.l10n.kudoUnknownErrorMessage,
+                  title: context.l10n.appConnectionErrorTitle,
+                  content: context.l10n.appUnknownErrorMessage,
                 );
               } else {
                 log('❌ Unimplemented SplashState.error ${state.error}');
@@ -172,7 +172,7 @@ Future<void> showErrorDialog(
       onPressed: () {
         context.read<SplashBloc>().add(const SplashRetry());
       },
-      mainButtonLabel: context.l10n.kudoRetryButtonLabel,
+      mainButtonLabel: context.l10n.appUpdateAppButton,
     ),
   );
 }

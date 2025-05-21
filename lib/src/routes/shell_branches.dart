@@ -75,7 +75,7 @@ enum AppShellBranch {
       case AppShellBranch.home:
         return context.l10n.homeLabel;
       case AppShellBranch.search:
-        return context.l10n.cardsLabel;
+        return context.l10n.searchLabel;
       case AppShellBranch.profile:
         return context.l10n.profileLabel;
     }

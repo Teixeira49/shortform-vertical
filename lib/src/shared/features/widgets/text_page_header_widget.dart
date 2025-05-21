@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:venetiktok/src/shared/core/utils/asset_images.dart';
 
 import '../../../theme/extended_text_theme.dart';
 import '../../../variables/values/values.dart';
@@ -22,10 +23,7 @@ class TextPageHeaderWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         if (showAppIsotype) ...[
-          Icon(
-            Icons.app_registration,
-            size: 100,
-          ),
+          Image.asset(AssetImages.mainLogo, height: 200),
           Gap(WidthValues.spacingMd),
         ],
         Text(
