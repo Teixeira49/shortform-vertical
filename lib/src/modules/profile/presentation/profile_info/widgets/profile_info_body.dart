@@ -33,6 +33,16 @@ class _ProfileInfoBody extends StatelessWidget {
             sectionName: context.l10n.bookmarksLabel,
             viewsRoute: 3,
           ),
+          Gap(WidthValues.spacingSm),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.download),
+            title: Text("Conoce tus videos descargados"),
+            trailing: Icon(Icons.navigate_next),
+          ),
+          Divider(),
+          Text("ver. 1.0.0+1"),
+          Gap(WidthValues.spacingSm),
         ],
       ),
     ));
@@ -80,7 +90,8 @@ class ProfileHeader extends StatelessWidget {
 }
 
 class ProfileInfoSection extends StatelessWidget {
-  const ProfileInfoSection({super.key, required this.sectionName, required this.viewsRoute});
+  const ProfileInfoSection(
+      {super.key, required this.sectionName, required this.viewsRoute});
 
   final String sectionName;
   final int viewsRoute; // TODO change for a enum
@@ -130,7 +141,8 @@ class ProfileInfoSection extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  context.pushNamed(ProfileHistoryPage.routeName, extra: viewsRoute);
+                  context.pushNamed(ProfileHistoryPage.routeName,
+                      extra: viewsRoute);
                 },
                 child: Text('Ver todos'))
           ],
