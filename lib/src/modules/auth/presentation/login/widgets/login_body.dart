@@ -14,7 +14,7 @@ class _LoginBody extends StatelessWidget {
               children: [
                 Gap(WidthValues.spacing6xl),
                 TextPageHeaderWidget(
-                  title: context.l10n.welcomeToKudoLabel,
+                  title: context.l10n.welcomeToAppLabel,
                   description: context.l10n.loginEnterYourUserInfoText,
                   showAppIsotype: true,
                 ),
