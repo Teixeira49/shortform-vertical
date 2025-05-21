@@ -9,10 +9,10 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get kudoAppTitle => 'Kudo App';
+  String get mediaAppTitle => 'FD Media App';
 
   @override
-  String get welcomeToKudoLabel => 'Bienvenido a Kudo';
+  String get welcomeToAppLabel => 'Bienvenido a FD Media';
 
   @override
   String get loginEnterYourUserInfoText => 'Ingrese su información de usuario';
@@ -153,6 +153,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get profileLabel => 'Perfil';
 
   @override
+  String get searchLabel => 'Buscar';
+
+  @override
   String get historyLabel => 'Vistos Recientemente';
 
   @override
@@ -162,95 +165,60 @@ class AppLocalizationsEs extends AppLocalizations {
   String get bookmarksLabel => 'Tu lista';
 
   @override
-  String get kudearLabel => 'Kudear';
-
-  @override
-  String get cardsLabel => 'Tarjetas';
-
-  @override
   String welcomeWithNameLabel(Object name) {
     return 'Bienvenido, $name';
   }
 
   @override
-  String get cumulativeTotalLabel => 'Total acumulado';
-
-  @override
-  String get redeemedTotalLabel => 'Total canjeado';
-
-  @override
-  String numberOfStampsLabel(num n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      n,
-      locale: localeName,
-      other: '$n sellos',
-      one: '1 sello',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get kudoStandardErrorMessage => 'Ocurrió un error';
-
-  @override
-  String get kudoRetryButtonLabel => 'Reintentar';
-
-  @override
-  String get newRewardsLabel => 'Nuevas recompensas';
-
-  @override
-  String get newCommercesLabel => 'Nuevos comercios';
-
-  @override
   String get seeMoreLabel => 'Ver más';
 
   @override
-  String get kudoConnectionErrorTitle => 'Error de conexión';
+  String get appConnectionErrorTitle => 'Error de conexión';
 
   @override
-  String get kudoConnectionErrorNoInternetDescription => 'Por favor, verifica tu conexión a internet e inténtalo de nuevo.';
+  String get appConnectionErrorNoInternetDescription => 'Por favor, verifica tu conexión a internet e inténtalo de nuevo.';
 
   @override
-  String get kudoConnectionErrorVpnDetectedTitle => 'VPN detectada';
+  String get aooConnectionErrorVpnDetectedTitle => 'VPN detectada';
 
   @override
-  String get kudoConnectionErrorActiveVPNDescription => 'Por favor, desactiva tu conexión VPN e inténtalo de nuevo.';
+  String get appConnectionErrorActiveVPNDescription => 'Por favor, desactiva tu conexión VPN e inténtalo de nuevo.';
 
   @override
-  String get kudoMaintenanceModeTitle => 'La aplicación está en mantenimiento';
+  String get appMaintenanceModeTitle => 'La aplicación está en mantenimiento';
 
   @override
-  String get kudoMaintenanceModeDescription => 'Estamos trabajando para mejorar la aplicación. Por favor, vuelve más tarde.';
+  String get appMaintenanceModeDescription => 'Estamos trabajando para mejorar la aplicación. Por favor, vuelve más tarde.';
 
   @override
-  String get kudoUpdateRequiredTitle => 'Actualización requerida';
+  String get appUpdateRequiredTitle => 'Actualización requerida';
 
   @override
-  String get kudoUpdateRequiredDescription => 'Debes actualizar a la última versión para continuar.';
+  String get appUpdateRequiredDescription => 'Debes actualizar a la última versión para continuar.';
 
   @override
-  String get kudoServerErrorMessage => 'Ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo.';
+  String get appServerErrorMessage => 'Ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo.';
 
   @override
-  String get kudoUnknownErrorMessage => 'Ocurrió un error inesperado. Por favor, inténtalo de nuevo.';
+  String get appUnknownErrorMessage => 'Ocurrió un error inesperado. Por favor, inténtalo de nuevo.';
 
   @override
-  String get kudoStillHavingProblemsButton => '¿Sigues teniendo problemas?';
+  String get appStillHavingProblemsButton => '¿Sigues teniendo problemas?';
 
   @override
-  String get kudoContactSupportButton => 'Contactar soporte';
+  String get appContactSupportButton => 'Contactar soporte';
 
   @override
-  String get kudoUpdateAppButton => 'Actualizar aplicación';
+  String get appUpdateAppButton => 'Actualizar aplicación';
 
   @override
-  String get kudoErrorOpeningUpdateUrlTitle => 'Error al abrir tienda';
+  String get appErrorOpeningUpdateUrlTitle => 'Error al abrir tienda';
 
   @override
-  String get kudoErrorOpeningUpdateUrlDescription => 'Por favor, actualiza la aplicación manualmente.';
+  String get appErrorOpeningUpdateUrlDescription => 'Por favor, actualiza la aplicación manualmente.';
 
   @override
-  String get fortgotPasswordNotEmailLabel => 'El correo ingresado no se encuentra registrado en Kudo';
+  String get forgotPasswordNotEmailLabel => 'El correo ingresado no se encuentra registrado en FD Media';
 
   @override
   String get profilePersonalInfoLabel => 'Información personal';
@@ -280,13 +248,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get logoutConfirmationText => 'Si cierras sesión, tendrás que iniciar sesión de nuevo';
 
   @override
-  String get exceptioNoCurrentUserFoundLabel => 'No se encontró un usuario en este dispositivo';
+  String get exceptionNoCurrentUserFoundLabel => 'No se encontró un usuario en este dispositivo';
 
   @override
   String get profileFullNameLabel => 'Nombre completo';
-
-  @override
-  String get commerceSearchLabel => 'Buscar comercio';
 
   @override
   String get openLabel => 'Abierto';
@@ -295,28 +260,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get closeLabel => 'Close';
 
   @override
-  String get commercesSearchNoFoundTitleLabel => 'No hemos encontrado un comercio';
-
-  @override
-  String get commercesSearchNoFoundDescriptionLabel => '¡Sigue explorando con otras categorías o nombre y descubre todos los comercios afiliados para ti!';
-
-  @override
-  String get cardsNoFoundTitleLabel => 'Aún no tienes tarjetas agregadas';
-
-  @override
-  String get cardsNoFoundDescriptionLabel => '¡Comienza a disfrutar de recompensas! Explora nuestros comercios afiliados y agrega tu primera tarjeta de lealtad.';
-
-  @override
-  String get loyaltyPlanLabel => 'Plan de lealtad';
-
-  @override
   String get informationLabel => 'Información';
-
-  @override
-  String get commerceLoyaltyCardDescriptionText => '¡Bienvenido a tu plan de lealtad! Acumula sellos en cada compra y desbloquea increíbles recompensas. Aquí podrás ver los premios que te esperan.';
-
-  @override
-  String get activateLoyaltyPlanButtonLabel => 'Activar plan';
 
   @override
   String get rewardsLabel => 'Recompensas';
@@ -334,34 +278,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get locationLabel => 'Ubicación';
 
   @override
-  String phoneNumerWithNumberLabel(Object phone) {
+  String phoneNumberWithNumberLabel(Object phone) {
     return 'Teléfono: $phone';
   }
 
   @override
   String get privacyPolicyLabel => 'Política de privacidad';
-
-  @override
-  String get commerceDetailNoLoyaltyCardAvailableLabel => 'Actualmente el comercio no posee una tarjeta de lealtad disponible';
-
-  @override
-  String commerceDetailNoLoyaltyCardAvailableDescriptionLabel(Object commerceName) {
-    return '¡No te preocupes! Pronto $commerceName tendrá una tarjeta disponible para ti.';
-  }
-
-  @override
-  String get commerceLoyaltyCardDoYouWantToActivateLabel => '¿Deseas activar este plan?';
-
-  @override
-  String get commerceLoyaltyCardActivateDescriptionText => 'Actívalo y acumula sellos para canjear tus recompensas';
-
-  @override
-  String get commerceLoyaltyCardActivatedLabel => '¡Plan de lealtad activado!';
-
-  @override
-  String commerceLoyaltyCardActivatedDescription(Object commerceName) {
-    return 'Ya puedes empezar a acumular sellos. Visita $commerceName, compra y reclama tu tarjeta para recibir tus sellos';
-  }
 
   @override
   String get filtersLabel => 'Filtros';
@@ -379,88 +301,68 @@ class AppLocalizationsEs extends AppLocalizations {
   String get redeemedRewardsLabel => 'Recompensas canjeadas';
 
   @override
-  String get cardDetailsNotAvailableLabel => 'Detalles de la tarjeta no disponibles';
-
-  @override
-  String get withOutCameraPermissionLabel => 'No tienes permisos de la cámara para escanear';
-
-  @override
-  String get pleaseAllowCameraPermissionLabel => 'Por favor, habilita los permisos de la cámara';
-
-  @override
-  String get youRequestedANewStampLabel => '¡Tu solicitud para reclamar un sello ha sido exitosa!';
-
-  @override
-  String get youRequestedANewStampDescriptionLabel => 'Dirígete a la caja del comercio para poder reclamar tu sello. ¡Estás un paso más cerca de canjear tu recompensa!';
-
-  @override
-  String get stampsLabel => 'Sellos';
-
-  @override
   String get obtainLabel => 'Obtener';
 
   @override
-  String get rewardsNoFoundTitleLabel => 'Actualmente no existen nuevas recompensas disponibles';
+  String get aboutUsButton => "Acerca de nosotros";
 
   @override
-  String get rewardsNoFoundDescriptionLabel => 'Está atento que próximamente habrán nuevas recompensas para ti';
+  String get aboutYouButton => "Acerca de mi cuenta";
 
   @override
-  String get noNewCommercesDescriptionLabel => 'Está atento que próximamente habrán nuevos comercios para ti';
+  String get browseByLabel => "Navegar por";
 
   @override
-  String get scanHeaderLabel => 'Escanea y listo';
+  String get categoryLabel => "Categoría";
 
   @override
-  String get claimRewardCodeGeneratedLabel => '¡Ya casi reclamas tu premio!';
+  String get deleteAccountButton => "Eliminar cuenta";
 
   @override
-  String get claimRewardCodeGeneratedDescriptionLabel => 'Dirígete a la caja del comercio y presenta el siguiente código para poder canjear tu recompensa';
+  String get editProfileButton => "Editar perfil";
 
   @override
-  String get discountRewardTypeLabel => 'Recompensa de Descuento';
+  String get forYouLabel => "Recomendado para ti";
 
   @override
-  String get dollarRewardTypeLabel => 'Recompensa en Efectivo';
+  String get genreLabel => "Géneros";
 
   @override
-  String get countOrdinalCardRepetitionFirst => "ra";
+  String get getPremiumButton => "Obtener Premium";
 
   @override
-  String get countOrdinalCardRepetitionSecond => "da";
+  String get helpButton => "Ayuda";
 
   @override
-  String get countOrdinalCardRepetitionThird => "ra";
+  String get kidsLabels => "Niños";
 
   @override
-  String get countOrdinalCardRepetitionOther => "ta";
+  String get logoutButton => "Cerrar sesión";
 
   @override
-  String get countOrdinalCardRepetitionSeven => "ma";
+  String get mediaOriginalsLabel => "Originales de medios";
 
   @override
-  String get countOrdinalCardRepetitionEight => "va";
+  String get menuLabel => "Opciones";
 
   @override
-  String get countOrdinalCardRepetitionNine => "na";
+  String get moviesLabel => "Películas";
 
   @override
-  String countOrdinalCardRepetitionLabel(Object ordinalNumber) {
-    return "Esta es tu $ordinalNumber vez coleccionando esta tarjeta";
-  }
+  String get settingsButton => "Configuración";
 
   @override
-  String get tooltipPendingLabel => "pendiente";
+  String get shortsLabel => "Cortos";
 
   @override
-  String get tooltipCompletedLabel => "reclamado";
+  String get termsAndConditionsButton => "Términos y condiciones";
 
   @override
-  String get tooltipUnclaimedLabel => "disponible";
+  String get viewAllLabel => "Ver todo";
 
   @override
-  String get tooltipStampLabel => "Sello";
+  String get searchByLabel => "Buscar por actor, título, género, etc.";
 
   @override
-  String get tooltipRewardLabel => "Premio";
+  String get resultsLabel => "Resultados";
 }

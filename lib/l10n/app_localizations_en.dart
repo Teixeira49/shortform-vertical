@@ -9,10 +9,10 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get kudoAppTitle => 'Kudo App';
+  String get mediaAppTitle => 'FD Media App';
 
   @override
-  String get welcomeToKudoLabel => 'Welcome to Kudo';
+  String get welcomeToAppLabel => 'Welcome to FD Media';
 
   @override
   String get loginEnterYourUserInfoText => 'Enter your user information';
@@ -153,6 +153,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileLabel => 'Profile';
 
   @override
+  String get searchLabel => 'Search';
+
+  @override
   String get historyLabel => 'Recently viewed';
 
   @override
@@ -162,95 +165,60 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bookmarksLabel => 'Your list';
 
   @override
-  String get kudearLabel => 'Kudear';
-
-  @override
-  String get cardsLabel => 'Cards';
-
-  @override
   String welcomeWithNameLabel(Object name) {
     return 'Welcome, $name';
   }
 
   @override
-  String get cumulativeTotalLabel => 'Cumulative total';
-
-  @override
-  String get redeemedTotalLabel => 'Redeemed total';
-
-  @override
-  String numberOfStampsLabel(num n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      n,
-      locale: localeName,
-      other: '$n stamps',
-      one: '1 stamp',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get kudoStandardErrorMessage => 'An error ocurred';
-
-  @override
-  String get kudoRetryButtonLabel => 'Retry';
-
-  @override
-  String get newRewardsLabel => 'New rewards';
-
-  @override
-  String get newCommercesLabel => 'New commerces';
-
-  @override
   String get seeMoreLabel => 'See more';
 
   @override
-  String get kudoConnectionErrorTitle => 'Connection error';
+  String get appConnectionErrorTitle => 'Connection error';
 
   @override
-  String get kudoConnectionErrorNoInternetDescription => 'Please check your internet connection and try again.';
+  String get appConnectionErrorNoInternetDescription => 'Please check your internet connection and try again.';
 
   @override
-  String get kudoConnectionErrorVpnDetectedTitle => 'VPN detected';
+  String get aooConnectionErrorVpnDetectedTitle => 'VPN detected';
 
   @override
-  String get kudoConnectionErrorActiveVPNDescription => 'Please disable your VPN connection and try again.';
+  String get appConnectionErrorActiveVPNDescription => 'Please disable your VPN connection and try again.';
 
   @override
-  String get kudoMaintenanceModeTitle => 'The app is under maintenance';
+  String get appMaintenanceModeTitle => 'The app is under maintenance';
 
   @override
-  String get kudoMaintenanceModeDescription => 'We are working to improve the app. Please, come back later.';
+  String get appMaintenanceModeDescription => 'We are working to improve the app. Please, come back later.';
 
   @override
-  String get kudoUpdateRequiredTitle => 'Update required';
+  String get appUpdateRequiredTitle => 'Update required';
 
   @override
-  String get kudoUpdateRequiredDescription => 'You must update to the latest version to continue.';
+  String get appUpdateRequiredDescription => 'You must update to the latest version to continue.';
 
   @override
-  String get kudoServerErrorMessage => 'An error occurred while processing your request. Please try again.';
+  String get appServerErrorMessage => 'An error occurred while processing your request. Please try again.';
 
   @override
-  String get kudoUnknownErrorMessage => 'An unexpected error occurred. Please try again.';
+  String get appUnknownErrorMessage => 'An unexpected error occurred. Please try again.';
 
   @override
-  String get kudoStillHavingProblemsButton => 'Still having problems?';
+  String get appStillHavingProblemsButton => 'Still having problems?';
 
   @override
-  String get kudoContactSupportButton => 'Contact support';
+  String get appContactSupportButton => 'Contact support';
 
   @override
-  String get kudoUpdateAppButton => 'Update app';
+  String get appUpdateAppButton => 'Update app';
 
   @override
-  String get kudoErrorOpeningUpdateUrlTitle => 'Could not open store';
+  String get appErrorOpeningUpdateUrlTitle => 'Could not open store';
 
   @override
-  String get kudoErrorOpeningUpdateUrlDescription => 'Please update the app manually.';
+  String get appErrorOpeningUpdateUrlDescription => 'Please update the app manually.';
 
   @override
-  String get fortgotPasswordNotEmailLabel => 'The email entered is not registered in Kudo';
+  String get forgotPasswordNotEmailLabel => 'The email entered is not registered in FD Media';
 
   @override
   String get profilePersonalInfoLabel => 'Personal information';
@@ -280,13 +248,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get logoutConfirmationText => 'If you log out, you will have to log in again';
 
   @override
-  String get exceptioNoCurrentUserFoundLabel => 'No user found on this device';
+  String get exceptionNoCurrentUserFoundLabel => 'No user found on this device';
 
   @override
   String get profileFullNameLabel => 'Full name';
-
-  @override
-  String get commerceSearchLabel => 'Search commerce';
 
   @override
   String get openLabel => 'Open';
@@ -295,28 +260,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get closeLabel => 'Close';
 
   @override
-  String get commercesSearchNoFoundTitleLabel => 'We couldn\'t find a commerce';
-
-  @override
-  String get commercesSearchNoFoundDescriptionLabel => 'Keep exploring with other categories or names and discover all the affiliated commerces for you!';
-
-  @override
-  String get cardsNoFoundTitleLabel => 'You don\'t have any cards added yet';
-
-  @override
-  String get cardsNoFoundDescriptionLabel => 'Start enjoying rewards! Explore our affiliated commerces and add your first loyalty card.';
-
-  @override
-  String get loyaltyPlanLabel => 'Loyalty plan';
-
-  @override
   String get informationLabel => 'Information';
-
-  @override
-  String get commerceLoyaltyCardDescriptionText => 'Welcome to your loyalty plan! Collect stamps with every purchase and unlock amazing rewards. Here you can see the prizes that await you.';
-
-  @override
-  String get activateLoyaltyPlanButtonLabel => 'Activate plan';
 
   @override
   String get rewardsLabel => 'Rewards';
@@ -334,7 +278,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get locationLabel => 'Location';
 
   @override
-  String phoneNumerWithNumberLabel(Object phone) {
+  String phoneNumberWithNumberLabel(Object phone) {
     return 'Phone number: $phone';
   }
 
@@ -342,26 +286,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get privacyPolicyLabel => 'Privacy policy';
 
   @override
-  String get commerceDetailNoLoyaltyCardAvailableLabel => 'The store currently does not have a loyalty card available';
-
-  @override
-  String commerceDetailNoLoyaltyCardAvailableDescriptionLabel(Object commerceName) {
-    return 'Don\'t worry! $commerceName will soon have a card available for you.';
-  }
-
-  @override
-  String get commerceLoyaltyCardDoYouWantToActivateLabel => 'Do you want to activate this plan?';
-
-  @override
-  String get commerceLoyaltyCardActivateDescriptionText => 'Activate it and collect stamps to redeem your rewards';
-
-  @override
-  String get commerceLoyaltyCardActivatedLabel => 'Loyalty plan activated!';
-
-  @override
-  String commerceLoyaltyCardActivatedDescription(Object commerceName) {
-    return 'You can now start collecting stamps. Visit $commerceName, shop, and claim your card to receive your stamps';
-  }
 
   @override
   String get filtersLabel => 'Filters';
@@ -379,88 +303,72 @@ class AppLocalizationsEn extends AppLocalizations {
   String get redeemedRewardsLabel => 'Redeemed rewards';
 
   @override
-  String get cardDetailsNotAvailableLabel => 'Card details not available';
-
-  @override
-  String get withOutCameraPermissionLabel => 'You don\'t have camera permissions to scan';
-
-  @override
-  String get pleaseAllowCameraPermissionLabel => 'Please enable camera permissions';
-
-  @override
-  String get youRequestedANewStampLabel => 'Your request to claim a stamp has been successful!';
-
-  @override
-  String get youRequestedANewStampDescriptionLabel => 'Go to the store\'s checkout to claim your stamp. You\'re one step closer to redeeming your reward!';
-
-  @override
-  String get stampsLabel => 'Stamps';
-
-  @override
   String get obtainLabel => 'Obtain';
 
   @override
-  String get rewardsNoFoundTitleLabel => 'Currently there are no new rewards available';
+  String get aboutUsButton => "About us";
 
   @override
-  String get rewardsNoFoundDescriptionLabel => 'Stay tuned for new rewards coming soon';
+  String get aboutYouButton => "About my account";
 
   @override
-  String get noNewCommercesDescriptionLabel => 'Stay tuned for new commerces coming soon';
+  String get browseByLabel => "Browse by";
 
   @override
-  String get scanHeaderLabel => 'Scan and Done';
+  String get categoryLabel => "Category";
+
 
   @override
-  String get claimRewardCodeGeneratedLabel => 'You\'re almost there to claim your prize!';
+  String get deleteAccountButton => "Delete account";
+
 
   @override
-  String get claimRewardCodeGeneratedDescriptionLabel => 'Go to the store\'s checkout and present the following code to redeem your reward.';
+  String get editProfileButton => "Edit profile";
+
 
   @override
-  String get discountRewardTypeLabel => "Discount Reward";
+  String get forYouLabel => "Recommended for you";
 
   @override
-  String get dollarRewardTypeLabel => "Cash Reward";
+  String get genreLabel => "Genres";
+
 
   @override
-  String get countOrdinalCardRepetitionFirst => "st";
+  String get getPremiumButton => "Get Premium";
 
   @override
-  String get countOrdinalCardRepetitionSecond => "nd";
+  String get helpButton => "Help";
 
   @override
-  String get countOrdinalCardRepetitionThird => "rd";
+  String get kidsLabels => "Kids";
 
   @override
-  String get countOrdinalCardRepetitionOther => "th";
+  String get logoutButton => "Logout";
 
   @override
-  String get countOrdinalCardRepetitionSeven => "th";
+  String get mediaOriginalsLabel => "Media Originals";
 
   @override
-  String get countOrdinalCardRepetitionEight => "th";
+  String get menuLabel => "Options";
 
   @override
-  String get countOrdinalCardRepetitionNine => "th";
+  String get moviesLabel => "Movies";
 
   @override
-  String countOrdinalCardRepetitionLabel(Object ordinalNumber) {
-    return "This is your $ordinalNumber time collecting this card";
-  }
+  String get settingsButton => "Settings";
 
   @override
-  String get tooltipPendingLabel => "pending";
+  String get shortsLabel => "Shorts";
 
   @override
-  String get tooltipCompletedLabel => "claimed";
+  String get termsAndConditionsButton => "Terms and conditions";
 
   @override
-  String get tooltipUnclaimedLabel => "available";
+  String get viewAllLabel => "View all";
 
   @override
-  String get tooltipStampLabel => "Stamp";
+  String get searchByLabel => "Search by actor, title, genre, etc.";
 
   @override
-  String get tooltipRewardLabel => "Reward";
+  String get resultsLabel => "Results";
 }
