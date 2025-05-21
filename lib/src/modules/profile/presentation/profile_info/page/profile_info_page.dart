@@ -84,7 +84,9 @@ class ProfilePage extends StatelessWidget {
             ),
             icon: const Icon(Icons.more_vert_outlined),
           ),
-        ]),
+        ],
+          actionsPadding: EdgeInsets.only(right: WidthValues.padding),
+        ),
         body: const _ProfileView(),
       ),
     );

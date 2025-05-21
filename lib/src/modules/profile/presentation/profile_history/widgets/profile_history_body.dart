@@ -120,14 +120,14 @@ class _ProfileHistoryBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Gap(WidthValues.padding),
-              ..._buildRewardRows(tempList, false),
+              ..._buildMoviesRows(tempList, false),
               Gap(WidthValues.padding),
             ],
           ),
         ));
   }
 
-  List<Widget> _buildRewardRows(List<Movie> movies, bool isLoading) {
+  List<Widget> _buildMoviesRows(List<Movie> movies, bool isLoading) {
     final rows = <Widget>[];
 
     for (var i = 0; i < movies.length; i += 2) {
