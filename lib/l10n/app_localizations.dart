@@ -99,13 +99,13 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Kudo App'**
-  String get kudoAppTitle;
+  String get mediaAppTitle;
 
   /// No description provided for @welcomeToKudoLabel.
   ///
   /// In en, this message translates to:
   /// **'Welcome to Kudo'**
-  String get welcomeToKudoLabel;
+  String get welcomeToAppLabel;
 
   /// No description provided for @loginEnterYourUserInfoText.
   ///
@@ -383,6 +383,12 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get profileLabel;
 
+  /// No description provided for @searchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get searchLabel;
+
   /// No description provided for @commercesLabel.
   ///
   /// In en, this message translates to:
@@ -401,65 +407,11 @@ abstract class AppLocalizations {
   /// **'Commerces'**
   String get bookmarksLabel;
 
-  /// No description provided for @kudearLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Kudear'**
-  String get kudearLabel;
-
-  /// No description provided for @cardsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cards'**
-  String get cardsLabel;
-
   /// No description provided for @welcomeWithNameLabel.
   ///
   /// In en, this message translates to:
   /// **'Welcome, {name}'**
   String welcomeWithNameLabel(Object name);
-
-  /// No description provided for @cumulativeTotalLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cumulative total'**
-  String get cumulativeTotalLabel;
-
-  /// No description provided for @redeemedTotalLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Redeemed total'**
-  String get redeemedTotalLabel;
-
-  /// No description provided for @numberOfStampsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'{n, plural, one{1 stamp} other{{n} stamps}}'**
-  String numberOfStampsLabel(num n);
-
-  /// No description provided for @kudoStandardErrorMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'An error ocurred'**
-  String get kudoStandardErrorMessage;
-
-  /// No description provided for @kudoRetryButtonLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Retry'**
-  String get kudoRetryButtonLabel;
-
-  /// No description provided for @newRewardsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'New rewards'**
-  String get newRewardsLabel;
-
-  /// No description provided for @newCommercesLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'New commerces'**
-  String get newCommercesLabel;
 
   /// No description provided for @seeMoreLabel.
   ///
@@ -471,97 +423,97 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Connection error'**
-  String get kudoConnectionErrorTitle;
+  String get appConnectionErrorTitle;
 
   /// No description provided for @kudoConnectionErrorNoInternetDescription.
   ///
   /// In en, this message translates to:
   /// **'Please check your internet connection and try again.'**
-  String get kudoConnectionErrorNoInternetDescription;
+  String get appConnectionErrorNoInternetDescription;
 
   /// No description provided for @kudoConnectionErrorVpnDetectedTitle.
   ///
   /// In en, this message translates to:
   /// **'VPN detected'**
-  String get kudoConnectionErrorVpnDetectedTitle;
+  String get aooConnectionErrorVpnDetectedTitle;
 
   /// No description provided for @kudoConnectionErrorActiveVPNDescription.
   ///
   /// In en, this message translates to:
   /// **'Please disable your VPN connection and try again.'**
-  String get kudoConnectionErrorActiveVPNDescription;
+  String get appConnectionErrorActiveVPNDescription;
 
   /// No description provided for @kudoMaintenanceModeTitle.
   ///
   /// In en, this message translates to:
   /// **'The app is under maintenance'**
-  String get kudoMaintenanceModeTitle;
+  String get appMaintenanceModeTitle;
 
   /// No description provided for @kudoMaintenanceModeDescription.
   ///
   /// In en, this message translates to:
   /// **'We are working to improve the app. Please, come back later.'**
-  String get kudoMaintenanceModeDescription;
+  String get appMaintenanceModeDescription;
 
   /// No description provided for @kudoUpdateRequiredTitle.
   ///
   /// In en, this message translates to:
   /// **'Update required'**
-  String get kudoUpdateRequiredTitle;
+  String get appUpdateRequiredTitle;
 
   /// No description provided for @kudoUpdateRequiredDescription.
   ///
   /// In en, this message translates to:
   /// **'You must update to the latest version to continue.'**
-  String get kudoUpdateRequiredDescription;
+  String get appUpdateRequiredDescription;
 
   /// No description provided for @kudoServerErrorMessage.
   ///
   /// In en, this message translates to:
   /// **'An error occurred while processing your request. Please try again.'**
-  String get kudoServerErrorMessage;
+  String get appServerErrorMessage;
 
   /// No description provided for @kudoUnknownErrorMessage.
   ///
   /// In en, this message translates to:
   /// **'An unexpected error occurred. Please try again.'**
-  String get kudoUnknownErrorMessage;
+  String get appUnknownErrorMessage;
 
   /// No description provided for @kudoStillHavingProblemsButton.
   ///
   /// In en, this message translates to:
   /// **'Still having problems?'**
-  String get kudoStillHavingProblemsButton;
+  String get appStillHavingProblemsButton;
 
   /// No description provided for @kudoContactSupportButton.
   ///
   /// In en, this message translates to:
   /// **'Contact support'**
-  String get kudoContactSupportButton;
+  String get appContactSupportButton;
 
   /// No description provided for @kudoUpdateAppButton.
   ///
   /// In en, this message translates to:
   /// **'Update app'**
-  String get kudoUpdateAppButton;
+  String get appUpdateAppButton;
 
   /// No description provided for @kudoErrorOpeningUpdateUrlTitle.
   ///
   /// In en, this message translates to:
   /// **'Could not open store'**
-  String get kudoErrorOpeningUpdateUrlTitle;
+  String get appErrorOpeningUpdateUrlTitle;
 
   /// No description provided for @kudoErrorOpeningUpdateUrlDescription.
   ///
   /// In en, this message translates to:
   /// **'Please update the app manually.'**
-  String get kudoErrorOpeningUpdateUrlDescription;
+  String get appErrorOpeningUpdateUrlDescription;
 
   /// No description provided for @fortgotPasswordNotEmailLabel.
   ///
   /// In en, this message translates to:
   /// **'The email entered is not registered in Kudo'**
-  String get fortgotPasswordNotEmailLabel;
+  String get forgotPasswordNotEmailLabel;
 
   /// No description provided for @profilePersonalInfoLabel.
   ///
@@ -621,19 +573,13 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'No user found on this device'**
-  String get exceptioNoCurrentUserFoundLabel;
+  String get exceptionNoCurrentUserFoundLabel;
 
   /// No description provided for @profileFullNameLabel.
   ///
   /// In en, this message translates to:
   /// **'Full name'**
   String get profileFullNameLabel;
-
-  /// No description provided for @commerceSearchLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Search commerce'**
-  String get commerceSearchLabel;
 
   /// No description provided for @openLabel.
   ///
@@ -647,53 +593,11 @@ abstract class AppLocalizations {
   /// **'Close'**
   String get closeLabel;
 
-  /// No description provided for @commercesSearchNoFoundTitleLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'We couldn\'t find a commerce'**
-  String get commercesSearchNoFoundTitleLabel;
-
-  /// No description provided for @commercesSearchNoFoundDescriptionLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Keep exploring with other categories or names and discover all the affiliated commerces for you!'**
-  String get commercesSearchNoFoundDescriptionLabel;
-
-  /// No description provided for @cardsNoFoundTitleLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'You don\'t have any cards added yet'**
-  String get cardsNoFoundTitleLabel;
-
-  /// No description provided for @cardsNoFoundDescriptionLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Start enjoying rewards! Explore our affiliated commerces and add your first loyalty card.'**
-  String get cardsNoFoundDescriptionLabel;
-
-  /// No description provided for @loyaltyPlanLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Loyalty plan'**
-  String get loyaltyPlanLabel;
-
   /// No description provided for @informationLabel.
   ///
   /// In en, this message translates to:
   /// **'Information'**
   String get informationLabel;
-
-  /// No description provided for @commerceLoyaltyCardDescriptionText.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome to your loyalty plan! Collect stamps with every purchase and unlock amazing rewards. Here you can see the prizes that await you.'**
-  String get commerceLoyaltyCardDescriptionText;
-
-  /// No description provided for @activateLoyaltyPlanButtonLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Activate plan'**
-  String get activateLoyaltyPlanButtonLabel;
 
   /// No description provided for @rewardsLabel.
   ///
@@ -729,49 +633,13 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Phone number: {phone}'**
-  String phoneNumerWithNumberLabel(Object phone);
+  String phoneNumberWithNumberLabel(Object phone);
 
   /// No description provided for @privacyPolicyLabel.
   ///
   /// In en, this message translates to:
   /// **'Privacy policy'**
   String get privacyPolicyLabel;
-
-  /// No description provided for @commerceDetailNoLoyaltyCardAvailableLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'The store currently does not have a loyalty card available'**
-  String get commerceDetailNoLoyaltyCardAvailableLabel;
-
-  /// No description provided for @commerceDetailNoLoyaltyCardAvailableDescriptionLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t worry! {commerceName} will soon have a card available for you.'**
-  String commerceDetailNoLoyaltyCardAvailableDescriptionLabel(Object commerceName);
-
-  /// No description provided for @commerceLoyaltyCardDoYouWantToActivateLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Do you want to activate this plan?'**
-  String get commerceLoyaltyCardDoYouWantToActivateLabel;
-
-  /// No description provided for @commerceLoyaltyCardActivateDescriptionText.
-  ///
-  /// In en, this message translates to:
-  /// **'Activate it and collect stamps to redeem your rewards'**
-  String get commerceLoyaltyCardActivateDescriptionText;
-
-  /// No description provided for @commerceLoyaltyCardActivatedLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Loyalty plan activated!'**
-  String get commerceLoyaltyCardActivatedLabel;
-
-  /// No description provided for @commerceLoyaltyCardActivatedDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'You can now start collecting stamps. Visit {commerceName}, shop, and claim your card to receive your stamps'**
-  String commerceLoyaltyCardActivatedDescription(Object commerceName);
 
   /// No description provided for @filtersLabel.
   ///
@@ -803,173 +671,137 @@ abstract class AppLocalizations {
   /// **'Redeemed rewards'**
   String get redeemedRewardsLabel;
 
-  /// No description provided for @cardDetailsNotAvailableLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Card details not available'**
-  String get cardDetailsNotAvailableLabel;
-
-  /// No description provided for @withOutCameraPermissionLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'You don\'t have camera permissions to scan'**
-  String get withOutCameraPermissionLabel;
-
-  /// No description provided for @pleaseAllowCameraPermissionLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enable camera permissions'**
-  String get pleaseAllowCameraPermissionLabel;
-
-  /// No description provided for @youRequestedANewStampLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Your request to claim a stamp has been successful!'**
-  String get youRequestedANewStampLabel;
-
-  /// No description provided for @youRequestedANewStampDescriptionLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Go to the store\'s checkout to claim your stamp. You\'re one step closer to redeeming your reward!'**
-  String get youRequestedANewStampDescriptionLabel;
-
-  /// No description provided for @stampsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Obtain'**
-  String get stampsLabel;
-
   /// No description provided for @obtainLabel.
   ///
   /// In en, this message translates to:
   /// **'Obtain'**
   String get obtainLabel;
 
-  /// No description provided for @rewardsNoFoundTitleLabel.
+  /// No description provided for @browseByLabel.
   ///
   /// In en, this message translates to:
-  /// **'Currently there are no new rewards available'**
-  String get rewardsNoFoundTitleLabel;
+  /// **'Browse by'**
+  String get browseByLabel;
 
-  /// No description provided for @rewardsNoFoundDescriptionLabel.
+  /// No description provided for @categoryLabel.
   ///
   /// In en, this message translates to:
-  /// **'Stay tuned for new rewards coming soon'**
-  String get rewardsNoFoundDescriptionLabel;
+  /// **'Category'**
+  String get categoryLabel;
 
-  /// No description provided for @noNewCommercesDescriptionLabel.
+  /// No description provided for @genreLabel.
   ///
   /// In en, this message translates to:
-  /// **'Stay tuned for new commerces coming soon'**
-  String get noNewCommercesDescriptionLabel;
+  /// **'Genres'**
+  String get genreLabel;
 
-  /// No description provided for @scanHeaderLabel.
+  /// No description provided for @moviesLabel.
   ///
   /// In en, this message translates to:
-  /// **'Scan and Done'**
-  String get scanHeaderLabel;
+  /// **'Movies'**
+  String get moviesLabel;
 
-  /// No description provided for @claimRewardCodeGeneratedLabel.
+  /// No description provided for @mediaOriginalsLabel.
   ///
-  /// In en, this message translates to:
-  /// **'You\'re almost there to claim your prize!'**
-  String get claimRewardCodeGeneratedLabel;
+  ///  In en, this message translates to:
+  ///  **'Media Originals'**
+  String get mediaOriginalsLabel;
 
-  /// No description provided for @claimRewardCodeGeneratedDescriptionLabel.
+  /// No description provided for @shortsLabel.
   ///
   /// In en, this message translates to:
-  /// **'Go to the store\'s checkout and present the following code to redeem your reward.'**
-  String get claimRewardCodeGeneratedDescriptionLabel;
+  /// 'Shorts'
+  String get shortsLabel;
 
-  /// No description provided for @discountRewardTypeLabel.
+  /// No description provided for @kidsLabels.
   ///
   /// In en, this message translates to:
-  /// **'Discount Reward'**
-  String get discountRewardTypeLabel;
+  /// 'For Kids'
+  String get kidsLabels;
 
-  /// No description provided for @dollarRewardTypeLabel.
+  /// No description provided for @forYouLabel.
   ///
   /// In en, this message translates to:
-  /// **'Cash Reward'**
-  String get dollarRewardTypeLabel;
+  /// 'For You'
+  String get forYouLabel;
 
-  /// No description provided for @countOrdinalCardRepetitionFirst.
+  /// No description provided for @viewAllLabel.
   ///
   /// In en, this message translates to:
-  /// **'First'**
-  String get countOrdinalCardRepetitionFirst;
+  /// 'View All'
+  String get viewAllLabel;
 
-  /// No description provided for @countOrdinalCardRepetitionSecond.
+  /// No description provided for @menuLabel.
   ///
   /// In en, this message translates to:
-  /// **'Second'**
-  String get countOrdinalCardRepetitionSecond;
+  /// 'Menu'
+  String get menuLabel;
 
-  /// No description provided for @countOrdinalCardRepetitionThird.
+  /// No description provided for @editProfileButton.
   ///
   /// In en, this message translates to:
-  /// **'Third'**
-  String get countOrdinalCardRepetitionThird;
+  /// 'Edit Profile'
+  String get editProfileButton;
 
-  /// No description provided for @countOrdinalCardRepetitionOther.
+  /// No description provided for @aboutUsButton.
   ///
   /// In en, this message translates to:
-  /// **'Fourth, Five, Six,'**
-  String get countOrdinalCardRepetitionOther;
+  /// 'About Us'
+  String get aboutUsButton;
 
-  /// No description provided for @countOrdinalCardRepetitionSeven.
+  /// No description provided for @aboutYouButton.
   ///
   /// In en, this message translates to:
-  /// **'Seventh'**
-  String get countOrdinalCardRepetitionSeven;
+  /// 'About You'
+  String get aboutYouButton;
 
-  /// No description provided for @countOrdinalCardRepetitionEight.
+  /// No description provided for @settingsButton.
   ///
   /// In en, this message translates to:
-  /// **'Eighth'**
-  String get countOrdinalCardRepetitionEight;
+  /// 'Settings'
+  String get settingsButton;
 
-  /// No description provided for @countOrdinalCardRepetitionNine.
+  /// No description provided for @helpButton.
   ///
   /// In en, this message translates to:
-  /// **'Ninth'**
-  String get countOrdinalCardRepetitionNine;
+  /// 'Help'
+  String get helpButton;
 
-  /// No description provided for @countOrdinalCardRepetitionLabel.
+  /// No description provided for @logoutButton.
   ///
   /// In en, this message translates to:
-  /// **'Tenth'**
-  String countOrdinalCardRepetitionLabel(Object ordinalNumber);
+  /// 'Log out'
+  String get logoutButton;
 
-  /// No description provided for @tooltipPendingLabel.
+  /// No description provided for @deleteAccountButton.
   ///
   /// In en, this message translates to:
-  /// /// **'Pending'**
-  String get tooltipPendingLabel;
+  /// 'Delete Account'
+  String get deleteAccountButton;
 
-  /// No description provided for @tooltipCompletedLabel.
+  /// No description provided for @termsAndConditionsButton.
   ///
   /// In en, this message translates to:
-  /// **'Completed'**
-  String get tooltipCompletedLabel;
+  /// 'terms and conditions'
+  String get termsAndConditionsButton;
 
-  /// No description provided for @tooltipUnclaimedLabel.
+  /// No description provided for @getPremiumButton.
   ///
   /// In en, this message translates to:
-  /// **'Available'**
-  String get tooltipUnclaimedLabel;
+  /// 'get Premium'
+  String get getPremiumButton;
 
-  /// No description provided for @tooltipStampLabel.
+  /// No description provided for @searchByLabel.
   ///
   /// In en, this message translates to:
-  /// **'Stamp'**
-  String get tooltipStampLabel;
+  /// 'Search by'
+  String get searchByLabel;
 
-  /// No description provided for @tooltipRewardLabel.
+  /// No description provided for @resultsLabel.
   ///
   /// In en, this message translates to:
-  /// **'Reward'**
-  String get tooltipRewardLabel;
+  /// 'Results'
+  String get resultsLabel;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
