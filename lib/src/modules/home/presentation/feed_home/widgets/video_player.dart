@@ -1,43 +1,75 @@
 part of '../page/feed_home_page.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
-  const VideoPlayerWidget({super.key});
+  const VideoPlayerWidget(
+      {required this.videoUrl, required this.isPlaying, super.key});
+
+  final String videoUrl;
+  final bool isPlaying;
 
   @override
-  _VideoPlayerState createState() => _VideoPlayerState();
+  _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
 }
 
-class _VideoPlayerState extends State<VideoPlayerWidget> {
-
-  // late VideoPlayerController _controller;
+class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
+  late VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    // _controller = VideoPlayerController.network(
-    //   'https://www.example.com/video.mp4',
-    // )
-    //   ..initialize().then((_) {
-    //     setState(() {});
-    //   });
+    _controller = VideoPlayerController.network(
+      widget.videoUrl,
+    )..initialize().then((value) {
+        _controller.play();
+        _controller.setVolume(1);
+        _controller.setLooping(true);
+      });
   }
 
   @override
   void dispose() {
-    // _controller.dispose();
+    _controller.pause();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
+  void didUpdateWidget(covariant VideoPlayerWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Sincroniza el estado de reproducción cuando cambia la prop
+    if (widget.isPlaying != oldWidget.isPlaying) {
+      widget.isPlaying ? _controller.play() : _controller.pause();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Container(
-        width: size.width,
-        height: size.height,
-        decoration: BoxDecoration(
-          color: Colors.black,
+    if (!_controller.value.isInitialized) {
+      return const Center(
+        child: CircularProgressIndicator(
+          color: Colors.white,
+          strokeWidth: 2,
         ),
-        child: Image.network(
-            'https://i.pinimg.com/736x/20/b3/33/20b333af293a687925a2652345015f4e.jpg'));
+      );
+    }
+
+    return AspectRatio(
+      aspectRatio: _controller.value.aspectRatio,
+      child: VideoPlayer(_controller),
+    );
+
+    /*if (!_controller.value.isInitialized) {
+
+    }
+    return
+          Container(
+              width: size.width,
+              height: size.height,
+              decoration: BoxDecoration(
+                color: Colors.black,
+              ),
+              child: VideoPlayer(_controller),
+          //'https://i.pinimg.com/736x/20/b3/33/20b333af293a687925a2652345015f4e.jpg'
+    );*/
   }
 }

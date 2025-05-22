@@ -19,8 +19,27 @@ class _HomeBody extends StatelessWidget {
   }
 }
 
-class _VideoScreen extends StatelessWidget {
+class _VideoScreen extends StatefulWidget {
   const _VideoScreen({super.key});
+
+  @override
+  _VideoPlayerState createState() => _VideoPlayerState();
+}
+
+class _VideoPlayerState extends State<_VideoScreen> {
+  bool _isPlaying = true;
+  bool _showControls = false;
+
+  void _togglePlayPause() {
+    setState(() {
+      _isPlaying = !_isPlaying;
+      _showControls = true;
+    });
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) setState(() => _showControls = false);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +48,49 @@ class _VideoScreen extends StatelessWidget {
 
     final size = MediaQuery.of(context).size;
 
-    return Center(
-      child: PageView.builder(
-        itemCount: 1,
-        scrollDirection: Axis.vertical,
-        itemBuilder: (context, index) {
-          return Stack(
+    //https://mobikul.com/tv-app-using-flutter/
+    List<String> manyUrl = [
+      "https://categories-deadline-minutes-many.trycloudflare.com/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL.mpd"
+          "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.jpg",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+    ];
+
+    return PageView.builder(
+      itemCount: manyUrl.length,
+      controller: PageController(initialPage: 0, viewportFraction: 1),
+      scrollDirection: Axis.vertical,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: _togglePlayPause,
+          child: Stack(
             children: [
-              VideoPlayerWidget(),
+              VideoPlayerWidget(
+                videoUrl: manyUrl[index],
+                isPlaying: _isPlaying,
+              ),
+              if (_showControls)
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: AnimatedOpacity(
+                      opacity: _showControls ? 1.0 : 0.0,
+                      duration: const Duration(milliseconds: 300),
+                      child: Icon(
+                        _isPlaying ? Icons.pause : Icons.play_arrow,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                    ),
+                  ),
+                ),
               Container(
                 padding: const EdgeInsets.all(
                   24,
@@ -357,17 +411,20 @@ class _VideoScreen extends StatelessWidget {
                 ),
               )
             ],
-          );
-        },
-        //  },
-      ),
+          ),
+        );
+      },
+      //  },
     );
   }
 
   SliverWoltModalSheetPage showComments(context) {
     return SliverWoltModalSheetPage(
       hasSabGradient: false,
-      topBarTitle: Text('Comments', style: TextStyle(color: Colors.red),),
+      topBarTitle: Text(
+        'Comments',
+        style: TextStyle(color: Colors.red),
+      ),
       isTopBarLayerAlwaysVisible: true,
       trailingNavBarWidget: IconButton(
         padding: const EdgeInsets.all(16),
@@ -406,7 +463,7 @@ class _VideoScreen extends StatelessWidget {
       mainContentSliversBuilder: (BuildContext context) => [
         SliverList(
           delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
+            (BuildContext context, int index) {
               return ListTile(
                 title: Text('User $index'),
                 leading: CircleAvatar(
@@ -444,15 +501,22 @@ class _VideoScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Gap(WidthValues.spacingXs),
-                    Text('Comment $index', textAlign: TextAlign.justify,),
+                    Text(
+                      'Comment $index',
+                      textAlign: TextAlign.justify,
+                    ),
                     Row(
                       children: [
-                        TextButton(onPressed: () {
-                          print('responde');
-                        }, child: Text('Responder')),
-                        TextButton(onPressed: () {
-                          print('responde');
-                        }, child: Text('Reportar'))
+                        TextButton(
+                            onPressed: () {
+                              print('responde');
+                            },
+                            child: Text('Responder')),
+                        TextButton(
+                            onPressed: () {
+                              print('responde');
+                            },
+                            child: Text('Reportar'))
                       ],
                     )
                   ],

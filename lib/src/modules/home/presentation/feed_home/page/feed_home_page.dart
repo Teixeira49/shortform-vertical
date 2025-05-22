@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_icon_button/tap_fill_icon.dart';
 import 'package:gap/gap.dart';
+import 'package:video_player/video_player.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:venetiktok/l10n/l10n.dart';
 import 'package:venetiktok/src/shared/features/widgets/base_layout.dart';
@@ -12,6 +12,7 @@ import '../../../../../shared/features/widgets/custom_modal.dart';
 import '../../../../../variables/values/values.dart';
 
 part '../widgets/feed_home_body.dart';
+
 part '../widgets/video_player.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,8 +27,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _HomeView(),
-    );
+        body: _HomeView(),
+      );
+
   }
 }
 

@@ -86,7 +86,7 @@ class _ProfileHistoryBody extends StatelessWidget {
           availDate: 'availDate',
           expDate: 'expDate',
           posterUrl:
-          'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
       Movie(
           assetsName: 'ejemplo',
           title: 'title',
@@ -97,7 +97,7 @@ class _ProfileHistoryBody extends StatelessWidget {
           availDate: 'availDate',
           expDate: 'expDate',
           posterUrl:
-          'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
       Movie(
           assetsName: 'ejemplo',
           title: 'title',
@@ -108,7 +108,7 @@ class _ProfileHistoryBody extends StatelessWidget {
           availDate: 'availDate',
           expDate: 'expDate',
           posterUrl:
-          'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
+              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
     ];
 
     return BaseLayout(
@@ -116,10 +116,47 @@ class _ProfileHistoryBody extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             spacing: WidthValues.padding,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Gap(WidthValues.padding),
+              Gap(WidthValues.spacingXs),
+              Text(
+                context.l10n.searchLabel,
+                style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextField(
+                  //controller: _searchController,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: context.l10n.searchByLabel,
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    border: InputBorder.none,
+                    prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                    suffixIcon: IconButton(
+                      icon: const Icon(Icons.mic, color: Colors.grey),
+                      onPressed: () {}, // opcional: búsqueda por voz
+                    ),
+                  ),
+                  //onChanged: (value) => setState(() => _query = value),
+                ),
+              ),
+              Gap(WidthValues.spacingXs),
+              Text(
+                context.l10n.moviesLabel,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Gap(WidthValues.spacing2Md),
               ..._buildMoviesRows(tempList, false),
               Gap(WidthValues.padding),
             ],
@@ -143,21 +180,20 @@ class _ProfileHistoryBody extends StatelessWidget {
 //               title: movies1.title,),
             SizedBox(
               height: 200,
-              child:  MovieTarget(
-                  url: movies1.posterUrl,
-                  title: movies1.title,
-                ),
+              child: MovieTarget(
+                url: movies1.posterUrl,
+                title: movies1.title,
               ),
+            ),
 
             if (movies2 != null)
               SizedBox(
                 height: 200,
-                child:  MovieTarget(
-                    url: movies2.posterUrl,
-                    title: movies2.title,
-                  ),
+                child: MovieTarget(
+                  url: movies2.posterUrl,
+                  title: movies2.title,
                 ),
-
+              ),
           ],
         ),
       );
