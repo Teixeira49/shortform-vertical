@@ -1,2 +1,3 @@
 export 'video.dart';
-export 'feed_videos.dart';
+export 'media_data.dart';
+export 'video_metadata.dart';

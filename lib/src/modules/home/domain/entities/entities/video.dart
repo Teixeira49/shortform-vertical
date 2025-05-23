@@ -1,20 +1,30 @@
+import 'package:venetiktok/src/modules/home/domain/entities/entities/video_metadata.dart';
+
+import 'media_data.dart';
 
 class Video {
-  final String id;
-  final String title;
-  final String description;
-  final String thumbnailUrl;
-  final String videoUrl;
-  final int duration;
-  final DateTime uploadDate;
+  final String assetName;
+  final VideoImage images;
+  final VideoFormat videos;
+  final Metadata metadata;
 
   Video({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.thumbnailUrl,
-    required this.videoUrl,
-    required this.duration,
-    required this.uploadDate,
+    required this.assetName,
+    required this.images,
+    required this.videos,
+    required this.metadata,
   });
+}
+
+class VideoImage {
+  final MediaData images;
+
+  VideoImage({required this.images});
+}
+
+class VideoFormat {
+  final MediaData hlsUrl;
+  final MediaData dashUrl;
+
+  VideoFormat({required this.hlsUrl, required this.dashUrl});
 }
