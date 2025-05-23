@@ -12,23 +12,44 @@ class VideoPlayerWidget extends StatefulWidget {
 }
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-  late VideoPlayerController _controller;
+  late BetterPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
+    _setupPlayer();
+  }
+
+  void _setupPlayer() {
+    final dataSource = BetterPlayerDataSource(
+      widget.videoUrl.endsWith('.mpd')
+          ? BetterPlayerDataSourceType.network
+          : BetterPlayerDataSourceType.network,
       widget.videoUrl,
-    )..initialize().then((value) {
-        _controller.play();
-        _controller.setVolume(1);
-        _controller.setLooping(true);
-      });
+      useAsmsSubtitles: true,
+      useAsmsTracks: true,
+      liveStream: false,
+      videoFormat: widget.videoUrl.endsWith('.mpd')
+          ? BetterPlayerVideoFormat.dash
+          : widget.videoUrl.endsWith('.m3u8')
+          ? BetterPlayerVideoFormat.hls
+          : BetterPlayerVideoFormat.other,
+    );
+
+    _controller = BetterPlayerController(
+      BetterPlayerConfiguration(
+        autoPlay: widget.isPlaying,
+        looping: true,
+        controlsConfiguration: BetterPlayerControlsConfiguration(
+          showControls: false,
+        ),
+      ),
+      betterPlayerDataSource: dataSource,
+    );
   }
 
   @override
   void dispose() {
-    _controller.pause();
     _controller.dispose();
     super.dispose();
   }
@@ -36,40 +57,16 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   void didUpdateWidget(covariant VideoPlayerWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Sincroniza el estado de reproducción cuando cambia la prop
-    if (widget.isPlaying != oldWidget.isPlaying) {
+    if (widget.videoUrl != oldWidget.videoUrl) {
+      _controller.dispose();
+      _setupPlayer();
+    } else if (widget.isPlaying != oldWidget.isPlaying) {
       widget.isPlaying ? _controller.play() : _controller.pause();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!_controller.value.isInitialized) {
-      return const Center(
-        child: CircularProgressIndicator(
-          color: Colors.white,
-          strokeWidth: 2,
-        ),
-      );
-    }
-
-    return AspectRatio(
-      aspectRatio: _controller.value.aspectRatio,
-      child: VideoPlayer(_controller),
-    );
-
-    /*if (!_controller.value.isInitialized) {
-
-    }
-    return
-          Container(
-              width: size.width,
-              height: size.height,
-              decoration: BoxDecoration(
-                color: Colors.black,
-              ),
-              child: VideoPlayer(_controller),
-          //'https://i.pinimg.com/736x/20/b3/33/20b333af293a687925a2652345015f4e.jpg'
-    );*/
+    return BetterPlayer(controller: _controller);
   }
 }

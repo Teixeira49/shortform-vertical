@@ -7,6 +7,7 @@ import 'package:venetiktok/l10n/l10n.dart';
 import 'package:venetiktok/src/shared/features/widgets/base_layout.dart';
 import 'package:venetiktok/src/shared/features/widgets/text_page_header_widget.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
+import 'package:better_player_plus/better_player_plus.dart';
 
 import '../../../../../shared/features/widgets/custom_modal.dart';
 import '../../../../../variables/values/values.dart';

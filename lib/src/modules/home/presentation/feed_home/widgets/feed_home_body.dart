@@ -50,8 +50,9 @@ class _VideoPlayerState extends State<_VideoScreen> {
 
     //https://mobikul.com/tv-app-using-flutter/
     List<String> manyUrl = [
-      "https://categories-deadline-minutes-many.trycloudflare.com/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL.mpd"
-          "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd",
+      "https://categories-deadline-minutes-many.trycloudflare.com/origin/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL/NewYou_Dereck_CandaceBushnell_Cover_BTS_Photoshoot_GREEN_DRESS_FINAL.mpd",
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
