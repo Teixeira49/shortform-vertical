@@ -3,6 +3,7 @@ class AssetIcons {
   static const String background = 'assets/icons/logos/background_fd_media_global_logo.png';
   static const String appIconWithBackground = 'assets/icons/logos/fd_media_global_logo_with_background.png';
   static const String appIcon = 'assets/icons/logos/fd_media_global_logo_without_background.png';
+  static const String defaultAvatar = 'assets/icons/default-avatar.jpg';
   static const String kudearIcon = 'assets/icons/kudear_icon.svg';
   static const String cardIcon = 'assets/icons/card_icon.svg';
   static const String giftIcon = 'assets/icons/gift_icon.svg';
