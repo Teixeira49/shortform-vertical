@@ -28,11 +28,15 @@ class AuthRepository implements IAuthRepository {
         name: '$_source.signUp()',
       );
 
-      await _storage.deleteValue(_storageTokenKey);
+      final value = await _storage.getValue(_storageTokenKey);
+      if (value != null) {
+        await _storage.deleteValue(_storageTokenKey);
+      }
 
-      final token = await _authApi.signUpUser(
-        params: SignUpUserParamsModel.fromEntity(params),
-      );
+      final token = params.email;
+      //await _authApi.signUpUser(
+      //  params: SignUpUserParamsModel.fromEntity(params),
+      //);
 
       await _storage.storeValue(key: _storageTokenKey, value: token);
 
@@ -59,11 +63,17 @@ class AuthRepository implements IAuthRepository {
         name: '$_source.signIn()',
       );
 
-      await _storage.deleteValue(_storageTokenKey);
+      final value = await _storage.getValue(_storageTokenKey);
+      if (value != null) {
+        await _storage.deleteValue(_storageTokenKey);
+      }
 
-      final token = await _authApi.signInUser(
-        params: SignInUserParamsModel.fromEntity(params),
-      );
+      final token = params.email;
+      //await _storage.deleteValue(_storageTokenKey);
+
+      //final token = await _authApi.signInUser(
+      //  params: SignInUserParamsModel.fromEntity(params),
+      //);
 
       await _storage.storeValue(key: _storageTokenKey, value: token);
 

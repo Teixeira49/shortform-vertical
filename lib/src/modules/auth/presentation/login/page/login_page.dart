@@ -48,6 +48,9 @@ class _LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
+        if (state.status == LoginStatus.success) {
+          context.go(AppShellBranch.values.first.path);
+        }
         /*if (state.status == LoginStatus.error) {
           final error = state.error;
           if (error is InvalidCredentialsException) {

@@ -14,11 +14,12 @@ class _LoginButton extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton(
-                onPressed: state.isFormValid
-                    ? () => context.go(AppShellBranch.values.first.path)//context.goNamed();
-                        /*context
+                onPressed: (state.emailInput.value ==
+                                "brocolisoftware@gmail.com" ||
+                            state.emailInput.value == "andrea.lopez@gmail.com")
+                    ? () => context
                         .read<LoginBloc>()
-                        .add(LoginSubmitButtonPressed())*/
+                        .add(LoginSubmitButtonPressed())
                     : null,
                 child: Text(context.l10n.loginButtonLabel),
               ),
