@@ -1,70 +1,83 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
 class User extends Equatable {
-  final int id;
   final int userId;
-  final String name;
-  final String lastname;
-  final String documentNum;
+  final int profileId;
+  final String firstName;
+  final String lastName;
+  final String plan;
   final String email;
+  final bool verified;
+  final String imageUrl;
 
   const User({
-    required this.id,
     required this.userId,
-    required this.name,
-    required this.lastname,
-    required this.documentNum,
+    required this.profileId,
+    required this.firstName,
+    required this.lastName,
+    required this.plan,
     required this.email,
+    required this.verified,
+    required this.imageUrl,
   });
 
   @override
   List<Object?> get props => [
-        id,
         userId,
-        name,
-        lastname,
-        documentNum,
+        profileId,
+        firstName,
+        lastName,
+        plan,
         email,
+        verified,
+        imageUrl,
       ];
 
-  String get fullName => '$name $lastname';
+  String get fullName => '$firstName $lastName';
 
   User copyWith({
-    int? id,
     int? userId,
-    String? name,
-    String? lastname,
-    String? documentNum,
+    int? profileId,
+    String? firstName,
+    String? lastName,
+    String? plan,
     String? email,
+    bool? verified,
+    String? imageUrl,
   }) {
     return User(
-      id: id ?? this.id,
       userId: userId ?? this.userId,
-      name: name ?? this.name,
-      lastname: lastname ?? this.lastname,
-      documentNum: documentNum ?? this.documentNum,
+      profileId: profileId ?? this.profileId,
+      firstName: firstName ?? this.firstName,
+      lastName: lastName ?? this.lastName,
+      plan: plan ?? this.plan,
       email: email ?? this.email,
+      verified: verified ?? this.verified,
+      imageUrl: imageUrl ?? this.imageUrl,
     );
   }
 
   static const empty = User(
-    id: 0,
     userId: 0,
-    name: '',
-    lastname: '',
-    documentNum: '',
+    profileId: 0,
+    firstName: '',
+    lastName: '',
+    plan: '',
     email: '',
+    verified: false,
+    imageUrl: '',
   );
 
   static const emptySkeletonizer = User(
-    id: 1,
     userId: 1,
-    name: 'Name',
-    lastname: 'Lastname',
-    documentNum: 'Document',
+    profileId: 1,
+    firstName: 'Name',
+    lastName: 'Lastname',
+    plan: 'Plan',
     email: 'email@email.com',
+    verified: true,
+    imageUrl: '',
   );
 
-  get userFullName => '$name $lastname';
+  get userFullName => '$firstName $lastName $email';
 }

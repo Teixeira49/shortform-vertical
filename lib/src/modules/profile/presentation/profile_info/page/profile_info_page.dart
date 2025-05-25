@@ -5,8 +5,10 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:venetiktok/l10n/l10n.dart';
+import 'package:venetiktok/src/variables/constants/constants.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
+import '../../../../../shared/core/utils/asset_icons.dart';
 import '../../../../../shared/features/blocs/get_current_user_bloc/bloc.dart';
 import '../../../../../shared/features/entities/entities/entities.dart';
 import '../../../../../shared/features/entities/enums/custom_dialog_type.dart';
@@ -15,7 +17,9 @@ import '../../../../../shared/features/widgets/base_layout.dart';
 import '../../../../../shared/features/widgets/custom_dialog.dart';
 import '../../../../../shared/features/widgets/custom_loading_dialog.dart';
 import '../../../../../shared/features/widgets/custom_modal.dart';
+import '../../../../../shared/features/widgets/custom_tag.dart';
 import '../../../../../shared/features/widgets/movie_target.dart';
+import '../../../../../shared/features/widgets/on_error_widget.dart';
 import '../../../../../theme/extended_text_theme.dart';
 import '../../../../../variables/values/values.dart';
 import '../../../../auth/domain/use_cases/sign_out_user.dart';
@@ -95,10 +99,10 @@ class ProfilePage extends StatelessWidget {
   SliverWoltModalSheetPage selectOption(context) {
     return SliverWoltModalSheetPage(
         hasSabGradient: false,
-        topBarTitle: Text(
-          'Options',
-          style: TextStyle(color: Colors.black),
-        ),
+        //topBarTitle: Text(
+        //  'Options',
+        //  style: TextStyle(color: Colors.black),
+        //),
         isTopBarLayerAlwaysVisible: true,
         mainContentSliversBuilder: (BuildContext context) => [
               SliverList(
@@ -223,15 +227,7 @@ class _ProfileView extends StatelessWidget {
           },
         ),
       ],
-      child: _ProfileInfoBody(
-        user: User(
-            id: 1,
-            userId: 1,
-            name: 'John',
-            lastname: 'Doe',
-            documentNum: '12312412',
-            email: 'javiertxr@gmail.com'),
-      ),
+      child: _ProfileInfoBody(),
     );
   }
 }

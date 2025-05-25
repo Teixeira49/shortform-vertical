@@ -1,11 +1,7 @@
 part of '../page/profile_history_page.dart';
 
 class _ProfileHistoryBody extends StatelessWidget {
-  const _ProfileHistoryBody({
-    required this.user,
-  });
-
-  final User user;
+  const _ProfileHistoryBody();
 
   @override
   Widget build(BuildContext context) {
@@ -111,57 +107,80 @@ class _ProfileHistoryBody extends StatelessWidget {
               'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
     ];
 
-    return BaseLayout(
-        automaticallyImplyLeading: false,
-        child: SingleChildScrollView(
-          child: Column(
-            spacing: WidthValues.padding,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Gap(WidthValues.spacingXs),
-              Text(
-                context.l10n.searchLabel,
-                style: TextStyle(
-                  fontSize: 19,
-                  fontWeight: FontWeight.bold,
-                ),
+    return BlocBuilder<GetCurrentUserBloc, GetCurrentUserState>(
+        buildWhen: (previous, current) => previous.status != current.status,
+        builder: (context, state) {
+          final user = state.user;
+          final status = state.status;
+
+          final isLoading = status.isLoading || status.isInitial;
+
+          Widget? body;
+
+          if (status.isFailure) {
+            body = Center(
+              child: OnErrorWidget(
+                icon: Icons.close,
+                iconBackgroundColor: ColorValues.fgErrorPrimary(context),
+                onRetry: () => context
+                    .read<GetCurrentUserBloc>()
+                    .add(GetCurrentUserRetryButtonPressed()),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: TextField(
-                  //controller: _searchController,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: context.l10n.searchByLabel,
-                    hintStyle: const TextStyle(color: Colors.grey),
-                    border: InputBorder.none,
-                    prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                    suffixIcon: IconButton(
-                      icon: const Icon(Icons.mic, color: Colors.grey),
-                      onPressed: () {}, // opcional: búsqueda por voz
+            );
+          }
+          return BaseLayout(
+              automaticallyImplyLeading: false,
+              child: SingleChildScrollView(
+                child: Column(
+                  spacing: WidthValues.padding,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Gap(WidthValues.spacingXs),
+                    Text(
+                      context.l10n.searchLabel,
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  //onChanged: (value) => setState(() => _query = value),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: TextField(
+                        //controller: _searchController,
+                        style: TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          hintText: context.l10n.searchByLabel,
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border: InputBorder.none,
+                          prefixIcon:
+                              const Icon(Icons.search, color: Colors.grey),
+                          suffixIcon: IconButton(
+                            icon: const Icon(Icons.mic, color: Colors.grey),
+                            onPressed: () {}, // opcional: búsqueda por voz
+                          ),
+                        ),
+                        //onChanged: (value) => setState(() => _query = value),
+                      ),
+                    ),
+                    Gap(WidthValues.spacingXs),
+                    Text(
+                      context.l10n.moviesLabel,
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Gap(WidthValues.spacing2Md),
+                    ..._buildMoviesRows(tempList, isLoading),
+                    Gap(WidthValues.padding),
+                  ],
                 ),
-              ),
-              Gap(WidthValues.spacingXs),
-              Text(
-                context.l10n.moviesLabel,
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 19,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Gap(WidthValues.spacing2Md),
-              ..._buildMoviesRows(tempList, false),
-              Gap(WidthValues.padding),
-            ],
-          ),
-        ));
+              ));
+        });
   }
 
   List<Widget> _buildMoviesRows(List<Movie> movies, bool isLoading) {

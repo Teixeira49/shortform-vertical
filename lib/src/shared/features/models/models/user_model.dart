@@ -6,33 +6,39 @@ import '../../entities/entities/entities.dart';
 
 class UserModel extends User {
   const UserModel({
-    required super.id,
     required super.userId,
-    required super.name,
-    required super.lastname,
-    required super.documentNum,
+    required super.profileId,
+    required super.firstName,
+    required super.lastName,
+    required super.plan,
     required super.email,
+    required super.verified,
+    required super.imageUrl,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'id': id,
       'user_id': userId,
-      'name': name,
-      'lastname': lastname,
-      'document_num': documentNum,
+      'profile_id': profileId,
+      'first_name': firstName,
+      'last_name': lastName,
+      'plan': plan,
       'email': email,
+      'verified': verified,
+      'image_url': imageUrl,
     };
   }
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      id: map['id'] as int? ?? 0,
       userId: map['user_id'] as int? ?? 0,
-      name: map['name'] as String? ?? '',
-      lastname: map['lastname'] as String? ?? '',
-      documentNum: map['document_num'] as String? ?? '',
+      profileId: map['profile_id'] as int? ?? 0,
+      firstName: map['first_name'] as String? ?? '',
+      lastName: map['last_name'] as String? ?? '',
+      plan: map['plan'] as String? ?? '',
       email: map['email'] as String? ?? '',
+      verified: map['verified'] as bool? ?? false,
+      imageUrl: map['image_url'] as String? ?? '',
     );
   }
 
@@ -43,12 +49,14 @@ class UserModel extends User {
 
   User toEntity() {
     return User(
-      id: id,
       userId: userId,
-      name: name,
-      lastname: lastname,
-      documentNum: documentNum,
+      profileId: profileId,
+      firstName: firstName,
+      lastName: lastName,
+      plan: plan,
       email: email,
+      verified: verified,
+      imageUrl: imageUrl,
     );
   }
 }

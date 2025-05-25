@@ -4,6 +4,7 @@ import '../../models/models/app_api_rest_response_model.dart';
 import '../../utils/http_manager.dart';
 import 'user_api.dart';
 import 'user_endpoints.dart';
+import 'dart:convert';
 
 class UserApiRest implements IUserApi {
   UserApiRest({
@@ -17,18 +18,27 @@ class UserApiRest implements IUserApi {
 
   @override
   Future<UserModel?> getCurrentUser({required String token}) async {
+
+    // NOTE: Hardcode for demo purposes
+    String complete = '';
+    if (token == "brocolisoftware@gmail.com") {
+      complete += '1.json';
+    } else if (token == "andrea.lopez@gmail.com") {
+      complete += '2.json';
+    }
+
     try {
       final response = await _client.request(
-        endpoint: _apiUrl + UserEndpoints.getCurrentUser,
-        customHeader: {
-          HttpConstants.tokenHeader: 'Bearer $token',
-        },
+        endpoint: _apiUrl + UserEndpoints.getCurrentUser + complete,
+        //customHeader: {
+        //  HttpConstants.tokenHeader: 'Bearer $token',
+        //},
       );
 
       final data = AppApiRestResponseModel.fromJson(response.data as String);
 
       if (response.statusCode == 200) {
-        return UserModel.fromMap(data.data);
+        return UserModel.fromMap(json.decode(response.data)); // Chance in a upper version
       }
 
       return null;

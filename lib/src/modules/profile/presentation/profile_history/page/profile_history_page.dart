@@ -9,6 +9,7 @@ import '../../../../../shared/features/entities/entities/entities.dart';
 import '../../../../../shared/features/use_cases/get_current_user.dart';
 import '../../../../../shared/features/widgets/base_layout.dart';
 import '../../../../../shared/features/widgets/movie_target.dart';
+import '../../../../../shared/features/widgets/on_error_widget.dart';
 import '../../../../../variables/values/values.dart';
 
 part '../widgets/profile_history_body.dart';
@@ -75,8 +76,6 @@ class _ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  _ProfileHistoryBody(
-        user: User(id: 1, userId: 1, name: 'John', lastname: 'Doe', documentNum: '12312412', email: 'javiertxr@gmail.com'),
-    );
+    return  _ProfileHistoryBody();
   }
 }

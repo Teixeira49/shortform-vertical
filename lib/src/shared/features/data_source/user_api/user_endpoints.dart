@@ -1,3 +1,3 @@
 class UserEndpoints {
-  static const String getCurrentUser = '/mobile/client/profile';
+  static const String getCurrentUser = '/origin/user';
 }
