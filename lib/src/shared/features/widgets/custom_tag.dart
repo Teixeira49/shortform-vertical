@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/extended_text_theme.dart';
-import '../../../variables/values/color_values.dart';
 import '../../../variables/values/values.dart';
 
 /// {@template custom_tag}
@@ -93,7 +92,7 @@ class CustomTag extends StatelessWidget {
   //   );
   // }
 
-  factory CustomTag.green({
+  factory CustomTag.success({
     required BuildContext context,
     required Widget child,
     EdgeInsets? padding,
@@ -107,39 +106,117 @@ class CustomTag extends StatelessWidget {
     );
   }
 
-  // factory CustomTag.yellow({
-  //   required Widget child,
-  //   EdgeInsets? padding,
-  // }) {
-  //   return CustomTag(
-  //     border: Border.all(
-  //       color: Consts.warning.shade200,
-  //       width: 1,
-  //     ),
-  //     backgroundColor: Consts.warning.shade50,
-  //     foregroundColor: Consts.warning.shade500,
-  //     iconColor: Consts.warning.shade500,
-  //     padding: padding,
-  //     child: child,
-  //   );
-  // }
+  factory CustomTag.green({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.tagGreenBg(context),
+      foregroundColor: ColorValues.tagGreenFg(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
 
-  // factory CustomTag.red({
-  //   required Widget child,
-  //   EdgeInsets? padding,
-  // }) {
-  //   return CustomTag(
-  //     border: Border.all(
-  //       color: Consts.error.shade200,
-  //       width: 1,
-  //     ),
-  //     backgroundColor: Consts.error.shade50,
-  //     foregroundColor: Consts.error.shade600,
-  //     iconColor: Consts.error.shade600,
-  //     padding: padding,
-  //     child: child,
-  //   );
-  // }
+  factory CustomTag.blue({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.tagBlueBg(context),
+      foregroundColor: ColorValues.tagBlueFg(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
+
+  factory CustomTag.red({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.tagRedBg(context),
+      foregroundColor: ColorValues.tagRedFg(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
+
+  factory CustomTag.yellow({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.tagYellowBg(context),
+      foregroundColor: ColorValues.tagYellowFg(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
+
+  factory CustomTag.orange({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.tagOrangeBg(context),
+      foregroundColor: ColorValues.tagOrangeFg(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
+
+  factory CustomTag.pink({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.tagPinkBg(context),
+      foregroundColor: ColorValues.tagPinkFg(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
+
+  factory CustomTag.purple({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.tagPurpleBg(context),
+      foregroundColor: ColorValues.tagPurpleFg(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
+
+  factory CustomTag.brand({
+    required BuildContext context,
+    required Widget child,
+    EdgeInsets? padding,
+  }) {
+    return CustomTag(
+      backgroundColor: ColorValues.bgBrandSecondary(context),
+      foregroundColor: ColorValues.fgBrandSecondary(context),
+      iconColor: ColorValues.utilitySuccess600(context),
+      padding: padding,
+      child: child,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
