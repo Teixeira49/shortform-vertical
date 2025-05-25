@@ -76,4 +76,36 @@ class MetadataModel extends Metadata {
         availDate.hashCode ^
         expDate.hashCode;
   }
+
+  MetadataModel copyWith({
+    String? title,
+    String? actors,
+    String? directors,
+    String? rating,
+    String? synopsis,
+    String? availDate,
+    String? expDate,
+  }) {
+    return MetadataModel(
+      title: title ?? this.title,
+      actors: actors ?? this.actors,
+      directors: directors ?? this.directors,
+      rating: rating ?? this.rating,
+      synopsis: synopsis ?? this.synopsis,
+      availDate: availDate ?? this.availDate,
+      expDate: expDate ?? this.expDate,
+    );
+  }
+
+  Metadata toEntity() {
+    return Metadata(
+      title: title,
+      actors: actors,
+      directors: directors,
+      rating: rating,
+      synopsis: synopsis,
+      availDate: availDate,
+      expDate: expDate,
+    );
+  }
 }

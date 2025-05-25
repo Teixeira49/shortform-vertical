@@ -29,11 +29,57 @@ class VideoModel extends Video {
 
   factory VideoModel.fromMap(Map<String, dynamic> map) {
     return VideoModel(
-        assetName: map['Asset Name'] as String,
-        images: VideoImageModel.fromMap(map['Images'] as Map<String, dynamic>),
-        videos: VideoFormatModel.fromMap(map['Videos'] as Map<String, dynamic>),
-        metadata: MetadataModel.fromMap(map['Metadata'] as Map<String, dynamic>),
+      assetName: map['Asset Name'] as String,
+      images: VideoImageModel.fromMap(map['Images'] as Map<String, dynamic>),
+      videos: VideoFormatModel.fromMap(map['Videos'] as Map<String, dynamic>),
+      metadata: MetadataModel.fromMap(map['Metadata'] as Map<String, dynamic>),
+    );
+  }
 
+  @override
+  String toString() {
+    return 'VideoModel(assetName: $assetName, images: $images, videos: $videos, metadata: $metadata)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is VideoModel &&
+        other.assetName == assetName &&
+        other.images == images &&
+        other.videos == videos &&
+        other.metadata == metadata;
+  }
+
+  @override
+  int get hashCode {
+    return assetName.hashCode ^
+        images.hashCode ^
+        videos.hashCode ^
+        metadata.hashCode;
+  }
+
+  VideoModel copyWith({
+    String? assetName,
+    VideoImage? images,
+    VideoFormat? videos,
+    Metadata? metadata,
+  }) {
+    return VideoModel(
+      assetName: assetName ?? this.assetName,
+      images: images ?? this.images,
+      videos: videos ?? this.videos,
+      metadata: metadata ?? this.metadata,
+    );
+  }
+
+  Video toEntity() {
+    return Video(
+      assetName: assetName,
+      images: images,
+      videos: videos,
+      metadata: metadata,
     );
   }
 }
@@ -73,6 +119,20 @@ class VideoImageModel extends VideoImage {
 
   @override
   int get hashCode => images.hashCode;
+
+  VideoImageModel copyWith({
+    MediaData? images,
+  }) {
+    return VideoImageModel(
+      images: images ?? this.images,
+    );
+  }
+
+  VideoImage toEntity() {
+    return VideoImage(
+      images: images,
+    );
+  }
 }
 
 class VideoFormatModel extends VideoFormat {
@@ -109,10 +169,27 @@ class VideoFormatModel extends VideoFormat {
     if (identical(this, other)) return true;
 
     return other is VideoFormatModel &&
-      other.hlsUrl == hlsUrl &&
-      other.dashUrl == dashUrl;
+        other.hlsUrl == hlsUrl &&
+        other.dashUrl == dashUrl;
   }
 
   @override
   int get hashCode => hlsUrl.hashCode ^ dashUrl.hashCode;
+
+  VideoFormatModel copyWith({
+    MediaData? hlsUrl,
+    MediaData? dashUrl
+  }) {
+    return VideoFormatModel(
+      hlsUrl: hlsUrl ?? this.hlsUrl,
+      dashUrl: dashUrl ?? this.dashUrl,
+    );
+  }
+
+  VideoFormat toEntity() {
+    return VideoFormat(
+      hlsUrl: hlsUrl,
+      dashUrl: dashUrl,
+    );
+  }
 }

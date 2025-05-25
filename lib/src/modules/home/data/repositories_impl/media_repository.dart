@@ -5,6 +5,7 @@ import 'package:venetiktok/src/modules/home/data/models/models.dart';
 import 'package:venetiktok/src/modules/home/domain/entities/params/feed_video_params.dart';
 import 'package:venetiktok/src/modules/home/domain/repositories/media_repository.dart';
 
+import '../../domain/entities/entities.dart';
 import '../data_source/remote/media_api.dart';
 
 class MediaRepository implements IMediaRepository {
@@ -13,7 +14,7 @@ class MediaRepository implements IMediaRepository {
   final IMediaApi _mediaApi;
 
   @override
-  Future<List<VideoModel>> getVideos({required FeedVideoParams params}) async {
+  Future<List<Video>> getVideos({required FeedVideoParams params}) async {
     try {
       log('📡 Getting videos...', name: 'MediaRepositoryImpl.getVideos()');
 
@@ -29,7 +30,7 @@ class MediaRepository implements IMediaRepository {
           '✅ Videos found: ${response.length}',
           name: 'MediaRepositoryImpl.getVideos()',
         );
-        return response;
+        return response.map((e) => e.toEntity()).toList();
       }
     } catch (e, s) {
       log(

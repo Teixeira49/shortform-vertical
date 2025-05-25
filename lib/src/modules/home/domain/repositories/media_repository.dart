@@ -1,4 +1,3 @@
-import '../../data/models/entities_model/entities.dart';
 import '../entities/entities.dart';
 
 abstract class IMediaRepository {
@@ -9,5 +8,5 @@ abstract class IMediaRepository {
   ///
   /// **Returns:**
   /// - A [Future] of [List<VideoModel>] with the videos.
-  Future<List<VideoModel>> getVideos({required FeedVideoParams params});
+  Future<List<Video>> getVideos({required FeedVideoParams params});
 }

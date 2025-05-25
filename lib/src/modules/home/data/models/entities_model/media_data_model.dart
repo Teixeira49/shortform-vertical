@@ -41,4 +41,21 @@ class MediaDataModel extends MediaData {
 
   @override
   int get hashCode => label.hashCode ^ url.hashCode;
+
+  MediaDataModel copyWith({
+    String? label,
+    String? url,
+  }) {
+    return MediaDataModel(
+      label: label ?? this.label,
+      url: url ?? this.url,
+    );
+  }
+
+  MediaData toEntity() {
+    return MediaData(
+      label: label,
+      url: url,
+    );
+  }
 }

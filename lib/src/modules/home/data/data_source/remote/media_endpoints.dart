@@ -1,3 +1,3 @@
 class MediaEndpoints {
-  static const String feed = 'https://api.themoviedb.org/3';
+  static const String feed = 'origin/assets.json';
 }

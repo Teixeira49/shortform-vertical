@@ -1,4 +1,3 @@
-import '../../data/models/entities_model/entities.dart';
 import '../entities/entities.dart';
 import '../repositories/media_repository.dart';
 
@@ -24,7 +23,7 @@ class GetNewVideosUseCase {
   /// **Throws:**
   /// - [Exception] if an error occurs while fetching the videos.
   ///
-  Future<List<VideoModel>> execute({required FeedVideoParams params}) async {
+  Future<List<Video>> execute({required FeedVideoParams params}) async {
     try {
       return await _mediaRepository.getVideos(params: params);
     } catch (e) {
