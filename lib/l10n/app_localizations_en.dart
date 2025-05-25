@@ -170,7 +170,13 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get seeMoreLabel => 'See more';
+  String get seeMoreLabel => 'See More';
+
+  @override
+  String get appStandardErrorMessage => 'An error occurred';
+
+  @override
+  String get appRetryButtonLabel=> 'Retry';
 
   @override
   String get appConnectionErrorTitle => 'Connection error';

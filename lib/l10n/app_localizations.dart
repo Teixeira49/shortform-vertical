@@ -419,6 +419,18 @@ abstract class AppLocalizations {
   /// **'See more'**
   String get seeMoreLabel;
 
+  /// No description provided for @appStandardErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'An error ocurred'**
+  String get appStandardErrorMessage;
+
+  /// No description provided for @appRetryButtonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get appRetryButtonLabel;
+
   /// No description provided for @kudoConnectionErrorTitle.
   ///
   /// In en, this message translates to:

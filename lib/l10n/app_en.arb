@@ -54,6 +54,8 @@
     "notificationLabel": "Notifications",
     "welcomeWithNameLabel": "Welcome, {name}",
     "seeMoreLabel": "See more",
+    "appStandardErrorMessage": "An error ocurred",
+    "appRetryButtonLabel": "Retry",
     "appConnectionErrorTitle": "Connection error",
     "appConnectionErrorNoInternetDescription": "Please check your internet connection and try again.",
     "appConnectionErrorVpnDetectedTitle": "VPN detected",
