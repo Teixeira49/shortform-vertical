@@ -1550,6 +1550,113 @@ class ColorValues {
   static Color buttonTertiaryErrorFg(BuildContext context) =>
       _buttonTertiaryErrorFg.getColor(context);
 
+  // ---------------------------------------------------------
+  // <----------------- Tags color values ------------------->
+  // ---------------------------------------------------------
+  // ----- Use this colors for any Tag used in the app. ------
+  // ---------------------------------------------------------
+
+  static final _tagGreenFg = _ColorScheme(
+    light: _ColorConstants.greenConstant.shade600,
+    dark: _ColorConstants.greenConstant.shade600,
+  );
+
+  static final _tagGreenBg = _ColorScheme(
+    light: _ColorConstants.greenConstant.shade100,
+    dark: _ColorConstants.greenConstant.shade800,
+  );
+
+  static final _tagRedFg = _ColorScheme(
+    light: _ColorConstants.redConstant.shade600,
+    dark: _ColorConstants.redConstant.shade600,
+  );
+
+  static final _tagRedBg = _ColorScheme(
+    light: _ColorConstants.redConstant.shade100,
+    dark: _ColorConstants.redConstant.shade800,
+  );
+
+  static final _tagYellowFg = _ColorScheme(
+    light: _ColorConstants.yellowConstant.shade600,
+    dark: _ColorConstants.yellowConstant.shade600,
+  );
+
+  static final _tagYellowBg = _ColorScheme(
+    light: _ColorConstants.yellowConstant.shade100,
+    dark: _ColorConstants.yellowConstant.shade800,
+  );
+
+  static final _tagBlueFg = _ColorScheme(
+    light: _ColorConstants.blueConstant.shade600,
+    dark: _ColorConstants.blueConstant.shade600,
+  );
+
+  static final _tagBlueBg = _ColorScheme(
+    light: _ColorConstants.blueConstant.shade100,
+    dark: _ColorConstants.blueConstant.shade800,
+  );
+
+  static final _tagOrangeFg = _ColorScheme(
+    light: _ColorConstants.orangeConstant.shade600,
+    dark: _ColorConstants.orangeConstant.shade600,
+  );
+
+  static final _tagOrangeBg = _ColorScheme(
+    light: _ColorConstants.orangeConstant.shade100,
+    dark: _ColorConstants.orangeConstant.shade800,
+  );
+
+  static final _tagPinkFg = _ColorScheme(
+    light: _ColorConstants.pinkConstant.shade600,
+    dark: _ColorConstants.pinkConstant.shade600,
+  );
+
+  static final _tagPinkBg = _ColorScheme(
+    light: _ColorConstants.pinkConstant.shade100,
+    dark: _ColorConstants.pinkConstant.shade800,
+  );
+
+  static final _tagPurpleFg = _ColorScheme(
+    light: _ColorConstants.purpleConstant.shade600,
+    dark: _ColorConstants.purpleConstant.shade600,
+  );
+
+  static final _tagPurpleBg = _ColorScheme(
+    light: _ColorConstants.purpleConstant.shade100,
+    dark: _ColorConstants.purpleConstant.shade800,
+  );
+
+  static Color tagGreenFg(BuildContext context) =>
+      _tagGreenFg.getColor(context);
+
+  static Color tagGreenBg(BuildContext context) =>
+      _tagGreenBg.getColor(context);
+
+  static Color tagRedFg(BuildContext context) => _tagRedFg.getColor(context);
+
+  static Color tagRedBg(BuildContext context) => _tagRedBg.getColor(context);
+
+  static Color tagYellowFg(BuildContext context) =>
+      _tagYellowFg.getColor(context);
+
+  static Color tagYellowBg(BuildContext context) =>
+      _tagYellowBg.getColor(context);
+
+  static Color tagBlueFg(BuildContext context) => _tagBlueFg.getColor(context);
+
+  static Color tagBlueBg(BuildContext context) => _tagBlueBg.getColor(context);
+
+  static Color tagOrangeFg(BuildContext context) => _tagOrangeFg.getColor(context);
+
+  static Color tagOrangeBg(BuildContext context) => _tagOrangeBg.getColor(context);
+
+  static Color tagPinkFg(BuildContext context) => _tagPinkFg.getColor(context);
+
+  static Color tagPinkBg(BuildContext context) => _tagPinkBg.getColor(context);
+
+  static Color tagPurpleFg(BuildContext context) => _tagPurpleFg.getColor(context);
+
+  static Color tagPurpleBg(BuildContext context) => _tagPurpleBg.getColor(context);
   // -------------------------------------------------------
   // <---------------- Icon color values ------------------>
   // -------------------------------------------------------

@@ -29,6 +29,24 @@ class AppConstants {
   static const String emptyTime = '';
 
   static const String skeleton = 'skeleton';
+
+  static const String emptyUrl = '';
+
+  static const String emptyText = '';
+
+  static const String emptyEmail = '';
+
+  static const String emptyPassword = '';
+
+  static const String verifiedUser = 'Verified';
+
+  static const String unverifiedUser = 'Unverified';
+
+  static const String freePlan = 'Free';
+
+  static const String premiumPlan = 'Premium';
+
+  static const String enterprisePlan = 'Enterprise';
 }
 
 class HttpConstants {
