@@ -16,7 +16,8 @@ class _LoginButton extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: (state.emailInput.value ==
                                 "brocolisoftware@gmail.com" ||
-                            state.emailInput.value == "andrea.lopez@gmail.com")
+                            state.emailInput.value == "andrea.lopez@gmail.com" ||
+                    state.emailInput.value == "alana.garcia@gmail.com")
                     ? () => context
                         .read<LoginBloc>()
                         .add(LoginSubmitButtonPressed())
