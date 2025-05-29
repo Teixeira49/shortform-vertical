@@ -10,6 +10,8 @@ import 'package:venetiktok/src/routes/branches/search_branch.dart';
 import 'package:venetiktok/src/routes/branches/home_branch.dart';
 import 'package:venetiktok/src/routes/branches/profile_branch.dart';
 import 'package:venetiktok/src/routes/shell_branches.dart';
+import 'package:venetiktok/src/shared/features/presentation/notifications/notifications.dart';
+import 'package:venetiktok/src/shared/features/presentation/premium_payments/page/premium_page.dart';
 import 'package:venetiktok/src/shared/features/presentation/success/page/success_page.dart';
 import 'package:venetiktok/src/shared/features/widgets/custom_page_transition.dart';
 
@@ -145,6 +147,30 @@ class AppRouter {
               key: state.pageKey,
               child: ProfileHistoryPage(
                 searchKey: state.extra! as int, // TODO Change
+              ),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) =>
+                  CustomPageTransition(animation: animation, child: child),
+            ),
+          ),
+          GoRoute(
+            path: NotificationsPage.path,
+            name: NotificationsPage.routeName,
+            pageBuilder: (context, state) => CustomTransitionPage(
+              key: state.pageKey,
+              child: NotificationsPage(),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) =>
+                  CustomPageTransition(animation: animation, child: child),
+            ),
+          ),
+
+          GoRoute(
+            path: PremiumPaywallPage.path,
+            name: PremiumPaywallPage.routeName,
+            pageBuilder: (context, state) => CustomTransitionPage(
+              key: state.pageKey,
+              child: PremiumPaywallPage(
               ),
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) =>
