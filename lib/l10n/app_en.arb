@@ -119,6 +119,23 @@
     "termsAndConditionsButton": "Terms and conditions",
     "getPremiumButton": "Get Premium",
     "searchByLabel": "Search by actor, title, genre, etc.",
-    "resultsLabel": "Results"
-
+    "resultsLabel": "Results",
+    "snackBarWarningDemo": "Not available in demo version",
+    "snackBarSaved": "Video saved successfully",
+    "premiumMessageLabel": "Enjoy your favorite clips to the fullest with Media Premium",
+    "premiumLabel": "Premium",
+    "premiumTitleLabel": "Premium Plans",
+    "premiumAvailablePlans": "Available plans",
+    "premiumButtonLabel": "Get {plan} plan",
+    "premiumRateYearLabel": "at year",
+    "premiumRateMonthLabel": "at Month",
+    "premiumWhyLabel": "Why I need Media Premium?",
+    "premiumReason1": "Watch videos without ads",
+    "premiumReason2": "Better playback quality",
+    "premiumReason3": "Access to exclusive content",
+    "reportLabel": "Report Content",
+    "reportFeedbackLabel": "Please describe why the video content is not suitable for the platform.",
+    "reportVideoTitle": "Video title: {element}",
+    "notificationsLabel": "Notifications",
+    "notificationsHaveNotNotificationsLabel": "You don't have notifications"
 }
