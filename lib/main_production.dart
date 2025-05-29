@@ -32,7 +32,8 @@ void main() async {
         authApiUrl: apiHost,
         userApiUrl: apiHost,
         mediaApiUrl: apiHost,
-        profileApiUrl: apiHost
+        profileApiUrl: apiHost,
+        searchApiUrl: apiHost,
       ),
     );
   });

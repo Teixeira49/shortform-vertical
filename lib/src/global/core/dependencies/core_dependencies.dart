@@ -12,6 +12,10 @@ import '../../../modules/profile/data/data_source/remote/profile_api.dart';
 import '../../../modules/profile/data/data_source/remote/profile_api_rest.dart';
 import '../../../modules/profile/data/repositories_impl/profile_repository.dart';
 import '../../../modules/profile/domain/repositories/profile_repository.dart';
+import '../../../modules/search/data/data_source/remote/search_api.dart';
+import '../../../modules/search/data/data_source/remote/search_api_rest.dart';
+import '../../../modules/search/data/repositories_impl/search_repository.dart';
+import '../../../modules/search/domain/repositories/repositories.dart';
 import '../../../shared/features/data_source/device_storage/device_storage_api.dart';
 import '../../../shared/features/data_source/device_storage/device_storage_flutter_secure.dart';
 import '../../../shared/features/data_source/user_api/user_api.dart';
@@ -26,6 +30,7 @@ class CoreDependencies implements BaseModuleDependencies {
     required this.userRepository,
     required this.mediaRepository,
     required this.profileRepository,
+    required this.searchRepository,
   });
 
   /// Handy method to reuse a base [CoreDependencies] constructor
@@ -35,18 +40,21 @@ class CoreDependencies implements BaseModuleDependencies {
     required String userApiUrl,
     required String mediaApiUrl,
     required String profileApiUrl,
+    required String searchApiUrl,
   }) {
     late final IAuthApi authApi;
     late final IUserApi userApi;
     late final IMediaApi mediaApi;
     late final IDeviceStorageApi secureStorage;
     late final IProfileApi profileApi;
+    late final ISearchApi searchApi;
 
     authApi = AuthApiRest(apiUrl: authApiUrl);
     userApi = UserApiRest(apiUrl: userApiUrl);
     mediaApi = MediaApiRest(apiUrl: mediaApiUrl);
     secureStorage = const FlutterSecureStorageApi();
     profileApi = ProfileApiRest(apiUrl: profileApiUrl);
+    searchApi = SearchApiRest(apiUrl: searchApiUrl);
 
     return CoreDependencies(
       authRepository: AuthRepository(authApi: authApi, storage: secureStorage),
@@ -56,6 +64,7 @@ class CoreDependencies implements BaseModuleDependencies {
         profileApi: profileApi,
         storage: secureStorage,
       ),
+      searchRepository: SearchRepository(searchApi: searchApi),
     );
   }
 
@@ -64,12 +73,14 @@ class CoreDependencies implements BaseModuleDependencies {
     required String userApiUrl,
     required String mediaApiUrl,
     required String profileApiUrl,
+    required String searchApiUrl,
   }) {
     return CoreDependencies._(
       authApiUrl: authApiUrl,
       userApiUrl: userApiUrl,
       mediaApiUrl: mediaApiUrl,
       profileApiUrl: profileApiUrl,
+      searchApiUrl: searchApiUrl,
     );
   }
 
@@ -78,12 +89,14 @@ class CoreDependencies implements BaseModuleDependencies {
     required String userApiUrl,
     required String mediaApiUrl,
     required String profileApiUrl,
+    required String searchApiUrl,
   }) {
     return CoreDependencies._(
       authApiUrl: authApiUrl,
       userApiUrl: userApiUrl,
       mediaApiUrl: mediaApiUrl,
       profileApiUrl: profileApiUrl,
+      searchApiUrl: searchApiUrl,
     );
   }
 
@@ -91,6 +104,7 @@ class CoreDependencies implements BaseModuleDependencies {
   final IUserRepository userRepository;
   final IMediaRepository mediaRepository;
   final IProfileRepository profileRepository;
+  final ISearchRepository searchRepository;
 
   @override
   List<RepositoryProvider> repositoryProviders() {
@@ -102,6 +116,9 @@ class CoreDependencies implements BaseModuleDependencies {
       ),
       RepositoryProvider<IProfileRepository>(
         create: (context) => profileRepository,
+      ),
+      RepositoryProvider<ISearchRepository>(
+        create: (context) => searchRepository,
       ),
     ];
   }

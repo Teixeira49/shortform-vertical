@@ -11,34 +11,53 @@ class MovieTarget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: WidthValues.spacingMd,
-        children: [
-          Expanded(
-              flex: 3,
-              child: ClipRRect(
-                borderRadius:
-                    BorderRadius.all(Radius.circular(WidthValues.radiusSm)),
-                child: Image.network(
-                  url,
-                  fit: BoxFit.cover,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      spacing: WidthValues.spacingMd,
+      children: [
+        Expanded(
+          flex: 3,
+          child: Stack(
+            children: [
+              Container(
+                alignment: Alignment.center,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: ColorValues.utilityGray700(context).withOpacity(0.5),
+                  borderRadius:
+                      BorderRadius.all(Radius.circular(WidthValues.radiusSm)),
                 ),
-              )),
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.only(left: 10),
-            child: Text(
-              title,
-              textAlign: TextAlign.justify,
-              maxLines: 2,
-              style: ExtendedTextTheme.textMedium(context),
-            ),
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.all(Radius.circular(WidthValues.radiusSm)),
+                  child: Image.network(
+                    url,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 4,
+                right: 4,
+                child: Icon(
+                  Icons.more_vert_outlined,
+                  color: ColorValues.utilityGray50(context),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-      Positioned(top: 4, right: 4, child: Icon(Icons.more_vert_outlined))
-    ]);
+        ),
+        Container(
+          alignment: Alignment.centerLeft,
+          padding: EdgeInsets.only(left: 10),
+          child: Text(
+            title,
+            textAlign: TextAlign.justify,
+            maxLines: 2,
+            style: ExtendedTextTheme.textMedium(context),
+          ),
+        ),
+      ],
+    );
   }
 }

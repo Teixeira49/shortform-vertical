@@ -33,6 +33,7 @@ void main() async {
         userApiUrl: apiHost,
         mediaApiUrl: apiHost,
         profileApiUrl: apiHost,
+        searchApiUrl: apiHost,
       ),
     );
   });
