@@ -62,6 +62,8 @@ class _ProfileInfoBody extends StatelessWidget {
                     leading: Icon(Icons.download),
                     title: Text("Conoce tus videos descargados"),
                     trailing: Icon(Icons.navigate_next),
+                    onTap: () => CustomSnackBar.showWarningBar(
+                        context, context.l10n.snackBarWarningDemo),
                   ),
                   Divider(),
                   Text("ver. 1.0.0+1"),

@@ -16,6 +16,7 @@ import '../../../../../shared/features/blocs/get_current_user_bloc/bloc.dart';
 import '../../../../../shared/features/entities/entities/entities.dart';
 import '../../../../../shared/features/entities/enums/custom_dialog_type.dart';
 import '../../../../../shared/features/presentation/notifications/notifications.dart';
+import '../../../../../shared/features/presentation/premium_payments/page/premium_page.dart';
 import '../../../../../shared/features/use_cases/get_current_user.dart';
 import '../../../../../shared/features/widgets/base_layout.dart';
 import '../../../../../shared/features/widgets/custom_dialog.dart';
@@ -135,26 +136,35 @@ class ProfilePage extends StatelessWidget {
                     trailing: Icon(Icons.arrow_forward_ios),
                     title: Text('Edit Profile'),
                     leading: Icon(Icons.edit_outlined),
+                    onTap: () => CustomSnackBar.showWarningBar(
+                        context, context.l10n.snackBarWarningDemo),
                   ),
                   ListTile(
                     trailing: Icon(Icons.arrow_forward_ios),
                     title: Text('About my account'),
                     leading: Icon(Icons.account_circle_outlined),
+                    onTap: () => CustomSnackBar.showWarningBar(
+                        context, context.l10n.snackBarWarningDemo),
                   ),
                   ListTile(
                     trailing: Icon(Icons.arrow_forward_ios),
                     title: Text('Settings'),
                     leading: Icon(Icons.settings_outlined),
+                    onTap: () => CustomSnackBar.showWarningBar(
+                        context, context.l10n.snackBarWarningDemo),
                   ),
                   ListTile(
                     trailing: Icon(Icons.arrow_forward_ios),
                     title: Text('Help'),
                     leading: Icon(Icons.help_outline),
+                    onTap: () => CustomSnackBar.showWarningBar(
+                        context, context.l10n.snackBarWarningDemo),
                   ),
                   ListTile(
                     trailing: Icon(Icons.arrow_forward_ios),
                     title: Text('Get Premium'),
                     leading: Icon(Icons.star_border_outlined),
+                    onTap: () => context.push(PremiumPaywallPage.path),
                   ),
                   ListTile(
                         trailing: Icon(Icons.arrow_forward_ios),
