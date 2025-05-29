@@ -360,8 +360,8 @@ class ColorValues {
   );
 
   static final _fgBrandSecondary = _ColorScheme(
-    light: _ColorConstants.brandColor,
-    dark: _ColorConstants.brandColor,
+    light: _ColorConstants.brandSecondColor,
+    dark: _ColorConstants.brandSecondColor,
   );
 
   static final _fgErrorPrimary = _ColorScheme(

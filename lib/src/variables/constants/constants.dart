@@ -47,6 +47,8 @@ class AppConstants {
   static const String premiumPlan = 'Premium';
 
   static const String enterprisePlan = 'Enterprise';
+
+  static const String visitorUser = "User not registered";
 }
 
 class HttpConstants {
