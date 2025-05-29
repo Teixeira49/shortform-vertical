@@ -25,6 +25,8 @@ class UserApiRest implements IUserApi {
       complete += '1.json';
     } else if (token == "andrea.lopez@gmail.com") {
       complete += '2.json';
+    } else if (token == "alana.garcia@gmail.com") {
+      complete += '3.json';
     }
 
     try {
