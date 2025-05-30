@@ -154,7 +154,7 @@ class AuthRepository implements IAuthRepository {
       );
       await _storage.deleteValue(_storageTokenKey);
 
-      await _authApi.signOut();
+      //await _authApi.signOut();
 
 
       //await _storage.deleteValue('user');

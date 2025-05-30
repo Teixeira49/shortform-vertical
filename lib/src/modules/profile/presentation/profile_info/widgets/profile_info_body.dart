@@ -13,20 +13,56 @@ class _ProfileInfoBody extends StatelessWidget {
             onPressed: () => context.push(NotificationsPage.path),
             icon: const Icon(Icons.notifications_outlined),
           ),
-          BlocBuilder<SignOutBloc, SignOutState>(builder: (context, state) {
-            return IconButton(
+          IconButton(
               onPressed: () => showModalBottomSheet<void>(
                 context: context,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
                 ),
                 builder: (BuildContext context) {
-                  return ModalOptions();
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          trailing: Icon(Icons.arrow_forward_ios),
+                          title: Text('Edit Profile'),
+                          leading: Icon(Icons.edit_outlined),
+                          onTap: () => CustomSnackBar.showWarningBar(
+                              context, context.l10n.snackBarWarningDemo),
+                        ),
+                        ListTile(
+                          trailing: Icon(Icons.arrow_forward_ios),
+                          title: Text('About my account'),
+                          leading: Icon(Icons.account_circle_outlined),
+                          onTap: () => CustomSnackBar.showWarningBar(
+                              context, context.l10n.snackBarWarningDemo),
+                        ),
+                        ListTile(
+                          trailing: Icon(Icons.arrow_forward_ios),
+                          title: Text('Settings'),
+                          leading: Icon(Icons.settings_outlined),
+                          onTap: () => CustomSnackBar.showWarningBar(
+                              context, context.l10n.snackBarWarningDemo),
+                        ),
+                        ListTile(
+                          trailing: Icon(Icons.arrow_forward_ios),
+                          title: Text('Help'),
+                          leading: Icon(Icons.help_outline),
+                          onTap: () => CustomSnackBar.showWarningBar(
+                              context, context.l10n.snackBarWarningDemo),
+                        ),
+                        ListTile(
+                          trailing: Icon(Icons.arrow_forward_ios),
+                          title: Text('Get Premium'),
+                          leading: Icon(Icons.star_border_outlined),
+                          onTap: () => context.push(PremiumPaywallPage.path),
+                        ),
+                      ],
+                    );
                 },
               ),
               icon: const Icon(Icons.more_vert_outlined),
-            );
-          })
+            )
         ],
         actionsPadding: EdgeInsets.only(right: WidthValues.padding),
       ),
@@ -99,6 +135,13 @@ class _ProfileInfoBody extends StatelessWidget {
                           onTap: () => CustomSnackBar.showWarningBar(
                               context, context.l10n.snackBarWarningDemo),
                         ),
+                        ListTile(
+                            trailing: Icon(Icons.navigate_next),
+                            title: Text('Log out'),
+                            leading: Icon(Icons.logout),
+                            onTap: () {
+                              context.read<SignOutBloc>().add(SignOutButtonPressed());
+                            }),
                         Divider(),
                         Text("ver. 1.0.0+1"),
                         Gap(WidthValues.spacingSm),
@@ -110,63 +153,6 @@ class _ProfileInfoBody extends StatelessWidget {
         },
       ),
     );
-  }
-}
-
-class ModalOptions extends StatelessWidget {
-  const ModalOptions({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SignOutBloc, SignOutState>(builder: (context, state) {
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ListTile(
-            trailing: Icon(Icons.arrow_forward_ios),
-            title: Text('Edit Profile'),
-            leading: Icon(Icons.edit_outlined),
-            onTap: () => CustomSnackBar.showWarningBar(
-                context, context.l10n.snackBarWarningDemo),
-          ),
-          ListTile(
-            trailing: Icon(Icons.arrow_forward_ios),
-            title: Text('About my account'),
-            leading: Icon(Icons.account_circle_outlined),
-            onTap: () => CustomSnackBar.showWarningBar(
-                context, context.l10n.snackBarWarningDemo),
-          ),
-          ListTile(
-            trailing: Icon(Icons.arrow_forward_ios),
-            title: Text('Settings'),
-            leading: Icon(Icons.settings_outlined),
-            onTap: () => CustomSnackBar.showWarningBar(
-                context, context.l10n.snackBarWarningDemo),
-          ),
-          ListTile(
-            trailing: Icon(Icons.arrow_forward_ios),
-            title: Text('Help'),
-            leading: Icon(Icons.help_outline),
-            onTap: () => CustomSnackBar.showWarningBar(
-                context, context.l10n.snackBarWarningDemo),
-          ),
-          ListTile(
-            trailing: Icon(Icons.arrow_forward_ios),
-            title: Text('Get Premium'),
-            leading: Icon(Icons.star_border_outlined),
-            onTap: () => context.push(PremiumPaywallPage.path),
-          ),
-          ListTile(
-              trailing: Icon(Icons.arrow_forward_ios),
-              title: Text('Log out'),
-              leading: Icon(Icons.logout),
-              onTap: () {
-                context.read<SignOutBloc>().add(SignOutButtonPressed());
-                Navigator.pop(context);
-              })
-        ],
-      );
-    });
   }
 }
 
