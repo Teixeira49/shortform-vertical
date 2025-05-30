@@ -1,8 +1,8 @@
-
+import 'dart:convert';
 
 import 'package:venetiktok/src/modules/profile/data/data_source/remote/profile_api.dart';
 import 'package:venetiktok/src/modules/profile/data/data_source/remote/profile_endpoints.dart';
-import 'package:venetiktok/src/modules/profile/data/models/params/delete_account_params_model.dart';
+import '../../models/models.dart';
 
 import '../../../../../shared/core/exceptions/app_exception.dart';
 import '../../../../../shared/features/models/models/app_api_rest_response_model.dart';
@@ -34,6 +34,28 @@ class ProfileApiRest implements IProfileApi {
       }
 
       return;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<VideoModel>> getVideosHistory({required FeedVideoParamsModel params}) async {
+    try {
+      final response = await _client.request(
+        endpoint: _apiUrl + ProfileEndpoints.history,
+        method: HttpOperation.get,
+        //body: params.toMap(),
+      );
+
+      //final data = AppApiRestResponseModel.fromJson(response.data);
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return (json.decode(response.data) as List) // Change in a future version
+            .map((e) => VideoModel.fromMap(e))
+            .toList();
+      }
+      throw Exception(response.statusMessage);
     } catch (e) {
       rethrow;
     }

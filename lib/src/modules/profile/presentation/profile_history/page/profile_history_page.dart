@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:venetiktok/l10n/l10n.dart';
+import 'package:venetiktok/src/modules/profile/domain/entities/entities.dart';
 
 import '../../../../../shared/features/blocs/get_current_user_bloc/bloc.dart';
 import '../../../../../shared/features/entities/entities/entities.dart';
@@ -11,6 +12,8 @@ import '../../../../../shared/features/widgets/base_layout.dart';
 import '../../../../../shared/features/widgets/movie_target.dart';
 import '../../../../../shared/features/widgets/on_error_widget.dart';
 import '../../../../../variables/values/values.dart';
+import '../../../domain/use_cases/get_videos_history_use_case.dart';
+import '../bloc/bloc.dart';
 
 part '../widgets/profile_history_body.dart';
 
@@ -38,6 +41,13 @@ class ProfileHistoryPage extends StatelessWidget {
               authRepository: context.read(),
             ),
           ),
+        ),
+        BlocProvider(
+          create: (context) => FetchHistoryBloc(
+            getVideosHistoryUseCase: GetVideosHistoryUseCase(
+              profileRepository: context.read(),
+            ),
+          )..add(FetchFeedVideosEvent(userId: 1)),
         ),
       ],
       child: Scaffold(

@@ -5,108 +5,6 @@ class _ProfileHistoryBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Movie> tempList = [
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-      Movie(
-          assetsName: 'ejemplo',
-          title: 'title',
-          actors: 'actors',
-          directors: 'directors',
-          rating: 'rating',
-          synopsis: 'synopsis',
-          availDate: 'availDate',
-          expDate: 'expDate',
-          posterUrl:
-              'https://yt3.ggpht.com/yti/ANjgQV8D_mFWkZ6j3O5Sp_c48DVnNJEb2HHs5M3Vh6s5uIErEjQ=s108-c-k-c0x00ffffff-no-rj'),
-    ];
-
     return BlocBuilder<GetCurrentUserBloc, GetCurrentUserState>(
         buildWhen: (previous, current) => previous.status != current.status,
         builder: (context, state) {
@@ -128,63 +26,104 @@ class _ProfileHistoryBody extends StatelessWidget {
               ),
             );
           }
-          return BaseLayout(
-              automaticallyImplyLeading: false,
-              child: SingleChildScrollView(
-                child: Column(
-                  spacing: WidthValues.padding,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Gap(WidthValues.spacingXs),
-                    Text(
-                      context.l10n.searchLabel,
-                      style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.bold,
-                      ),
+          return BlocBuilder<FetchHistoryBloc, FetchHistoryState>(
+              buildWhen: (previous, current) =>
+                  previous.status != current.status,
+              builder: (context, state) {
+                final status = state.status;
+                final feedVideos = state.feedVideos;
+
+                Widget? body;
+
+                if (status.isError) {
+                  body = Center(
+                    child: OnErrorWidget(
+                      iconSize: 30,
+                      icon: Icons.close_outlined,
+                      iconBackgroundColor: ColorValues.fgErrorPrimary(context),
+                      onRetry: () => context
+                          .read<FetchHistoryBloc>()
+                          .add(const FetchFeedVideosEvent(userId: 1)),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: TextField(
-                        //controller: _searchController,
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(
-                          hintText: context.l10n.searchByLabel,
-                          hintStyle: const TextStyle(color: Colors.grey),
-                          border: InputBorder.none,
-                          prefixIcon:
-                              const Icon(Icons.search, color: Colors.grey),
-                          suffixIcon: IconButton(
-                            icon: const Icon(Icons.mic, color: Colors.grey),
-                            onPressed: () {}, // opcional: búsqueda por voz
+                  );
+                }
+
+                if (feedVideos.isEmpty && !status.isLoading) {
+                  body = Center(
+                    child: OnErrorWidget(
+                      iconSize: 30,
+                      icon: Icons.not_interested,
+                      iconBackgroundColor: ColorValues.fgErrorPrimary(context),
+                      onRetry: () => context
+                          .read<FetchHistoryBloc>()
+                          .add(const FetchFeedVideosEvent(userId: 1)),
+                    ),
+                  );
+                }
+                return body ??
+                    BaseLayout(
+                        automaticallyImplyLeading: false,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            spacing: WidthValues.padding,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Gap(WidthValues.spacingXs),
+                              Text(
+                                context.l10n.searchLabel,
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: TextField(
+                                  //controller: _searchController,
+                                  style: TextStyle(color: ColorValues.utilityGray700(context)),
+                                  decoration: InputDecoration(
+                                    hintText: context.l10n.searchByLabel,
+                                    hintStyle:
+                                        const TextStyle(color: Colors.grey),
+                                    border: InputBorder.none,
+                                    prefixIcon: const Icon(Icons.search,
+                                        color: Colors.grey),
+                                    suffixIcon: IconButton(
+                                      icon: const Icon(Icons.mic,
+                                          color: Colors.grey),
+                                      onPressed:
+                                          () {}, // opcional: búsqueda por voz
+                                    ),
+                                  ),
+                                  //onChanged: (value) => setState(() => _query = value),
+                                ),
+                              ),
+                              Text(
+                                context.l10n.moviesLabel,
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ..._buildMoviesRows(
+                                  context, feedVideos, isLoading),
+                              Gap(WidthValues.padding),
+                            ],
                           ),
-                        ),
-                        //onChanged: (value) => setState(() => _query = value),
-                      ),
-                    ),
-                    Gap(WidthValues.spacingXs),
-                    Text(
-                      context.l10n.moviesLabel,
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Gap(WidthValues.spacing2Md),
-                    ..._buildMoviesRows(tempList, isLoading),
-                    Gap(WidthValues.padding),
-                  ],
-                ),
-              ));
+                        ));
+              });
         });
   }
 
-  List<Widget> _buildMoviesRows(List<Movie> movies, bool isLoading) {
+  List<Widget> _buildMoviesRows(
+      BuildContext context, List<Video> movies, bool isLoading) {
     final rows = <Widget>[];
+
+    final size = MediaQuery.of(context).size;
 
     for (var i = 0; i < movies.length; i += 2) {
       final movies1 = movies[i];
@@ -193,25 +132,35 @@ class _ProfileHistoryBody extends StatelessWidget {
       rows.add(
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
+          spacing: WidthValues.padding,
           children: [
 //            MovieTarget(
 //               url: movies1.posterUrl,
 //               title: movies1.title,),
-            SizedBox(
+            Flexible(
+                child: SizedBox(
               height: 200,
               child: MovieTarget(
-                url: movies1.posterUrl,
-                title: movies1.title,
+                url: movies1.images.images.url,
+                title: movies1.metadata.title,
+                author: movies1.metadata.directors,
               ),
-            ),
+            )),
 
             if (movies2 != null)
-              SizedBox(
-                height: 200,
-                child: MovieTarget(
-                  url: movies2.posterUrl,
-                  title: movies2.title,
+              Flexible(
+                child: SizedBox(
+                  height: 200,
+                  child: MovieTarget(
+                    url: movies2.images.images.url,
+                    title: movies2.metadata.title,
+                    author: movies2.metadata.directors,
+                  ),
                 ),
+              )
+            else
+              SizedBox(
+                width: (size.width / 2) - WidthValues.padding * 1.5,
               ),
           ],
         ),

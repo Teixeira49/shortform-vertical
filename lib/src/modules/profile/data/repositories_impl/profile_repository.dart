@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:venetiktok/src/modules/profile/data/models/params/delete_account_params_model.dart';
-import 'package:venetiktok/src/modules/profile/domain/entities/params/params.dart';
+import '../../domain/entities/entities.dart';
+import '../models/models.dart';
 
 import '../../../../shared/features/data_source/device_storage/device_storage_api.dart';
 import '../../domain/repositories/profile_repository.dart';
@@ -41,6 +41,36 @@ class ProfileRepository implements IProfileRepository {
       log(
         '❌ An unexpected error ocurred while Deleting user account',
         name: '$_source.deleteAccount()',
+        error: e,
+        stackTrace: s,
+      );
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<Video>> getVideoHistory({required FeedVideoParams params}) async {
+    try {
+      log('📡 Getting videos...', name: 'SearchRepositoryImpl.getVideos()');
+
+      final response = await _profileApi.getVideosHistory(
+        params: FeedVideoParamsModel.fromEntity(params),
+      );
+
+      if (response.isEmpty) {
+        log('❌ No videos found', name: 'SearchRepositoryImpl.getVideos()');
+        return [];
+      } else {
+        log(
+          '✅ Videos found: ${response.length}',
+          name: 'SearchRepositoryImpl.getVideos()',
+        );
+        return response.map((e) => e.toEntity()).toList();
+      }
+    } catch (e, s) {
+      log(
+        '❌ An unexpected error ocurred while getting videos',
+        name: 'SearchRepositoryImpl.getVideos()',
         error: e,
         stackTrace: s,
       );
