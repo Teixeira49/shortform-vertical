@@ -814,6 +814,58 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// 'Results'
   String get resultsLabel;
+
+  /// No description provided for @snackBarWarningDemo.
+  ///
+  /// In en, this message translates to:
+  /// 'Not available in demo version'
+  String get snackBarWarningDemo;
+
+  /// No description provided for @snackBarSaved.
+  ///
+  ///  In en, this message translates to:
+  ///  'Video saved successfully'
+  String get snackBarSaved;
+
+  /// No description provided for @premiumMessageLabel.
+  ///
+  ///  In en, this message translates to:
+  ///  'Enjoy your favorite clips to the fullest with Media Premium'
+  String get premiumMessageLabel;
+
+  /// No description provided for @premiumLabel.
+  ///
+  ///  In en, this message translates to:
+  ///
+  String get premiumLabel;
+
+
+  String get premiumAvailablePlans;
+
+  String get premiumButtonLabel;
+
+  String get premiumRateYearLabel;
+
+  String get premiumRateMonthLabel;
+
+  String get premiumWhyLabel;
+
+  String get premiumReason1;
+
+  String get premiumReason2;
+
+  String get premiumReason3;
+
+  String get reportLabel;
+
+  String get reportFeedbackLabel;
+
+  String get reportVideoTitle;
+
+  String get notificationsLabel;
+
+  String get notificationsHaveNotNotificationsLabel;
+
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

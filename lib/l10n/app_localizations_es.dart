@@ -371,4 +371,55 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get resultsLabel => "Resultados";
+
+  @override
+  String get premiumMessageLabel => "Disfruta al maximo de tus clips favoritos con Media Premium";
+
+  @override
+  String get snackBarSaved => "Video guardado exitosamente";
+
+  @override
+  String get snackBarWarningDemo => "No disponible en version demo";
+
+  @override
+  String get premiumAvailablePlans => "Planes disponibles";
+
+  @override
+  String get premiumButtonLabel => "Obtener plan {plan}";
+
+  @override
+  String get premiumLabel => "Premium";
+
+  @override
+  String get premiumRateMonthLabel => "al mes";
+
+  @override
+  String get premiumRateYearLabel => "al año";
+
+  @override
+  String get premiumReason1 => "Ver videos sin anuncios";
+
+  @override
+  String get premiumReason2 => "Mejor calidad de reproduccion";
+
+  @override
+  String get premiumReason3 => "Acceso a contenido exclusivo";
+
+  @override
+  String get premiumWhyLabel => "¿Por qué necesito Media Premium?";
+
+  @override
+  String get notificationsHaveNotNotificationsLabel => "No tienes notificaciones";
+
+  @override
+  String get notificationsLabel => "Notificaciones";
+
+  @override
+  String get reportFeedbackLabel => "Por favor describa porque el contenido del video no es apto para la plataforma.";
+
+  @override
+  String get reportLabel => "Reportar Contenido";
+
+  @override
+  String get reportVideoTitle => "Titulo del video: {element}";
 }
