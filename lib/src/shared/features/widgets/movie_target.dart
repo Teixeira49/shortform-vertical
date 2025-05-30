@@ -4,16 +4,18 @@ import '../../../theme/extended_text_theme.dart';
 import '../../../variables/values/values.dart';
 
 class MovieTarget extends StatelessWidget {
-  const MovieTarget({super.key, required this.url, required this.title});
+  const MovieTarget({super.key, required this.url, required this.title, required this.author});
 
   final String url;
   final String title;
+  final String author;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      spacing: WidthValues.spacingMd,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: WidthValues.spacingXxs,
       children: [
         Expanded(
           flex: 3,
@@ -49,12 +51,20 @@ class MovieTarget extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.centerLeft,
-          padding: EdgeInsets.only(left: 10),
           child: Text(
             title,
             textAlign: TextAlign.justify,
             maxLines: 2,
-            style: ExtendedTextTheme.textMedium(context),
+            style: ExtendedTextTheme.textMedium(context).copyWith(fontWeight: FontWeight.bold),
+          ),
+        ),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            author,
+            textAlign: TextAlign.justify,
+            maxLines: 1,
+            style: ExtendedTextTheme.textSmall(context),
           ),
         ),
       ],

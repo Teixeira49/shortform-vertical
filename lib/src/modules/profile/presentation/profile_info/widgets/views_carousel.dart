@@ -6,7 +6,7 @@ class _ViewsCarousel extends StatefulWidget {
     required this.isLoading,
   });
 
-  final List<Movie> views;
+  final List<Video> views;
   final bool isLoading;
 
   @override
@@ -63,8 +63,9 @@ class _ViewsCarouselState extends State<_ViewsCarousel> {
                           child: Container(),
                         )
                       : MovieTarget(
-                          url: views[index].posterUrl,
-                          title: views[index].title,
+                          url: views[index].images.images.url,
+                          title: views[index].metadata.title,
+                          author: views[index].metadata.directors,
                   )
                 ),
               );

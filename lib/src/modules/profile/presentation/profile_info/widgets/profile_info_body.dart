@@ -18,12 +18,10 @@ class _ProfileInfoBody extends StatelessWidget {
               onPressed: () => showModalBottomSheet<void>(
                 context: context,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
                 ),
                 builder: (BuildContext context) {
-                  return selectOption(
-                    context,
-                  );
+                  return ModalOptions();
                 },
               ),
               icon: const Icon(Icons.more_vert_outlined),
@@ -113,63 +111,62 @@ class _ProfileInfoBody extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget selectOption(context) {
-    bool check = false;
+class ModalOptions extends StatelessWidget {
+  const ModalOptions({super.key});
 
-    void outStatus(context, check) {
-      if (check) {
-        context.read<SignOutBloc>().add(SignOutButtonPressed());
-      }
-    }
-
-    return Column(
-      children: [
-        ListTile(
-          trailing: Icon(Icons.arrow_forward_ios),
-          title: Text('Edit Profile'),
-          leading: Icon(Icons.edit_outlined),
-          onTap: () => CustomSnackBar.showWarningBar(
-              context, context.l10n.snackBarWarningDemo),
-        ),
-        ListTile(
-          trailing: Icon(Icons.arrow_forward_ios),
-          title: Text('About my account'),
-          leading: Icon(Icons.account_circle_outlined),
-          onTap: () => CustomSnackBar.showWarningBar(
-              context, context.l10n.snackBarWarningDemo),
-        ),
-        ListTile(
-          trailing: Icon(Icons.arrow_forward_ios),
-          title: Text('Settings'),
-          leading: Icon(Icons.settings_outlined),
-          onTap: () => CustomSnackBar.showWarningBar(
-              context, context.l10n.snackBarWarningDemo),
-        ),
-        ListTile(
-          trailing: Icon(Icons.arrow_forward_ios),
-          title: Text('Help'),
-          leading: Icon(Icons.help_outline),
-          onTap: () => CustomSnackBar.showWarningBar(
-              context, context.l10n.snackBarWarningDemo),
-        ),
-        ListTile(
-          trailing: Icon(Icons.arrow_forward_ios),
-          title: Text('Get Premium'),
-          leading: Icon(Icons.star_border_outlined),
-          onTap: () => context.push(PremiumPaywallPage.path),
-        ),
-        ListTile(
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<SignOutBloc, SignOutState>(builder: (context, state) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
             trailing: Icon(Icons.arrow_forward_ios),
-            title: Text('Log out'),
-            leading: Icon(Icons.logout),
-            onTap: () {
-              check = true;
-              outStatus(context, check);
-              Navigator.pop(context);
-            })
-      ],
-    );
+            title: Text('Edit Profile'),
+            leading: Icon(Icons.edit_outlined),
+            onTap: () => CustomSnackBar.showWarningBar(
+                context, context.l10n.snackBarWarningDemo),
+          ),
+          ListTile(
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text('About my account'),
+            leading: Icon(Icons.account_circle_outlined),
+            onTap: () => CustomSnackBar.showWarningBar(
+                context, context.l10n.snackBarWarningDemo),
+          ),
+          ListTile(
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text('Settings'),
+            leading: Icon(Icons.settings_outlined),
+            onTap: () => CustomSnackBar.showWarningBar(
+                context, context.l10n.snackBarWarningDemo),
+          ),
+          ListTile(
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text('Help'),
+            leading: Icon(Icons.help_outline),
+            onTap: () => CustomSnackBar.showWarningBar(
+                context, context.l10n.snackBarWarningDemo),
+          ),
+          ListTile(
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text('Get Premium'),
+            leading: Icon(Icons.star_border_outlined),
+            onTap: () => context.push(PremiumPaywallPage.path),
+          ),
+          ListTile(
+              trailing: Icon(Icons.arrow_forward_ios),
+              title: Text('Log out'),
+              leading: Icon(Icons.logout),
+              onTap: () {
+                context.read<SignOutBloc>().add(SignOutButtonPressed());
+                Navigator.pop(context);
+              })
+        ],
+      );
+    });
   }
 }
 
