@@ -1,1 +1,2 @@
 export 'delete_account_params_model.dart';
+export 'feed_video_params_model.dart';
