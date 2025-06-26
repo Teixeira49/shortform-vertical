@@ -95,16 +95,16 @@ abstract class AppLocalizations {
     Locale('es')
   ];
 
-  /// No description provided for @kudoAppTitle.
+  /// No description provided for @mediaAppTitle.
   ///
   /// In en, this message translates to:
-  /// **'Kudo App'**
+  /// **'FD Media App'**
   String get mediaAppTitle;
 
-  /// No description provided for @welcomeToKudoLabel.
+  /// No description provided for @welcomeToAppLabel.
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Kudo'**
+  /// **'Welcome to FD Media'**
   String get welcomeToAppLabel;
 
   /// No description provided for @loginEnterYourUserInfoText.
@@ -299,10 +299,10 @@ abstract class AppLocalizations {
   /// **'Go back'**
   String get goBackButtonLabel;
 
-  /// No description provided for @goBackButtonLabel.
+  /// No description provided for @viewCommerceButtonLabel.
   ///
   /// In en, this message translates to:
-  /// **'Go back'**
+  /// **'See gift card'**
   String get viewCommerceButtonLabel;
 
   /// No description provided for @signUpSuccessText.
@@ -362,7 +362,7 @@ abstract class AppLocalizations {
   /// No description provided for @waitLabelWithExpression.
   ///
   /// In en, this message translates to:
-  /// **'Wait'**
+  /// **'Wait!'**
   String get waitLabelWithExpression;
 
   /// No description provided for @loginNeedToValidateEmailText.
@@ -389,23 +389,29 @@ abstract class AppLocalizations {
   /// **'Search'**
   String get searchLabel;
 
-  /// No description provided for @commercesLabel.
+  /// No description provided for @historyLabel.
   ///
   /// In en, this message translates to:
-  /// **'Commerces'**
+  /// **'Recently viewed'**
   String get historyLabel;
 
-  /// No description provided for @commercesLabel.
+  /// No description provided for @likedLabel.
   ///
   /// In en, this message translates to:
-  /// **'Commerces'**
+  /// **'Favorites'**
   String get likedLabel;
 
-  /// No description provided for @commercesLabel.
+  /// No description provided for @bookmarksLabel.
   ///
   /// In en, this message translates to:
-  /// **'Commerces'**
+  /// **'Your list'**
   String get bookmarksLabel;
+
+  /// No description provided for @notificationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationLabel;
 
   /// No description provided for @welcomeWithNameLabel.
   ///
@@ -431,100 +437,100 @@ abstract class AppLocalizations {
   /// **'Retry'**
   String get appRetryButtonLabel;
 
-  /// No description provided for @kudoConnectionErrorTitle.
+  /// No description provided for @appConnectionErrorTitle.
   ///
   /// In en, this message translates to:
   /// **'Connection error'**
   String get appConnectionErrorTitle;
 
-  /// No description provided for @kudoConnectionErrorNoInternetDescription.
+  /// No description provided for @appConnectionErrorNoInternetDescription.
   ///
   /// In en, this message translates to:
   /// **'Please check your internet connection and try again.'**
   String get appConnectionErrorNoInternetDescription;
 
-  /// No description provided for @kudoConnectionErrorVpnDetectedTitle.
+  /// No description provided for @appConnectionErrorVpnDetectedTitle.
   ///
   /// In en, this message translates to:
   /// **'VPN detected'**
-  String get aooConnectionErrorVpnDetectedTitle;
+  String get appConnectionErrorVpnDetectedTitle;
 
-  /// No description provided for @kudoConnectionErrorActiveVPNDescription.
+  /// No description provided for @appConnectionErrorActiveVPNDescription.
   ///
   /// In en, this message translates to:
   /// **'Please disable your VPN connection and try again.'**
   String get appConnectionErrorActiveVPNDescription;
 
-  /// No description provided for @kudoMaintenanceModeTitle.
+  /// No description provided for @appMaintenanceModeTitle.
   ///
   /// In en, this message translates to:
   /// **'The app is under maintenance'**
   String get appMaintenanceModeTitle;
 
-  /// No description provided for @kudoMaintenanceModeDescription.
+  /// No description provided for @appMaintenanceModeDescription.
   ///
   /// In en, this message translates to:
   /// **'We are working to improve the app. Please, come back later.'**
   String get appMaintenanceModeDescription;
 
-  /// No description provided for @kudoUpdateRequiredTitle.
+  /// No description provided for @appUpdateRequiredTitle.
   ///
   /// In en, this message translates to:
   /// **'Update required'**
   String get appUpdateRequiredTitle;
 
-  /// No description provided for @kudoUpdateRequiredDescription.
+  /// No description provided for @appUpdateRequiredDescription.
   ///
   /// In en, this message translates to:
   /// **'You must update to the latest version to continue.'**
   String get appUpdateRequiredDescription;
 
-  /// No description provided for @kudoServerErrorMessage.
+  /// No description provided for @appServerErrorMessage.
   ///
   /// In en, this message translates to:
   /// **'An error occurred while processing your request. Please try again.'**
   String get appServerErrorMessage;
 
-  /// No description provided for @kudoUnknownErrorMessage.
+  /// No description provided for @appUnknownErrorMessage.
   ///
   /// In en, this message translates to:
   /// **'An unexpected error occurred. Please try again.'**
   String get appUnknownErrorMessage;
 
-  /// No description provided for @kudoStillHavingProblemsButton.
+  /// No description provided for @appStillHavingProblemsButton.
   ///
   /// In en, this message translates to:
   /// **'Still having problems?'**
   String get appStillHavingProblemsButton;
 
-  /// No description provided for @kudoContactSupportButton.
+  /// No description provided for @appContactSupportButton.
   ///
   /// In en, this message translates to:
   /// **'Contact support'**
   String get appContactSupportButton;
 
-  /// No description provided for @kudoUpdateAppButton.
+  /// No description provided for @appUpdateAppButton.
   ///
   /// In en, this message translates to:
   /// **'Update app'**
   String get appUpdateAppButton;
 
-  /// No description provided for @kudoErrorOpeningUpdateUrlTitle.
+  /// No description provided for @appErrorOpeningUpdateUrlTitle.
   ///
   /// In en, this message translates to:
   /// **'Could not open store'**
   String get appErrorOpeningUpdateUrlTitle;
 
-  /// No description provided for @kudoErrorOpeningUpdateUrlDescription.
+  /// No description provided for @appErrorOpeningUpdateUrlDescription.
   ///
   /// In en, this message translates to:
   /// **'Please update the app manually.'**
   String get appErrorOpeningUpdateUrlDescription;
 
-  /// No description provided for @fortgotPasswordNotEmailLabel.
+  /// No description provided for @forgotPasswordNotEmailLabel.
   ///
   /// In en, this message translates to:
-  /// **'The email entered is not registered in Kudo'**
+  /// **'The email entered is not registered in FD Media'**
   String get forgotPasswordNotEmailLabel;
 
   /// No description provided for @profilePersonalInfoLabel.
@@ -542,25 +548,25 @@ abstract class AppLocalizations {
   /// No description provided for @profileDeleteAccountLabel.
   ///
   /// In en, this message translates to:
-  /// **'Terms and conditions'**
+  /// **'Delete account'**
   String get profileDeleteAccountLabel;
 
   /// No description provided for @profileDeleteAccountWarningLabel.
   ///
   /// In en, this message translates to:
-  /// **'Terms and conditions'**
+  /// **'Are you sure you want to delete your account?'**
   String get profileDeleteAccountWarningLabel;
 
   /// No description provided for @profileDeleteAccountDescriptionLabel.
   ///
   /// In en, this message translates to:
-  /// **'Terms and conditions'**
+  /// **'Your account will be permanently deleted and you will not be able to recover it.'**
   String get profileDeleteAccountDescriptionLabel;
 
   /// No description provided for @profileDeleteAccountSuccessLabel.
   ///
   /// In en, this message translates to:
-  /// **'Terms and conditions'**
+  /// **'Your account has been successfully deleted.'**
   String get profileDeleteAccountSuccessLabel;
 
   /// No description provided for @profileLogoutLabel.
@@ -581,7 +587,7 @@ abstract class AppLocalizations {
   /// **'If you log out, you will have to log in again'**
   String get logoutConfirmationText;
 
-  /// No description provided for @exceptioNoCurrentUserFoundLabel.
+  /// No description provided for @exceptionNoCurrentUserFoundLabel.
   ///
   /// In en, this message translates to:
   /// **'No user found on this device'**
@@ -641,7 +647,7 @@ abstract class AppLocalizations {
   /// **'Location'**
   String get locationLabel;
 
-  /// No description provided for @phoneNumerWithNumberLabel.
+  /// No description provided for @phoneNumberWithNumberLabel.
   ///
   /// In en, this message translates to:
   /// **'Phone number: {phone}'**
@@ -670,6 +676,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Apply'**
   String get filtersApplyButtonLabel;
+
+  /// No description provided for @searchYourDownloadsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Find Your Downloaded videos'**
+  String get searchYourDownloadsLabel;
 
   /// No description provided for @availableRewardsLabel.
   ///
@@ -715,157 +727,213 @@ abstract class AppLocalizations {
 
   /// No description provided for @mediaOriginalsLabel.
   ///
-  ///  In en, this message translates to:
-  ///  **'Media Originals'**
+  /// In en, this message translates to:
+  /// **'Media Originals'**
   String get mediaOriginalsLabel;
 
   /// No description provided for @shortsLabel.
   ///
   /// In en, this message translates to:
-  /// 'Shorts'
+  /// **'Shorts'**
   String get shortsLabel;
 
   /// No description provided for @kidsLabels.
   ///
   /// In en, this message translates to:
-  /// 'For Kids'
+  /// **'Kids'**
   String get kidsLabels;
 
   /// No description provided for @forYouLabel.
   ///
   /// In en, this message translates to:
-  /// 'For You'
+  /// **'Recommended for you'**
   String get forYouLabel;
 
   /// No description provided for @viewAllLabel.
   ///
   /// In en, this message translates to:
-  /// 'View All'
+  /// **'View all'**
   String get viewAllLabel;
 
   /// No description provided for @menuLabel.
   ///
   /// In en, this message translates to:
-  /// 'Menu'
+  /// **'Options'**
   String get menuLabel;
 
   /// No description provided for @editProfileButton.
   ///
   /// In en, this message translates to:
-  /// 'Edit Profile'
+  /// **'Edit profile'**
   String get editProfileButton;
 
   /// No description provided for @aboutUsButton.
   ///
   /// In en, this message translates to:
-  /// 'About Us'
+  /// **'About us'**
   String get aboutUsButton;
 
   /// No description provided for @aboutYouButton.
   ///
   /// In en, this message translates to:
-  /// 'About You'
+  /// **'About my account'**
   String get aboutYouButton;
 
   /// No description provided for @settingsButton.
   ///
   /// In en, this message translates to:
-  /// 'Settings'
+  /// **'Settings'**
   String get settingsButton;
 
   /// No description provided for @helpButton.
   ///
   /// In en, this message translates to:
-  /// 'Help'
+  /// **'Help'**
   String get helpButton;
 
   /// No description provided for @logoutButton.
   ///
   /// In en, this message translates to:
-  /// 'Log out'
+  /// **'Logout'**
   String get logoutButton;
 
   /// No description provided for @deleteAccountButton.
   ///
   /// In en, this message translates to:
-  /// 'Delete Account'
+  /// **'Delete account'**
   String get deleteAccountButton;
 
   /// No description provided for @termsAndConditionsButton.
   ///
   /// In en, this message translates to:
-  /// 'terms and conditions'
+  /// **'Terms and conditions'**
   String get termsAndConditionsButton;
 
   /// No description provided for @getPremiumButton.
   ///
   /// In en, this message translates to:
-  /// 'get Premium'
+  /// **'Get Premium'**
   String get getPremiumButton;
 
   /// No description provided for @searchByLabel.
   ///
   /// In en, this message translates to:
-  /// 'Search by'
+  /// **'Search by actor, title, genre, etc.'**
   String get searchByLabel;
 
   /// No description provided for @resultsLabel.
   ///
   /// In en, this message translates to:
-  /// 'Results'
+  /// **'Results'**
   String get resultsLabel;
 
   /// No description provided for @snackBarWarningDemo.
   ///
   /// In en, this message translates to:
-  /// 'Not available in demo version'
+  /// **'Not available in demo version'**
   String get snackBarWarningDemo;
 
   /// No description provided for @snackBarSaved.
   ///
-  ///  In en, this message translates to:
-  ///  'Video saved successfully'
+  /// In en, this message translates to:
+  /// **'Video saved successfully'**
   String get snackBarSaved;
 
   /// No description provided for @premiumMessageLabel.
   ///
-  ///  In en, this message translates to:
-  ///  'Enjoy your favorite clips to the fullest with Media Premium'
+  /// In en, this message translates to:
+  /// **'Enjoy your favorite clips to the fullest with Media Premium'**
   String get premiumMessageLabel;
 
   /// No description provided for @premiumLabel.
   ///
-  ///  In en, this message translates to:
-  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
   String get premiumLabel;
 
+  /// No description provided for @premiumTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium Plans'**
+  String get premiumTitleLabel;
 
+  /// No description provided for @premiumAvailablePlans.
+  ///
+  /// In en, this message translates to:
+  /// **'Available plans'**
   String get premiumAvailablePlans;
 
-  String get premiumButtonLabel;
+  /// No description provided for @premiumButtonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Get {plan} plan'**
+  String premiumButtonLabel(Object plan);
 
+  /// No description provided for @premiumRateYearLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'at year'**
   String get premiumRateYearLabel;
 
+  /// No description provided for @premiumRateMonthLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'at Month'**
   String get premiumRateMonthLabel;
 
+  /// No description provided for @premiumWhyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Why I need Media Premium?'**
   String get premiumWhyLabel;
 
+  /// No description provided for @premiumReason1.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch videos without ads'**
   String get premiumReason1;
 
+  /// No description provided for @premiumReason2.
+  ///
+  /// In en, this message translates to:
+  /// **'Better playback quality'**
   String get premiumReason2;
 
+  /// No description provided for @premiumReason3.
+  ///
+  /// In en, this message translates to:
+  /// **'Access to exclusive content'**
   String get premiumReason3;
 
+  /// No description provided for @reportLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Content'**
   String get reportLabel;
 
+  /// No description provided for @reportFeedbackLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Please describe why the video content is not suitable for the platform.'**
   String get reportFeedbackLabel;
 
-  String get reportVideoTitle;
+  /// No description provided for @reportVideoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Video title: {element}'**
+  String reportVideoTitle(Object element);
 
+  /// No description provided for @notificationsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
   String get notificationsLabel;
 
+  /// No description provided for @notificationsHaveNotNotificationsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have notifications'**
   String get notificationsHaveNotNotificationsLabel;
-
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

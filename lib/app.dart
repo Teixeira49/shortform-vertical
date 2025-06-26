@@ -2,15 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
-import 'package:venetiktok/l10n/l10n.dart';
 import 'package:venetiktok/src/global/core/dependencies/core_dependencies.dart';
 import 'package:venetiktok/src/modules/auth/domain/use_cases/get_current_token.dart';
 import 'package:venetiktok/src/modules/auth/presentation/splash/bloc/bloc.dart';
 import 'package:venetiktok/src/theme/app_theme.dart';
 import 'package:venetiktok/src/variables/variables.dart';
+
+import 'l10n/app_localizations.dart';
 
 class App extends StatelessWidget {
   const App({

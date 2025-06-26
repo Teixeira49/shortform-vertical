@@ -111,7 +111,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get goBackButtonLabel => 'Go back';
 
   @override
-  String get viewCommerceButtonLabel => "See gift card";
+  String get viewCommerceButtonLabel => 'See gift card';
 
   @override
   String get signUpSuccessText => 'Enter to your email to validate your account, to start accumulating stamps and redeem rewards at your favorite stores.';
@@ -165,18 +165,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bookmarksLabel => 'Your list';
 
   @override
+  String get notificationLabel => 'Notifications';
+
+  @override
   String welcomeWithNameLabel(Object name) {
     return 'Welcome, $name';
   }
 
   @override
-  String get seeMoreLabel => 'See More';
+  String get seeMoreLabel => 'See more';
 
   @override
-  String get appStandardErrorMessage => 'An error occurred';
+  String get appStandardErrorMessage => 'An error ocurred';
 
   @override
-  String get appRetryButtonLabel=> 'Retry';
+  String get appRetryButtonLabel => 'Retry';
 
   @override
   String get appConnectionErrorTitle => 'Connection error';
@@ -185,7 +188,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appConnectionErrorNoInternetDescription => 'Please check your internet connection and try again.';
 
   @override
-  String get aooConnectionErrorVpnDetectedTitle => 'VPN detected';
+  String get appConnectionErrorVpnDetectedTitle => 'VPN detected';
 
   @override
   String get appConnectionErrorActiveVPNDescription => 'Please disable your VPN connection and try again.';
@@ -292,8 +295,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get privacyPolicyLabel => 'Privacy policy';
 
   @override
-
-  @override
   String get filtersLabel => 'Filters';
 
   @override
@@ -301,6 +302,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get filtersApplyButtonLabel => 'Apply';
+
+  @override
+  String get searchYourDownloadsLabel => 'Find Your Downloaded videos';
 
   @override
   String get availableRewardsLabel => 'Available rewards';
@@ -312,121 +316,123 @@ class AppLocalizationsEn extends AppLocalizations {
   String get obtainLabel => 'Obtain';
 
   @override
-  String get aboutUsButton => "About us";
+  String get browseByLabel => 'Browse by';
 
   @override
-  String get aboutYouButton => "About my account";
+  String get categoryLabel => 'Category';
 
   @override
-  String get browseByLabel => "Browse by";
+  String get genreLabel => 'Genres';
 
   @override
-  String get categoryLabel => "Category";
-
-
-  @override
-  String get deleteAccountButton => "Delete account";
-
+  String get moviesLabel => 'Movies';
 
   @override
-  String get editProfileButton => "Edit profile";
-
-
-  @override
-  String get forYouLabel => "Recommended for you";
+  String get mediaOriginalsLabel => 'Media Originals';
 
   @override
-  String get genreLabel => "Genres";
-
-
-  @override
-  String get getPremiumButton => "Get Premium";
+  String get shortsLabel => 'Shorts';
 
   @override
-  String get helpButton => "Help";
+  String get kidsLabels => 'Kids';
 
   @override
-  String get kidsLabels => "Kids";
+  String get forYouLabel => 'Recommended for you';
 
   @override
-  String get logoutButton => "Logout";
+  String get viewAllLabel => 'View all';
 
   @override
-  String get mediaOriginalsLabel => "Media Originals";
+  String get menuLabel => 'Options';
 
   @override
-  String get menuLabel => "Options";
+  String get editProfileButton => 'Edit profile';
 
   @override
-  String get moviesLabel => "Movies";
+  String get aboutUsButton => 'About us';
 
   @override
-  String get settingsButton => "Settings";
+  String get aboutYouButton => 'About my account';
 
   @override
-  String get shortsLabel => "Shorts";
+  String get settingsButton => 'Settings';
 
   @override
-  String get termsAndConditionsButton => "Terms and conditions";
+  String get helpButton => 'Help';
 
   @override
-  String get viewAllLabel => "View all";
+  String get logoutButton => 'Logout';
 
   @override
-  String get searchByLabel => "Search by actor, title, genre, etc.";
+  String get deleteAccountButton => 'Delete account';
 
   @override
-  String get resultsLabel => "Results";
+  String get termsAndConditionsButton => 'Terms and conditions';
 
   @override
-  String get premiumMessageLabel => "";
+  String get getPremiumButton => 'Get Premium';
 
   @override
-  String get snackBarSaved => "Video saved successfully";
+  String get searchByLabel => 'Search by actor, title, genre, etc.';
 
   @override
-  String get snackBarWarningDemo => "Not available in demo version";
+  String get resultsLabel => 'Results';
 
   @override
-  String get premiumAvailablePlans => "Available plans";
+  String get snackBarWarningDemo => 'Not available in demo version';
 
   @override
-  String get premiumButtonLabel => "Get {plan} plan";
+  String get snackBarSaved => 'Video saved successfully';
 
   @override
-  String get premiumLabel => "Premium";
+  String get premiumMessageLabel => 'Enjoy your favorite clips to the fullest with Media Premium';
 
   @override
-  String get premiumRateMonthLabel => "at Month";
+  String get premiumLabel => 'Premium';
 
   @override
-  String get premiumRateYearLabel => "at year";
+  String get premiumTitleLabel => 'Premium Plans';
 
   @override
-  String get premiumReason1 => "Watch videos without ads";
+  String get premiumAvailablePlans => 'Available plans';
 
   @override
-  String get premiumReason2 => "Better playback quality";
+  String premiumButtonLabel(Object plan) {
+    return 'Get $plan plan';
+  }
 
   @override
-  String get premiumReason3 => "Access to exclusive content";
+  String get premiumRateYearLabel => 'at year';
 
   @override
-  String get premiumWhyLabel => "Why I need Media Premium?";
+  String get premiumRateMonthLabel => 'at Month';
 
   @override
-  String get notificationsHaveNotNotificationsLabel => "You don't have notifications";
+  String get premiumWhyLabel => 'Why I need Media Premium?';
 
   @override
-  String get notificationsLabel => "Notifications";
+  String get premiumReason1 => 'Watch videos without ads';
 
   @override
-  String get reportFeedbackLabel => "Please describe why the video content is not suitable for the platform.";
+  String get premiumReason2 => 'Better playback quality';
 
   @override
-  String get reportLabel => "Report Content";
+  String get premiumReason3 => 'Access to exclusive content';
 
   @override
-  String get reportVideoTitle => "Video title: {element}";
+  String get reportLabel => 'Report Content';
 
+  @override
+  String get reportFeedbackLabel => 'Please describe why the video content is not suitable for the platform.';
+
+  @override
+  String reportVideoTitle(Object element) {
+    return 'Video title: $element';
+  }
+
+  @override
+  String get notificationsLabel => 'Notifications';
+
+  @override
+  String get notificationsHaveNotNotificationsLabel => 'You don\'t have notifications';
 }

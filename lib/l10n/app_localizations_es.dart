@@ -111,7 +111,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get goBackButtonLabel => 'Regresar';
 
   @override
-  String get viewCommerceButtonLabel => "Ver Tarjeta";
+  String get viewCommerceButtonLabel => 'Ver Tarjeta';
 
   @override
   String get signUpSuccessText => 'Ingresa a tu correo para validar tu cuenta, para empezar a acumular sellos y canjear recompensas en tus comercios favoritos';
@@ -135,7 +135,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get forgotPasswordEmailSendSuccessLabel => '¡Correo enviado con éxito!';
 
   @override
-  String get forgotPasswordEmailSendSuccessText => 'Ingrese al enlace de recuperación que le hemos enviado';
+  String get forgotPasswordEmailSendSuccessText => 'Ingrese al enlace de recuperación que le hemos enviado a su correo';
 
   @override
   String get waitLabel => 'Espera';
@@ -162,7 +162,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get likedLabel => 'Favoritos';
 
   @override
-  String get bookmarksLabel => 'Tu lista';
+  String get bookmarksLabel => 'Tu Lista';
+
+  @override
+  String get notificationLabel => 'Notificaciones';
 
   @override
   String welcomeWithNameLabel(Object name) {
@@ -176,7 +179,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get appStandardErrorMessage => 'Ha ocurrido un error';
 
   @override
-  String get appRetryButtonLabel=> 'Reintentar';
+  String get appRetryButtonLabel => 'Reintentar';
 
   @override
   String get appConnectionErrorTitle => 'Error de conexión';
@@ -185,7 +188,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get appConnectionErrorNoInternetDescription => 'Por favor, verifica tu conexión a internet e inténtalo de nuevo.';
 
   @override
-  String get aooConnectionErrorVpnDetectedTitle => 'VPN detectada';
+  String get appConnectionErrorVpnDetectedTitle => 'VPN detectada';
 
   @override
   String get appConnectionErrorActiveVPNDescription => 'Por favor, desactiva tu conexión VPN e inténtalo de nuevo.';
@@ -236,10 +239,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get profileDeleteAccountLabel => 'Eliminar cuenta';
 
   @override
-  String get profileDeleteAccountWarningLabel => '¿Estas seguro que deseas eliminar tu cuenta?';
+  String get profileDeleteAccountWarningLabel => '¿Estás seguro que deseas eliminar tu cuenta?';
 
   @override
-  String get profileDeleteAccountDescriptionLabel => 'Tu cuenta sera eliminada permanentemente y no podras recuperarla';
+  String get profileDeleteAccountDescriptionLabel => 'Tu cuenta será eliminada permanentemente y no podrás recuperarla';
 
   @override
   String get profileDeleteAccountSuccessLabel => 'Su cuenta se ha eliminado correctamente.';
@@ -301,6 +304,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get filtersApplyButtonLabel => 'Aplicar';
 
   @override
+  String get searchYourDownloadsLabel => 'Conoce tus videos descargados';
+
+  @override
   String get availableRewardsLabel => 'Recompensas disponibles';
 
   @override
@@ -310,116 +316,123 @@ class AppLocalizationsEs extends AppLocalizations {
   String get obtainLabel => 'Obtener';
 
   @override
-  String get aboutUsButton => "Acerca de nosotros";
+  String get browseByLabel => 'Buscar por';
 
   @override
-  String get aboutYouButton => "Acerca de mi cuenta";
+  String get categoryLabel => 'Categoria';
 
   @override
-  String get browseByLabel => "Navegar por";
+  String get genreLabel => 'Generos';
 
   @override
-  String get categoryLabel => "Categoría";
+  String get moviesLabel => 'Peliculas';
 
   @override
-  String get deleteAccountButton => "Eliminar cuenta";
+  String get mediaOriginalsLabel => 'Media Originals';
 
   @override
-  String get editProfileButton => "Editar perfil";
+  String get shortsLabel => 'Shorts';
 
   @override
-  String get forYouLabel => "Recomendado para ti";
+  String get kidsLabels => 'Para Niños';
 
   @override
-  String get genreLabel => "Géneros";
+  String get forYouLabel => 'Recomendados para ti';
 
   @override
-  String get getPremiumButton => "Obtener Premium";
+  String get viewAllLabel => 'Ver Todos';
 
   @override
-  String get helpButton => "Ayuda";
+  String get menuLabel => 'Opciones';
 
   @override
-  String get kidsLabels => "Niños";
+  String get editProfileButton => 'Editar perfil';
 
   @override
-  String get logoutButton => "Cerrar sesión";
+  String get aboutUsButton => 'Sobre Nosotros';
 
   @override
-  String get mediaOriginalsLabel => "Originales de medios";
+  String get aboutYouButton => 'Sobre tu cuenta';
 
   @override
-  String get menuLabel => "Opciones";
+  String get settingsButton => 'Configuracion';
 
   @override
-  String get moviesLabel => "Películas";
+  String get helpButton => 'Ayuda';
 
   @override
-  String get settingsButton => "Configuración";
+  String get logoutButton => 'Cerrar sesión';
 
   @override
-  String get shortsLabel => "Cortos";
+  String get deleteAccountButton => 'Borrar cuenta';
 
   @override
-  String get termsAndConditionsButton => "Términos y condiciones";
+  String get termsAndConditionsButton => 'Terminos y condiciones';
 
   @override
-  String get viewAllLabel => "Ver todo";
+  String get getPremiumButton => 'Obtener Premium';
 
   @override
-  String get searchByLabel => "Buscar por actor, título, género, etc.";
+  String get searchByLabel => 'Buscar por actor, titulo, genero, etc';
 
   @override
-  String get resultsLabel => "Resultados";
+  String get resultsLabel => 'Resultados';
 
   @override
-  String get premiumMessageLabel => "Disfruta al maximo de tus clips favoritos con Media Premium";
+  String get snackBarWarningDemo => 'No disponible en version demo';
 
   @override
-  String get snackBarSaved => "Video guardado exitosamente";
+  String get snackBarSaved => 'Video guardado exitosamente';
 
   @override
-  String get snackBarWarningDemo => "No disponible en version demo";
+  String get premiumMessageLabel => 'Disfruta al maximo de tus clips favoritos con Media Premium';
 
   @override
-  String get premiumAvailablePlans => "Planes disponibles";
+  String get premiumLabel => 'Premium';
 
   @override
-  String get premiumButtonLabel => "Obtener plan {plan}";
+  String get premiumTitleLabel => 'Planes Premium';
 
   @override
-  String get premiumLabel => "Premium";
+  String get premiumAvailablePlans => 'Planes disponibles';
 
   @override
-  String get premiumRateMonthLabel => "al mes";
+  String premiumButtonLabel(Object plan) {
+    return 'Obtener plan $plan';
+  }
 
   @override
-  String get premiumRateYearLabel => "al año";
+  String get premiumRateYearLabel => 'al año';
 
   @override
-  String get premiumReason1 => "Ver videos sin anuncios";
+  String get premiumRateMonthLabel => 'al mes';
 
   @override
-  String get premiumReason2 => "Mejor calidad de reproduccion";
+  String get premiumWhyLabel => '¿Por qué necesito Media Premium?';
 
   @override
-  String get premiumReason3 => "Acceso a contenido exclusivo";
+  String get premiumReason1 => 'Ver videos sin anuncios';
 
   @override
-  String get premiumWhyLabel => "¿Por qué necesito Media Premium?";
+  String get premiumReason2 => 'Mejor calidad de reproduccion';
 
   @override
-  String get notificationsHaveNotNotificationsLabel => "No tienes notificaciones";
+  String get premiumReason3 => 'Acceso a contenido exclusivo';
 
   @override
-  String get notificationsLabel => "Notificaciones";
+  String get reportLabel => 'Reportar Contenido';
 
   @override
-  String get reportFeedbackLabel => "Por favor describa porque el contenido del video no es apto para la plataforma.";
+  String get reportFeedbackLabel => 'Por favor describa porque el contenido del video no es apto para la plataforma.';
 
   @override
-  String get reportLabel => "Reportar Contenido";
+  String reportVideoTitle(Object element) {
+    return 'Titulo del video: $element';
+  }
 
   @override
-  String get reportVideoTitle => "Titulo del video: {element}";
+  String get notificationsLabel => 'Notificaciones';
+
+  @override
+  String get notificationsHaveNotNotificationsLabel => 'No tienes notificaciones';
 }
