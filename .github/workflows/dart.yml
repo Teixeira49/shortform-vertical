@@ -12,20 +12,19 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.19.0' # Usa tu versión de Flutter
           channel: 'stable'
           architecture: x64
-      - run: flutter pub get
-      
-
-      - run: pod repo update
-        working-directory: ios
-
+          
       - name: Install dependencies
         run: |
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
-          
-      - run: flutter build ios --release 
+      
+      - run: pod repo update
+        working-directory: ios
+
+      - run: flutter build ios --release --no-codesign
 
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
