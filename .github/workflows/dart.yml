@@ -12,7 +12,7 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0' # Usa tu versión de Flutter
+          flutter-version: '3.22.3' # Usa tu versión de Flutter
           channel: 'stable'
           architecture: x64
           
