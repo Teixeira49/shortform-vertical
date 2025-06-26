@@ -7,13 +7,17 @@ class Video {
   final VideoImage images;
   final VideoFormat videos;
   final Metadata metadata;
+  final VideoSubtitle subtitle;
 
   Video({
     required this.assetName,
     required this.images,
     required this.videos,
     required this.metadata,
+    required this.subtitle,
   });
+
+  String get subtitleUrl => subtitle.url;
 }
 
 class VideoImage {
@@ -27,4 +31,10 @@ class VideoFormat {
   final MediaData dashUrl;
 
   VideoFormat({required this.hlsUrl, required this.dashUrl});
+}
+
+class VideoSubtitle {
+  final String url;
+
+  VideoSubtitle({required this.url});
 }

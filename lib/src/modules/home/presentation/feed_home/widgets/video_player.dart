@@ -2,9 +2,13 @@ part of '../page/feed_home_page.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
   const VideoPlayerWidget(
-      {required this.videoUrl, required this.isPlaying, super.key});
+      {required this.videoUrl,
+      required this.subtitleUrl,
+      required this.isPlaying,
+      super.key});
 
   final String videoUrl;
+  final String subtitleUrl;
   final bool isPlaying;
 
   @override
@@ -27,21 +31,30 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           : BetterPlayerDataSourceType.network,
       widget.videoUrl,
       useAsmsSubtitles: true,
-      useAsmsTracks: true,
+      //useAsmsTracks: true,
       liveStream: false,
       videoFormat: widget.videoUrl.endsWith('.mpd')
           ? BetterPlayerVideoFormat.dash
           : widget.videoUrl.endsWith('.m3u8')
-          ? BetterPlayerVideoFormat.hls
-          : BetterPlayerVideoFormat.other,
+              ? BetterPlayerVideoFormat.hls
+              : BetterPlayerVideoFormat.other,
+      subtitles: BetterPlayerSubtitlesSource.single(
+          type: BetterPlayerSubtitlesSourceType.network,
+          selectedByDefault: true,
+          name: "EN",
+          url: widget.subtitleUrl),
     );
 
     _controller = BetterPlayerController(
       BetterPlayerConfiguration(
         autoPlay: widget.isPlaying,
         looping: true,
-        controlsConfiguration: BetterPlayerControlsConfiguration(
-          showControls: false,
+        aspectRatio: 9 / 16,
+        fit: BoxFit.contain,
+        subtitlesConfiguration: const BetterPlayerSubtitlesConfiguration(
+          fontSize: 18,
+          fontFamily: "Roboto",
+          fontColor: Colors.white,
         ),
       ),
       betterPlayerDataSource: dataSource,

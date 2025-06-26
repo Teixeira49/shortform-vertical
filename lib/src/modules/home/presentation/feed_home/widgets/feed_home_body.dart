@@ -59,18 +59,55 @@ class _VideoPlayerState extends State<_HomeBody> {
             controller: PageController(initialPage: 0, viewportFraction: 1),
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: _togglePlayPause,
-                child: Stack(
-                  children: [
-                    if (state.status == UpdateFeedStatus.loaded)
-                      VideoPlayerWidget(
-                        videoUrl: selectPlatform(index),
-                        isPlaying: _isPlaying,
+              return //GestureDetector(
+                  //onDoubleTap: _togglePlayPause,
+                  //child:
+                  Stack(
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        padding:
+                            const EdgeInsets.only(top: 18, right: 24, left: 24),
+                        color: Colors.white,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            InkWell(
+                                onTap: () =>
+                                    context.go(AppShellBranch.values.last.path),
+                                child: UserHeaderFeedVideosWidget()),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.more_vert_outlined,
+                                size: 32,
+                              ),
+                              onPressed: () {
+                                showModal(context, <SliverWoltModalSheetPage>[
+                                  showMoreOptions(
+                                      context, selectPlatform(index)),
+                                  showReportDetails(
+                                      context,
+                                      context.l10n.reportLabel,
+                                      state.feedVideos[index].metadata.title),
+                                ]);
+                              },
+                            ),
+                          ],
+                        ),
                       ),
-                    //else
-                    //const Center(child: CircularProgressIndicator()),
-                    if (_showControls)
+                      if (state.status == UpdateFeedStatus.loaded)
+                        VideoPlayerWidget(
+                          videoUrl: selectPlatform(index),
+                          isPlaying: _isPlaying,
+                          subtitleUrl: state.feedVideos[index].subtitleUrl,
+                        ),
+                    ],
+                  ),
+                  //else
+                  //const Center(child: CircularProgressIndicator()),
+                  /*if (_showControls)
                       Positioned.fill(
                         child: Align(
                           alignment: Alignment.center,
@@ -85,172 +122,70 @@ class _VideoPlayerState extends State<_HomeBody> {
                           ),
                         ),
                       ),
-                    Container(
-                      padding: const EdgeInsets.all(
-                        24,
+                    Positioned(
+                      bottom: 40,
+                      right: 40,
+                      child: IconButton(
+                        icon: Icon(Icons.subtitles, color: Colors.white, size: 36),
+                        onPressed: () {
+                          // Muestra el selector de subtítulos nativo de BetterPlayer
+                          _controller.showSubtitlesSelection(context);
+                        },
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          InkWell(
-                            onTap: () =>
-                                context.go(AppShellBranch.values.last.path),
-                            child: BlocBuilder<GetCurrentUserBloc,
-                                    GetCurrentUserState>(
-                                buildWhen: (previous, current) =>
-                                    previous.status != current.status,
-                                builder: (context, state) {
-                                  final user = state.user;
-                                  final status = state.status;
-                                  final isLoading =
-                                      status.isLoading || status.isInitial;
-
-                                  print('status: $status');
-                                  if (isLoading) {
-                                    return Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Icon(
-                                          Icons.account_circle,
-                                          size: 32,
-                                        ),
-                                        Gap(WidthValues.spacingMd),
-                                        Text(
-                                          user.fullName,
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ],
-                                    );
-                                  } else if (status.isFailure) {
-                                    return Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Icon(
-                                          Icons.account_circle,
-                                          size: 32,
-                                        ),
-                                        Gap(WidthValues.spacingMd),
-                                        Text(
-                                          AppConstants.visitorUser,
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ],
-                                    );
-                                  } else {
-                                    return Row(
-                                      spacing: WidthValues.spacingMd,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 16,
-                                          backgroundImage: user
-                                                      .imageUrl.isNotEmpty &&
-                                                  user.imageUrl !=
-                                                      AppConstants.emptyString
-                                              ? NetworkImage(user.imageUrl)
-                                              : Image.asset(
-                                                      AssetIcons.defaultAvatar)
-                                                  .image,
-                                        ),
-                                        Text(
-                                          user.fullName,
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ],
-                                    );
-                                  }
-                                }),
-                          ),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.more_vert_outlined,
-                              size: 32,
+                    ), */
+                  Container(
+                    alignment: Alignment.bottomRight,
+                    margin: EdgeInsets.only(top: size.height / 1.3),
+                    padding: const EdgeInsets.only(
+                      right: 24,
+                      bottom: 24,
+                    ),
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.transparent,
+                          Colors.black,
+                        ],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                            TapFillIcon(
+                              onTap: () {
+                                print("cambia cantidad de likes backend");
+                              },
+                              fillIcon: Icon(
+                                Icons.favorite,
+                                size: 32,
+                              ),
+                              borderIcon: Icon(
+                                Icons.favorite_border,
+                                size: 32,
+                              ),
                             ),
-                            onPressed: () {
-                              showModal(context, <SliverWoltModalSheetPage>[
-                                showMoreOptions(context, selectPlatform(index)),
-                                showReportDetails(
-                                    context,
-                                    context.l10n.reportLabel,
-                                    state.feedVideos[index].metadata.title),
-                              ]);
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.bottomRight,
-                      margin: EdgeInsets.only(top: size.height / 5),
-                      padding: const EdgeInsets.only(
-                        right: 24,
-                        bottom: 24,
-                      ),
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.transparent,
-                            Colors.black,
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              TapFillIcon(
-                                onTap: () {
-                                  print("cambia cantidad de likes backend");
-                                },
-                                fillIcon: Icon(
-                                  Icons.favorite,
-                                  size: 32,
-                                ),
-                                borderIcon: Icon(
-                                  Icons.favorite_border,
-                                  size: 32,
-                                ),
+                            Text(
+                              '100k',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
                               ),
-                              Text(
-                                '100k',
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Gap(WidthValues.spacingLg)
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                            Gap(WidthValues.spacingLg)
+
+                      ],
                     ),
-                    if (state.status == UpdateFeedStatus.loaded)
-                      VideoBottomFeedVideosWidget(
-                        videoMetadata: state.feedVideos[index].metadata,
-                      ),
-                  ],
-                ),
+                  ),
+                  if (state.status == UpdateFeedStatus.loaded)
+                    VideoBottomFeedVideosWidget(
+                      videoMetadata: state.feedVideos[index].metadata,
+                    ),
+                ],
+                //),
               );
             },
           );
@@ -337,14 +272,14 @@ class _VideoPlayerState extends State<_HomeBody> {
         mainContentSliversBuilder: (BuildContext context) => [
               SliverList(
                   delegate: SliverChildListDelegate([
-                    Gap(WidthValues.padding),
-                    ListTile(
+                Gap(WidthValues.padding),
+                ListTile(
                   title: Text(context.l10n.reportFeedbackLabel),
                 ),
-                    ListTile(
-                      title: Text(context.l10n.reportVideoTitle(videoName)),
-                    ),
-                    Padding(
+                ListTile(
+                  title: Text(context.l10n.reportVideoTitle(videoName)),
+                ),
+                Padding(
                     padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                     child: Column(
                       spacing: WidthValues.padding,
@@ -376,6 +311,7 @@ class VideoBottomFeedVideosWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.only(
         right: 24,
@@ -386,13 +322,16 @@ class VideoBottomFeedVideosWidget extends StatelessWidget {
         children: [
           Expanded(
             child: Row(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.only(
                       left: 24,
+                    ),
+                    margin: EdgeInsets.only(
+                      right: size.width / 10,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -455,34 +394,46 @@ class VideoBottomFeedVideosWidget extends StatelessWidget {
                 title: Text('About this video:'),
                 titleAlignment: ListTileTitleAlignment.center,
               ),
-              ListTile(
-                title: Text('Directors:'),
-                subtitle: Text(metadata.directors),
-                leading: Icon(Icons.person_2_outlined),
-              ),
-              ListTile(
-                title: Text('Actors:'),
-                subtitle: Text(metadata.actors),
-                leading: Icon(Icons.people_alt_outlined),
-              ),
-              ListTile(
-                title: Text('Synopsis:'),
-                subtitle: Text(metadata.synopsis),
-                leading: Icon(Icons.movie_outlined),
-              ),
-              ListTile(
-                title: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  spacing: WidthValues.spacingSm,
-                  children: [
-                    Text('Rating:'),
-                    CustomTag.red(
-                      context: context,
-                      child: Text(metadata.rating),
-                    )
-                  ],
+              Visibility(
+                visible: metadata.directors.isNotEmpty,
+                child: ListTile(
+                  title: Text('Directors:'),
+                  subtitle: Text(metadata.directors),
+                  leading: Icon(Icons.person_2_outlined),
                 ),
-                leading: Icon(Icons.hotel_class),
+              ),
+              Visibility(
+                visible: metadata.actors.isNotEmpty,
+                child: ListTile(
+                  title: Text('Actors:'),
+                  subtitle: Text(metadata.actors),
+                  leading: Icon(Icons.people_alt_outlined),
+                ),
+              ),
+              Visibility(
+                visible: metadata.synopsis.isNotEmpty,
+                child: ListTile(
+                  title: Text('Synopsis:'),
+                  subtitle: Text(metadata.synopsis),
+                  leading: Icon(Icons.movie_outlined),
+                ),
+              ),
+              Visibility(
+                visible: metadata.rating.isNotEmpty,
+                child: ListTile(
+                  title: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    spacing: WidthValues.spacingSm,
+                    children: [
+                      Text('Rating:'),
+                      CustomTag.red(
+                        context: context,
+                        child: Text(metadata.rating),
+                      )
+                    ],
+                  ),
+                  leading: Icon(Icons.hotel_class),
+                ),
               ),
             ],
           ),
@@ -491,8 +442,6 @@ class VideoBottomFeedVideosWidget extends StatelessWidget {
     );
   }
 }
-
-//TODO Impl later
 
 class UserHeaderFeedVideosWidget extends StatelessWidget {
   const UserHeaderFeedVideosWidget({super.key});
@@ -551,7 +500,7 @@ class UserHeaderFeedVideosWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  radius: 12,
+                  radius: 16,
                   backgroundImage: user.imageUrl.isNotEmpty &&
                           user.imageUrl != AppConstants.emptyString
                       ? NetworkImage(user.imageUrl)
