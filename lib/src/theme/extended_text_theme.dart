@@ -73,4 +73,64 @@ extension ExtendedTextTheme on TextTheme {
         fontWeight: TextValues.regular,
         color: ColorValues.textPrimary(context),
       );
+
+  static TextStyle titleExtraLarge(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.textXl,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle titleLarge(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.textLg,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle titleMedium(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.textMd,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle titleSmall(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.textSm,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle titleExtraSmall(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.textXs,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle displayTitleExtraLarge(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.displayXl,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle displayTitleLarge(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.displayLg,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle displayTitleMedium(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.displayMd,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle displayTitleSmall(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.displaySm,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
+
+  static TextStyle displayTitExtraSmall(BuildContext context) => GoogleFonts.poppins(
+    fontSize: TextValues.displayXs,
+    fontWeight: TextValues.bold,
+    color: ColorValues.textPrimary(context),
+  );
 }
