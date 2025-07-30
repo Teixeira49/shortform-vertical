@@ -31,8 +31,8 @@ class _IntroSignUpTextButton extends StatelessWidget {
   }
 }
 
-class _TermAndConditionsMessage extends StatelessWidget {
-  const _TermAndConditionsMessage();
+class _IntroTermAndConditionsMessage extends StatelessWidget {
+  const _IntroTermAndConditionsMessage();
 
   @override
   Widget build(BuildContext context) {
@@ -54,5 +54,43 @@ class _TermAndConditionsMessage extends StatelessWidget {
               text: 'Privacy Policy',
               style: ExtendedTextTheme.titleSmall(context)),
         ]));
+  }
+}
+
+class _IntroAppMainIcon extends StatelessWidget {
+  const _IntroAppMainIcon();
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      'assets/icons/logos/stream_lite_full_logo-removebg-preview.png',
+      height: Adaptive.h(16),
+    );
+  }
+}
+
+class _IntroText extends StatelessWidget {
+  const _IntroText();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      spacing: WidthValues.spacingSm,
+      children: [
+        Text(
+          'Welcome User!',
+          style: ExtendedTextTheme.displayTitleSmall(context).copyWith(
+            color: ColorValues.fgBrandPrimary(context),
+          ),
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          'Get ready to dive into the greatest stories in TV and Film',
+          style: ExtendedTextTheme.textLarge(context),
+          textAlign: TextAlign.center,
+        ),
+        Gap(WidthValues.padding),
+      ],
+    );
   }
 }

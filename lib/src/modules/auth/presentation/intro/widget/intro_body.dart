@@ -115,8 +115,10 @@ class _IntroBodyState extends State<_IntroBody> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Colors.white,
-                      Colors.white.withAlpha(0),
+                      AppTheme.theme(context).scaffoldBackgroundColor,
+                      AppTheme.theme(context)
+                          .scaffoldBackgroundColor
+                          .withAlpha(0),
                     ],
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
@@ -128,31 +130,13 @@ class _IntroBodyState extends State<_IntroBody> {
                 height: size.height / 1.75,
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 2.0,
-                  ),
-                  //borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.white,
+                  color: AppTheme.theme(context).scaffoldBackgroundColor,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   spacing: WidthValues.spacingSm,
                   children: [
-                    Text(
-                      'Welcome User!',
-                      style:
-                          ExtendedTextTheme.displayTitleSmall(context).copyWith(
-                        color: ColorValues.fgBrandPrimary(context),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      'Get ready to dive into the greatest stories in TV and Film',
-                      style: ExtendedTextTheme.textLarge(context),
-                      textAlign: TextAlign.center,
-                    ),
-                    Gap(WidthValues.padding),
+                    _IntroText(),
                     _IntroPremiumPlansButton(),
                     _IntroLoginButton(),
                     _IntroSignUpTextButton(),
@@ -166,17 +150,14 @@ class _IntroBodyState extends State<_IntroBody> {
             top: size.height * 0.15,
             left: 0,
             right: 0,
-            child: Image.asset(
-              'assets/icons/logos/stream_lite_full_logo-removebg-preview.png',
-              height: Adaptive.h(16),
-            ),
+            child: _IntroAppMainIcon(),
           ),
 
           Positioned(
             bottom: 16,
             left: 16,
             right: 16,
-            child: _TermAndConditionsMessage(),
+            child: _IntroTermAndConditionsMessage(),
           ),
         ],
       ),

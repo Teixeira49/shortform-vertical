@@ -12,6 +12,7 @@ import 'package:venetiktok/l10n/l10n.dart';
 import 'package:venetiktok/src/theme/extended_text_theme.dart';
 import 'package:venetiktok/src/variables/variables.dart';
 
+import '../../../../../theme/app_theme.dart';
 import '../../../../../variables/values/color_values.dart';
 import '../../../../../variables/values/values.dart';
 import '../../login/login.dart';
