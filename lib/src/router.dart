@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:venetiktok/src/index.dart';
+import 'package:venetiktok/src/modules/auth/presentation/intro/page/intro_page.dart';
 
 import 'package:venetiktok/src/navigation_controller.dart';
 import 'package:venetiktok/src/navigator_observer.dart';
@@ -14,7 +15,6 @@ import 'package:venetiktok/src/shared/features/presentation/notifications/notifi
 import 'package:venetiktok/src/shared/features/presentation/premium_payments/page/premium_page.dart';
 import 'package:venetiktok/src/shared/features/presentation/success/page/success_page.dart';
 import 'package:venetiktok/src/shared/features/widgets/custom_page_transition.dart';
-
 
 import 'modules/auth/presentation/login/page/login_page.dart';
 import 'modules/auth/presentation/sign_up/page/sign_up_page.dart';
@@ -55,11 +55,27 @@ class AppRouter {
                   if (state.isAlreadySignedIn) {
                     context.go(AppShellBranch.values.first.path);
                   } else {
-                    context.go(LoginPage.path);
+                    context.go(IntroPage.path);
                   }
                 }
               },
               child: const SplashPage(),
+            ),
+          ),
+          GoRoute(
+            path: IntroPage.path,
+            name: IntroPage.routeName,
+            pageBuilder: (context, state) => CustomTransitionPage(
+              key: state.pageKey,
+              transitionDuration: const Duration(milliseconds: 500),
+              child: const IntroPage(),
+              transitionsBuilder: (
+                context,
+                animation,
+                secondaryAnimation,
+                child,
+              ) =>
+                  CustomPageTransition(animation: animation, child: child),
             ),
           ),
           GoRoute(
@@ -150,7 +166,7 @@ class AppRouter {
               ),
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) =>
-                  CustomPageTransition(animation: animation, child: child),
+                      CustomPageTransition(animation: animation, child: child),
             ),
           ),
           GoRoute(
@@ -161,7 +177,7 @@ class AppRouter {
               child: NotificationsPage(),
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) =>
-                  CustomPageTransition(animation: animation, child: child),
+                      CustomPageTransition(animation: animation, child: child),
             ),
           ),
 
@@ -170,11 +186,10 @@ class AppRouter {
             name: PremiumPaywallPage.routeName,
             pageBuilder: (context, state) => CustomTransitionPage(
               key: state.pageKey,
-              child: PremiumPaywallPage(
-              ),
+              child: PremiumPaywallPage(),
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) =>
-                  CustomPageTransition(animation: animation, child: child),
+                      CustomPageTransition(animation: animation, child: child),
             ),
           ),
 
